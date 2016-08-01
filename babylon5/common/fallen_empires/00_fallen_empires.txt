@@ -1,0 +1,77 @@
+### The First Born
+fallen_empire_1 = {
+	graphical_culture = "fallen_empire_02"
+	initializer = "fallen_1_1"
+	
+	create_country_effect = {
+		create_species = {
+			name = "First Born"
+			class = "MAM"
+			portrait = "gfx/portraits/firstones/firstborn_lorien.dds"
+			traits = random
+		}
+		create_country = {
+			name = "The First Born"
+			type = fallen_empire
+			ignore_initial_colony_error = yes
+			government = stagnated_ascendancy
+			species = last_created
+			flag = random
+			effect = {
+				set_country_flag = fallen_empire_1		
+			}
+		}
+	}
+}
+
+### Walkers of Sigma-957
+fallen_empire_2 = {
+	graphical_culture = "fallen_empire_01"
+	initializer = "fallen_2"
+	
+	create_country_effect = {
+		create_species = {
+			name = "Walkers of Sigma-957"
+			class = EXD
+			portrait = random
+			traits = random
+		}
+		create_country = {
+			name = "Walkers of Sigma-957"
+			type = fallen_empire
+			ignore_initial_colony_error = yes
+			government = stagnated_ascendancy
+			species = last_created
+			flag = random
+			effect = {
+				set_country_flag = fallen_empire_2
+			}
+		}
+	}
+}
+
+### The Hand
+fallen_empire_3 = {
+	graphical_culture = "fallen_empire_03"
+	initializer = "fallen_3"
+	
+	create_country_effect = {
+		create_species = {
+			name = "The Hand"
+			class = random
+			portrait = random
+			traits = random
+		}
+		create_country = {
+			name = "The Hand"
+			type = fallen_empire
+			ignore_initial_colony_error = yes
+			government = stagnated_ascendancy
+			species = last_created
+			flag = random
+			effect = {
+				set_country_flag = fallen_empire_3
+			}
+		}
+	}
+}

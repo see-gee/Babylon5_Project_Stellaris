@@ -1,0 +1,64 @@
+narn = {
+	name = "Narn Regime"
+	spawn_enabled = always # yes / no / always
+	
+	name_list = "NARN1"
+	ship_prefix = ""
+	
+	species_name = "Narn"
+	species_plural = "Narns"
+	species_adjective = "Narn"
+	species_bio = "Narns were once a peaceful and agrarian people, though after a century of slavery under the Centauri, the once peaceful people had become bitter and hostile, turning more to their warrior traditions than they once did. Even before the Centauri occupation, life on Narn was hard and often very short, out of this grew the tradition of giving newborn pouchlings temporary names until the age of ten, when he or she decides which of their religions to follow and to choose their 'true name' from that faith. Narn pride themselves on physical perfection and even a minor disability such as poor eyesight is considered a source of great shame."
+	species_class = "REP"
+	trait="trait_agrarian"
+	trait="trait_strong"
+	trait="trait_repugnant"
+	# portrait = "rep2"
+	portrait = "narn"
+	adjective = "Narn"
+	
+	government="military_junta"
+	ethic="ethic_individualist"
+	ethic="ethic_militarist"
+	ethic="ethic_spiritualist"
+
+	flags = { narnstart_1 narn_cpu }
+	
+	weapon="tech_lasers_1"
+	ftl=hyperdrive
+	
+	planet_name = "Narn"
+	planet_class = "pc_tropical"
+	#Actual name of system containing Narn Homeworld
+	system_name = "Sector 160"
+	
+	graphical_culture="reptilian_01"
+	city_graphical_culture="reptilian_01"
+	
+	empire_flag={
+		icon={
+			category="babylon5"
+			file="narn_flag_1.dds"
+		}
+		background={
+			category="backgrounds"
+			file="v.dds"
+		}
+		colors={
+			"red"
+			"dark_brown"
+			"null"
+			"null"
+		}
+	}
+
+	
+	ruler={
+		gender=male
+		name="G'kar of G'Quan"
+		portrait= narn_gkar_1
+		texture=0
+		hair=0
+		clothes=0
+	}
+}

@@ -1,0 +1,17 @@
+﻿l_english:
+
+ name_list_MINBARI1:0 "Minbari"
+ IS_SPECIES_CLASS_TRIGGER:0 "Is corresponding species class"
+ 
+ FLAG_CATEGORY_minbari:0 "Minbari"
+ 
+ START_SCREEN_MIN:0 "Minbari Start screen\n\n new line"
+ 
+ EMPIRE_DESIGN_minbari:0 "Minbari Grey Council"
+ EMPIRE_DESIGN_minbari_desc:0 "We are the universe, trying to understand itself."
+
+ VOR:0 "minbari"
+
+ personality_minbari_cpu:0 "Federation Builders"
+ personality_minbari_cpu_desc:0 "Minbari Grey Council purpose is unity of all the races in the galaxy"
+

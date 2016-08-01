@@ -1,0 +1,109 @@
+portraits = {
+	vorlon_kosh_1 = { texturefile = "gfx/portraits/vorlon/vorlon_kosh_1.dds"}
+	vorlon_kosh_2 = { texturefile = "gfx/portraits/vorlon/vorlon_kosh_2.dds"}
+	vorlon_civ_1 = { texturefile = "gfx/portraits/vorlon/vorlon_civ_1.dds"}
+	vorlon_mil_1	= { texturefile = "gfx/portraits/vorlon/vorlon_mil_1.dds"}
+	vorlon_arm_1 = { texturefile = "gfx/portraits/vorlon/vorlon_arm_1.dds"}
+	vorlon_gov_1 = { texturefile = "gfx/portraits/vorlon/vorlon_gov_1.dds"}
+	vorlon_sci_1 = { texturefile = "gfx/portraits/vorlon/vorlon_sci_1.dds"}
+}
+portrait_groups = {
+	vorlon = {
+		default = vorlon_kosh_1
+		game_setup = { #will run with a limited country scope. species and government is set but the country does not actually exist
+			add = {
+				portraits = {
+					vorlon_kosh_1
+					vorlon_kosh_2
+				}
+			}
+		}		
+		
+		#species scope
+		species = { #generic portrait for a species
+			set = {
+				portraits = {
+					vorlon_civ_1
+				}
+			}
+		}		
+		
+		#pop scope
+		pop = { #for a specific pop
+			add = {
+				portraits = {
+					vorlon_civ_1
+				}
+			}
+		}
+		
+		#leader scope
+		leader = { #scientists, generals, admirals, governor
+			set = {
+				trigger = {
+					gender = male
+				}
+				portraits = {
+					vorlon_civ_1
+				}
+			}
+			
+			set = {
+				trigger = {
+					leader_class = general
+				}
+				portraits = {
+					vorlon_arm_1
+				}
+			}
+			
+			add = {
+				trigger = {
+					leader_class = admiral
+				}
+				portraits = {
+					vorlon_mil_1
+				}
+			}
+			
+			add = {
+				trigger = {
+					leader_class = scientist
+				}
+				portraits = {
+					vorlon_sci_1
+				}
+			}
+			
+			add = {
+				trigger = {
+					leader_class = governor
+				}
+				portraits = {
+					vorlon_gov_1
+				}
+			}
+			
+			add = {
+				trigger = {
+					leader_class = ruler
+				}
+				portraits = {
+					vorlon_kosh_1
+				}
+			}
+		}
+
+			
+		#leader scope 
+		ruler = {
+			add = {
+				portraits = {
+					vorlon_kosh_1
+				}
+			}
+		}
+		
+		
+	}
+}

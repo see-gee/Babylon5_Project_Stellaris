@@ -1,0 +1,17 @@
+﻿l_english:
+
+ name_list_NARN1:0 "Narn"
+ IS_SPECIES_CLASS_TRIGGER:0 "Is corresponding species class"
+ 
+ FLAG_CATEGORY_NARN:0 "Narn"
+ 
+ START_SCREEN_NAR:0 "Narn Start screen\n\n new line"
+ 
+ EMPIRE_DESIGN_narn:0 "Narn Spiritual Junta"
+ EMPIRE_DESIGN_narn_desc:0 " If I take a lamp and shine it toward the wall, a bright spot will appear on the wall. The lamp is our search for truth, for understanding. Too often we assume that the light on the wall is God. But the light is not the goal of the search; it is the result of the search. The more intense the search, the brighter the light on the wall. The brighter the light on the wall, the greater the sense of revelation upon seeing it! Similarly, someone who does not search, who does not bring a lantern with him, sees nothing. What we perceive as God, is the byproduct of our search for God. It may simply be an appreciation of the light, pure and unblemished, not understanding that it comes from us. Sometimes we stand in front of the light and assume that we are the center of the universe. God looks astonishingly like we do! Or we turn to look at our shadow, and assume that all is darkness. If we allow ourselves to get in the way, we defeat the purpose; which is to use the light of our search to illuminate the wall in all its beauty - and in all its flaws. And in so doing better understand the world around us."
+
+ CEN:0 "narn"
+
+ personality_narn_cpu:0 "Spiritual Militarists"
+ personality_narn_cpu_desc:0 "No price is too enough when Narn pride and beliefs are involved."
+

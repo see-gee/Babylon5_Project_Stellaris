@@ -1,0 +1,188 @@
+﻿VORLON1 = {
+	ship_names = {
+		generic = {
+		}
+
+		corvette = {
+			"-.-" 
+		}
+		
+		constructor = {
+			"___." "__|."
+		}
+		
+		colonizer = {
+			sequential_name = "_|||_"
+		}
+
+		destroyer = {
+			"-::-" 
+		}
+		
+		cruiser = {
+			"-:|:-"
+		}
+		
+		battleship = {
+			"-:():-"
+		}
+		
+		science = {
+			"--)--"
+		}
+
+		orbital_station = {
+			"(__)"
+		}
+
+		mining_station = {
+			"||.)" "(.|("
+		}
+
+		research_station = {
+			"__.:_"
+		}
+
+		wormhole_station = {
+			"(((:.))"
+		}
+
+		terraform_station = {
+			")):.:(_"
+		}
+
+		observation_station = {
+			"_|(.)--"
+		}
+
+		outpost_station = {
+			"((:||__"
+		}
+		
+		transport = {
+			":__:_:(-))"
+		}
+		
+		military_station_small = {
+		}
+		
+		military_station_medium = {
+		}
+		
+		military_station_large = {
+		}
+	}
+	
+	fleet_names = {
+		random_names = { "The Golden Armada" "Koprulu Expeditionary Force" "Fleet of the Patriarch" "Fleet of the Executor" "Conclave Fleet" "Fleet of the Hierarch"
+		}
+		sequential_name = "%O% Vorlon Fleet"
+	}
+
+
+	army_names = {
+	
+		defense_army = {
+			sequential_name = "%O% Vorlon Defenders"
+		}
+			
+		assault_army = {
+			sequential_name = "%O% Vorlon Legion"
+		}
+		
+		slave_army = {
+			sequential_name = "%O% Vorclave Legion"
+		}
+		
+		clone_army = {
+			sequential_name = "%O% LonLon Legion"
+		}
+		
+		robotic_army = {
+			sequential_name = "%O% Vorbot Legion"
+		}
+		
+		android_army = {
+			sequential_name = "%O% Vorsent purifiers"
+		}
+		
+		psionic_army = {
+			sequential_name = "%O% VT divison"
+		}
+		
+		xenomorph_army = {
+			sequential_name = "%O% Kraken swarm"
+		}
+		
+		gene_warrior_army = {
+			sequential_name = "%O% Vorriors"
+		}
+	}
+
+	
+	planet_names = {
+	
+		generic = {
+			names = {
+			}
+		}
+		
+		pc_desert = {
+			names = { "Korlon"
+			}
+		}
+		
+		pc_tropical = {
+			names = { "Sarlon"
+			}
+		}
+		
+		pc_arid = {
+			names = { "Karron"
+			}
+		}
+		
+		pc_continental = {
+			names = {
+			}
+		}
+		
+		pc_ocean = {
+			names = { "Otolon"
+			}
+		}
+		
+		pc_tundra = {
+			names = {
+			}
+		}
+		
+		pc_arctic = {
+			names = { "Aralon"
+			}
+		}
+		
+	}
+
+	
+	character_names = {
+		default = {
+			#A complete name
+			full_names = { 
+			}
+			
+			# Always combined with a second name
+			first_names = { "Ulkesh" "Shelk" "Eroksh" "Kelsh" "Erlek" "Kellesh" "Hosh" "Tosh" "Splosh" "Melesh" "Kulmesh" "Keksh" "Kosh" "Kesh" "Kash" "Kush" "Kish"
+			}
+			
+			# Always combined with a first name
+			second_names = { "Ranekar" "Akenek" "Rekaran" "Nakaren" "Naaken" "Araken" "Ranarek" "Keraker" "Nakaner" "Karanek"
+ 			}
+			
+			regnal_first_names = { "Kosh" "Ulkesh" "Zash" "Felsh"
+			}
+			regnal_second_names = { "Naranek" "Taraken" "Akeramt" "Runamas"
+			}
+		}
+	}
+}

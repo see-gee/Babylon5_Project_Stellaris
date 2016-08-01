@@ -1,0 +1,4662 @@
+############################
+#
+# Thirdspace Alien Invasion
+#
+############################
+
+namespace = crisis
+
+### EXTRADIMENSIONALS
+
+# Thirdspace Alien Invasion Begins (HIDDEN)
+country_event = {
+	id = crisis.1000
+	hide_window = yes
+	fire_only_once = yes
+	
+	trigger = {
+		NOT = { 
+			has_global_flag = extradimensional_invasion_happened
+			has_global_flag = galactic_crisis_happened
+		}
+		#is_ai = no
+		is_country_type = default
+		exists = capital_scope
+		capital_scope = { colony_age > 1800 }
+		OR = {
+			has_technology = "tech_wormhole_generation_3"
+			has_technology = "tech_hyper_drive_3"
+			has_technology = "tech_warp_drive_3"
+		}
+	}
+	
+	mean_time_to_happen = {
+		# 2k years
+		months = 24000
+		# 200 years if empire has jump drive
+		modifier = {
+			factor = 0.1
+			is_country_type = default
+			OR = {
+				has_technology = "tech_jump_drive_1"
+				has_technology = "tech_psi_jump_drive_1"
+			}
+		}
+		# 20 years if empire has both jump drives
+		modifier = {
+			factor = 0.1
+			is_country_type = default
+			has_technology = "tech_jump_drive_1"
+			has_technology = "tech_psi_jump_drive_1"
+		}
+		# 16/0/0 years if player has completed Wanderlust chain
+		modifier = {
+			factor = 0.8
+			is_country_type = default
+			has_country_flag = completed_rogue_scientist
+		}
+	}
+	
+	immediate = {
+		set_global_flag = extradimensional_invasion_happened
+		set_global_flag = galactic_crisis_happened
+		random_system = {
+			limit = {
+				NOT = {
+					any_country = {
+						is_country_type = fallen_empire
+						any_system_within_border = {
+							is_same_value = prev
+						}
+					}
+				}
+			}
+			set_star_flag = extradimensional_origin_system
+			save_event_target_as = extradimensional_system
+			random_system_planet = {
+				create_species = {
+					name = "Thirdspace Aliens"
+					class = EXD
+					portrait = exd1
+					traits = random
+				}
+				create_country = {
+					name = "Harbringers"
+					type = "extradimensional"
+					species = last_created
+					name_list = "Extradimensional"
+					flag = {
+						icon= {
+							category = "special"
+							file = "extradimensional_01.dds"
+						}
+						background= {
+							category = "backgrounds"
+							file = "circle.dds"
+						}
+						colors={
+							"indigo"
+							"blue"
+							"null"
+							"null"
+						}
+					}
+				}
+				last_created_species = { save_event_target_as = extradimensional_species }
+				last_created_country = {
+
+					# Beef up Extradimensionals depending on difficulty
+					if = {
+						limit = {
+							is_difficulty = 2
+						}
+						add_modifier = {
+							modifier = exd_strength_insane
+						}
+						else = {
+							if = {
+								limit = {
+									is_difficulty = 1
+								}
+								add_modifier = {
+									modifier = exd_strength_hard
+									days = -1
+								}
+								else = {
+									add_modifier = {
+										modifier = exd_strength
+										days = -1
+									}	
+								}
+							}
+						}
+					}
+
+					save_event_target_as = extradimensionals
+					create_ship_design = { design = "Void Shaper" }
+					add_ship_design = last_created_design
+					create_ship_design = { design = "Phantasm Alpha" }
+					add_ship_design = last_created_design
+					create_ship_design = { design = "Whisper Alpha" }
+					add_ship_design = last_created_design
+					save_event_target_as = extradimensionals
+					create_fleet = { name = "Dimensional Portal" }
+					last_created_fleet = {
+						set_owner = PREV
+						create_ship = {
+							# Actual name of B5 Gate
+							name = "Well of Souls"
+							design = "Dimensional Portal"
+							graphical_culture = "extra_dimensional_01"
+						}
+						set_location = {
+							target = PREVPREV
+							distance = 40
+							angle = random
+						}
+						save_event_target_as = dimensional_portal
+						fleet_event = { id = crisis.1003 days = 120 } # Second Fleet Arrives
+						fleet_event = { id = crisis.1003 days = 300 } # Third Fleet Arrives
+						fleet_event = { id = crisis.1003 days = 700 } # Fourth Fleet Arrives
+						fleet_event = { id = crisis.1006 days = 80 } # First Constructor Arrives
+						fleet_event = { id = crisis.1006 days = 100 } # Second Constructor Arrives
+						fleet_event = { id = crisis.1006 days = 220 } # Third Constructor Arrives
+						fleet_event = { id = crisis.1006 days = 330 } # Fourth Constructor Arrives
+					}
+					create_fleet = { }
+					create_leader = {
+						type = admiral
+						species = event_target:extradimensional_species
+						name = random
+						skill = 500
+						traits = {
+							trait = leader_trait_ethereal
+						}
+					}
+					last_created_fleet = {
+						set_owner = PREV
+						create_ship = {
+							name = random
+							design = "Revenant"
+							graphical_culture = "extra_dimensional_01"
+						}
+						assign_leader = last_created_leader
+						create_ship = {
+							name = random
+							design = "Revenant"
+							graphical_culture = "extra_dimensional_01"
+						}
+						create_ship = {
+							name = random
+							design = "Revenant"
+							graphical_culture = "extra_dimensional_01"
+						}
+						create_ship = {
+							name = random
+							design = "Revenant"
+							graphical_culture = "extra_dimensional_01"
+						}
+						create_ship = {
+							name = random
+							design = "Revenant"
+							graphical_culture = "extra_dimensional_01"
+						}
+						create_ship = {
+							name = random
+							design = "Revenant"
+							graphical_culture = "extra_dimensional_01"
+						}
+						create_ship = {
+							name = random
+							design = "Revenant"
+							graphical_culture = "extra_dimensional_01"
+						}
+						create_ship = {
+							name = random
+							design = "Revenant"
+							graphical_culture = "extra_dimensional_01"
+						}
+						create_ship = {
+							name = random
+							design = "Phantom"
+							graphical_culture = "extra_dimensional_01"
+						}
+						create_ship = {
+							name = random
+							design = "Phantom"
+							graphical_culture = "extra_dimensional_01"
+						}
+						create_ship = {
+							name = random
+							design = "Phantom"
+							graphical_culture = "extra_dimensional_01"
+						}
+						create_ship = {
+							name = random
+							design = "Phantom"
+							graphical_culture = "extra_dimensional_01"
+						}
+						create_ship = {
+							name = random
+							design = "Phantom"
+							graphical_culture = "extra_dimensional_01"
+						}
+						create_ship = {
+							name = random
+							design = "Phantom"
+							graphical_culture = "extra_dimensional_01"
+						}
+						create_ship = {
+							name = random
+							design = "Phantom"
+							graphical_culture = "extra_dimensional_01"
+						}
+						create_ship = {
+							name = random
+							design = "Phantom"
+							graphical_culture = "extra_dimensional_01"
+						}
+						create_ship = {
+							name = random
+							design = "Phantom"
+							graphical_culture = "extra_dimensional_01"
+						}
+						create_ship = {
+							name = random
+							design = "Phantom"
+							graphical_culture = "extra_dimensional_01"
+						}
+						create_ship = {
+							name = random
+							design = "Wraith"
+							graphical_culture = "extra_dimensional_01"
+						}
+						create_ship = {
+							name = random
+							design = "Wraith"
+							graphical_culture = "extra_dimensional_01"
+						}
+						create_ship = {
+							name = random
+							design = "Wraith"
+							graphical_culture = "extra_dimensional_01"
+						}
+						create_ship = {
+							name = random
+							design = "Wraith"
+							graphical_culture = "extra_dimensional_01"
+						}
+						create_ship = {
+							name = random
+							design = "Wraith"
+							graphical_culture = "extra_dimensional_01"
+						}
+						create_ship = {
+							name = random
+							design = "Wraith"
+							graphical_culture = "extra_dimensional_01"
+						}
+						create_ship = {
+							name = random
+							design = "Wraith"
+							graphical_culture = "extra_dimensional_01"
+						}
+						create_ship = {
+							name = random
+							design = "Wraith"
+							graphical_culture = "extra_dimensional_01"
+						}
+						create_ship = {
+							name = random
+							design = "Wraith"
+							graphical_culture = "extra_dimensional_01"
+						}
+						create_ship = {
+							name = random
+							design = "Wraith"
+							graphical_culture = "extra_dimensional_01"
+						}
+						create_ship = {
+							name = random
+							design = "Wraith"
+							graphical_culture = "extra_dimensional_01"
+						}
+						create_ship = {
+							name = random
+							design = "Wraith"
+							graphical_culture = "extra_dimensional_01"
+						}
+						create_ship = {
+							name = random
+							design = "Wraith"
+							graphical_culture = "extra_dimensional_01"
+						}
+						create_ship = {
+							name = random
+							design = "Wraith"
+							graphical_culture = "extra_dimensional_01"
+						}
+						create_ship = {
+							name = random
+							design = "Wraith"
+							graphical_culture = "extra_dimensional_01"
+						}
+						create_ship = {
+							name = random
+							design = "Wraith"
+							graphical_culture = "extra_dimensional_01"
+						}
+						create_ship = {
+							name = random
+							design = "Wraith"
+							graphical_culture = "extra_dimensional_01"
+						}
+						create_ship = {
+							name = random
+							design = "Wraith"
+							graphical_culture = "extra_dimensional_01"
+						}
+						create_ship = {
+							name = random
+							design = "Wraith"
+							graphical_culture = "extra_dimensional_01"
+						}
+						set_location = {
+							target = event_target:dimensional_portal
+							distance = 5
+							angle = random
+						}
+						set_fleet_stance = aggressive
+						set_aggro_range = 500
+						set_aggro_range_measure_from = self
+					}
+				}
+			}
+		}
+		every_country = {
+			limit = {
+				#is_ai = no
+				is_country_type = default
+				intel_level = { 
+					level = high
+					system = event_target:extradimensional_system
+				}
+			}
+			country_event = { id = crisis.1007 }
+		}
+		every_country = {
+			limit = {
+				#is_ai = no
+				is_country_type = default
+				NOT = {
+					intel_level = { 
+						level = high
+						system = event_target:extradimensional_system
+					}
+				}
+			}
+			country_event = { id = crisis.1008 }
+		}	
+	}
+}
+
+# Fleet Reinforcements
+fleet_event = {
+	id = crisis.1003
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		event_target:extradimensionals = {
+			create_fleet = { }
+			random_list = {
+				25 = {
+					create_leader = {
+						type = admiral
+						species = event_target:extradimensional_species
+						name = random
+						skill = 1000
+						traits = {
+							trait = leader_trait_ethereal
+						}
+					}
+				}
+				25 = {
+					create_leader = {
+						type = admiral
+						species = event_target:extradimensional_species
+						name = random
+						skill = 1000
+						traits = {
+							trait = leader_trait_dimensional_stutter
+						}
+					}
+				}
+				50 = {
+					create_leader = {
+						type = admiral
+						species = event_target:extradimensional_species
+						name = random
+						skill = 500
+					}
+				}
+			}
+			last_created_fleet = {
+				set_owner = PREV
+				create_ship = {
+					name = random
+					design = "Revenant"
+					graphical_culture = "extra_dimensional_01"
+				}
+				assign_leader = last_created_leader
+				create_ship = {
+					name = random
+					design = "Revenant"
+					graphical_culture = "extra_dimensional_01"
+				}
+				create_ship = {
+					name = random
+					design = "Revenant"
+					graphical_culture = "extra_dimensional_01"
+				}
+				create_ship = {
+					name = random
+					design = "Revenant"
+					graphical_culture = "extra_dimensional_01"
+				}
+				create_ship = {
+					name = random
+					design = "Revenant"
+					graphical_culture = "extra_dimensional_01"
+				}
+				create_ship = {
+					name = random
+					design = "Revenant"
+					graphical_culture = "extra_dimensional_01"
+				}
+				create_ship = {
+					name = random
+					design = "Revenant"
+					graphical_culture = "extra_dimensional_01"
+				}
+				create_ship = {
+					name = random
+					design = "Revenant"
+					graphical_culture = "extra_dimensional_01"
+				}
+				create_ship = {
+					name = random
+					design = "Phantom"
+					graphical_culture = "extra_dimensional_01"
+				}
+				create_ship = {
+					name = random
+					design = "Phantom"
+					graphical_culture = "extra_dimensional_01"
+				}
+				create_ship = {
+					name = random
+					design = "Phantom"
+					graphical_culture = "extra_dimensional_01"
+				}
+				create_ship = {
+					name = random
+					design = "Phantom"
+					graphical_culture = "extra_dimensional_01"
+				}
+				create_ship = {
+					name = random
+					design = "Phantom"
+					graphical_culture = "extra_dimensional_01"
+				}
+				create_ship = {
+					name = random
+					design = "Phantom"
+					graphical_culture = "extra_dimensional_01"
+				}
+				create_ship = {
+					name = random
+					design = "Phantom"
+					graphical_culture = "extra_dimensional_01"
+				}
+				create_ship = {
+					name = random
+					design = "Phantom"
+					graphical_culture = "extra_dimensional_01"
+				}
+				create_ship = {
+					name = random
+					design = "Phantom"
+					graphical_culture = "extra_dimensional_01"
+				}
+				create_ship = {
+					name = random
+					design = "Phantom"
+					graphical_culture = "extra_dimensional_01"
+				}
+				create_ship = {
+					name = random
+					design = "Wraith"
+					graphical_culture = "extra_dimensional_01"
+				}
+				create_ship = {
+					name = random
+					design = "Wraith"
+					graphical_culture = "extra_dimensional_01"
+				}
+				create_ship = {
+					name = random
+					design = "Wraith"
+					graphical_culture = "extra_dimensional_01"
+				}
+				create_ship = {
+					name = random
+					design = "Wraith"
+					graphical_culture = "extra_dimensional_01"
+				}
+				create_ship = {
+					name = random
+					design = "Wraith"
+					graphical_culture = "extra_dimensional_01"
+				}
+				create_ship = {
+					name = random
+					design = "Wraith"
+					graphical_culture = "extra_dimensional_01"
+				}
+				create_ship = {
+					name = random
+					design = "Wraith"
+					graphical_culture = "extra_dimensional_01"
+				}
+				create_ship = {
+					name = random
+					design = "Wraith"
+					graphical_culture = "extra_dimensional_01"
+				}
+				create_ship = {
+					name = random
+					design = "Wraith"
+					graphical_culture = "extra_dimensional_01"
+				}
+				create_ship = {
+					name = random
+					design = "Wraith"
+					graphical_culture = "extra_dimensional_01"
+				}
+				create_ship = {
+					name = random
+					design = "Wraith"
+					graphical_culture = "extra_dimensional_01"
+				}
+				create_ship = {
+					name = random
+					design = "Wraith"
+					graphical_culture = "extra_dimensional_01"
+				}
+				create_ship = {
+					name = random
+					design = "Wraith"
+					graphical_culture = "extra_dimensional_01"
+				}
+				create_ship = {
+					name = random
+					design = "Wraith"
+					graphical_culture = "extra_dimensional_01"
+				}
+				create_ship = {
+					name = random
+					design = "Wraith"
+					graphical_culture = "extra_dimensional_01"
+				}
+				create_ship = {
+					name = random
+					design = "Wraith"
+					graphical_culture = "extra_dimensional_01"
+				}
+				create_ship = {
+					name = random
+					design = "Wraith"
+					graphical_culture = "extra_dimensional_01"
+				}
+				create_ship = {
+					name = random
+					design = "Wraith"
+					graphical_culture = "extra_dimensional_01"
+				}
+				create_ship = {
+					name = random
+					design = "Wraith"
+					graphical_culture = "extra_dimensional_01"
+				}
+				set_location = {
+					target = ROOT
+					distance = 5
+					angle = random
+				}
+				set_fleet_stance = aggressive
+				set_aggro_range = 500
+				set_aggro_range_measure_from = self
+			}
+		}
+	}
+}
+
+# Constructor
+fleet_event = {
+	id = crisis.1006
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		event_target:extradimensionals = {
+			create_fleet = { }
+			last_created_fleet = {
+				set_owner = PREV
+				create_ship = {
+					name = random
+					design = "Void Shaper"
+					graphical_culture = "extra_dimensional_01"
+				}
+				set_location = {
+					target = ROOT
+					distance = 5
+					angle = random
+				}
+			}
+		}
+	}
+}
+
+# Notification (High Intel)
+country_event = {
+	id = crisis.1007
+	title = "crisis.1007.name"
+	desc = "crisis.1007.desc"
+	picture = GFX_evt_wormhole
+	show_sound = event_ex_started
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = crisis.18.a
+		trigger = {
+			OR = {
+				has_government = theocratic_republic
+				has_government = transcendent_republic
+				has_government = theocratic_oligarchy
+				has_government = transcendent_oligarchy
+				has_government = divine_mandate
+				has_government = transcendent_empire
+			}
+			NOT = {
+				has_ethic = "ethic_fanatic_individualist"
+				has_ethic = "ethic_fanatic_collectivist"
+				has_ethic = "ethic_fanatic_xenophile"
+				has_ethic = "ethic_fanatic_xenophobe"
+			}
+		}
+		begin_event_chain = {
+			event_chain = "extradimensional_invasion_chain"
+			target = ROOT
+		}
+		create_point_of_interest = {
+			id = extradimensional_invasion_poi.1
+			name = "extradimensional_invasion_1_poi"
+			desc = "extradimensional_invasion_1_poi_desc"
+			event_chain = "extradimensional_invasion_chain"
+			location = event_target:extradimensional_system
+		}
+		country_event = { id = crisis.1010 }
+	}
+	option = {
+		name = crisis.18.b
+		trigger = {
+			OR = {
+				has_government = military_dictatorship
+				has_government = martial_empire
+				has_government = military_junta
+				has_government = ordered_stratocracy
+				has_government = military_republic
+				has_government = martial_demarchy
+			}
+			NOT = {
+				has_ethic = "ethic_fanatic_individualist"
+				has_ethic = "ethic_fanatic_collectivist"
+				has_ethic = "ethic_fanatic_xenophile"
+				has_ethic = "ethic_fanatic_xenophobe"
+			}
+		}
+		begin_event_chain = {
+			event_chain = "extradimensional_invasion_chain"
+			target = ROOT
+		}
+		create_point_of_interest = {
+			id = extradimensional_invasion_poi.1
+			name = "extradimensional_invasion_1_poi"
+			desc = "extradimensional_invasion_1_poi_desc"
+			event_chain = "extradimensional_invasion_chain"
+			location = event_target:extradimensional_system
+		}
+		country_event = { id = crisis.1010 }
+	}
+	option = {
+		name = crisis.18.c
+		trigger = {
+			OR = {
+				has_government = despotic_hegemony
+				has_government = ai_overlordship
+				has_government = science_directorate
+				has_government = illuminated_technocracy
+				has_government = direct_democracy
+				has_government = subconscious_consensus
+			}
+			NOT = {
+				has_ethic = "ethic_fanatic_individualist"
+				has_ethic = "ethic_fanatic_collectivist"
+				has_ethic = "ethic_fanatic_xenophile"
+				has_ethic = "ethic_fanatic_xenophobe"
+			}
+		}
+		begin_event_chain = {
+			event_chain = "extradimensional_invasion_chain"
+			target = ROOT
+		}
+		create_point_of_interest = {
+			id = extradimensional_invasion_poi.1
+			name = "extradimensional_invasion_1_poi"
+			desc = "extradimensional_invasion_1_poi_desc"
+			event_chain = "extradimensional_invasion_chain"
+			location = event_target:extradimensional_system
+		}
+		country_event = { id = crisis.1010 }
+	}
+	option = {
+		name = crisis.18.d
+		trigger = {
+			OR = {
+				has_government = moral_democracy
+				has_government = irenic_democracy
+				has_government = peaceful_bureaucracy
+				has_government = irenic_protectorate
+				has_government = enlightened_monarchy
+				has_government = irenic_monarchy
+			}
+			NOT = {
+				has_ethic = "ethic_fanatic_individualist"
+				has_ethic = "ethic_fanatic_collectivist"
+				has_ethic = "ethic_fanatic_xenophile"
+				has_ethic = "ethic_fanatic_xenophobe"
+			}
+		}
+		begin_event_chain = {
+			event_chain = "extradimensional_invasion_chain"
+			target = ROOT
+		}
+		create_point_of_interest = {
+			id = extradimensional_invasion_poi.1
+			name = "extradimensional_invasion_1_poi"
+			desc = "extradimensional_invasion_1_poi_desc"
+			event_chain = "extradimensional_invasion_chain"
+			location = event_target:extradimensional_system
+		}
+		country_event = { id = crisis.1010 }
+	}
+	option = {
+		name = crisis.18.e
+		trigger = {
+			OR = {
+				has_government = plutocratic_oligarchy
+				has_government = mega_corporation
+			}
+			NOT = {
+				has_ethic = "ethic_fanatic_individualist"
+				has_ethic = "ethic_fanatic_collectivist"
+				has_ethic = "ethic_fanatic_xenophile"
+				has_ethic = "ethic_fanatic_xenophobe"
+			}
+		}
+		begin_event_chain = {
+			event_chain = "extradimensional_invasion_chain"
+			target = ROOT
+		}
+		create_point_of_interest = {
+			id = extradimensional_invasion_poi.1
+			name = "extradimensional_invasion_1_poi"
+			desc = "extradimensional_invasion_1_poi_desc"
+			event_chain = "extradimensional_invasion_chain"
+			location = event_target:extradimensional_system
+		}
+		country_event = { id = crisis.1010 }
+	}
+	option = {
+		name = crisis.18.f
+		trigger = {
+			OR = {
+				has_government = despotic_empire
+				has_government = star_empire
+				has_government = indirect_democracy
+				has_government = democratic_utopia
+			}
+			NOT = {
+				has_ethic = "ethic_fanatic_individualist"
+				has_ethic = "ethic_fanatic_collectivist"
+				has_ethic = "ethic_fanatic_xenophile"
+				has_ethic = "ethic_fanatic_xenophobe"
+			}
+		}
+		begin_event_chain = {
+			event_chain = "extradimensional_invasion_chain"
+			target = ROOT
+		}
+		create_point_of_interest = {
+			id = extradimensional_invasion_poi.1
+			name = "extradimensional_invasion_1_poi"
+			desc = "extradimensional_invasion_1_poi_desc"
+			event_chain = "extradimensional_invasion_chain"
+			location = event_target:extradimensional_system
+		}
+		country_event = { id = crisis.1010 }
+	}
+	option = {
+		name = crisis.18.g
+		trigger = {
+			has_ethic = "ethic_fanatic_xenophobe"
+		}
+		begin_event_chain = {
+			event_chain = "extradimensional_invasion_chain"
+			target = ROOT
+		}
+		create_point_of_interest = {
+			id = extradimensional_invasion_poi.1
+			name = "extradimensional_invasion_1_poi"
+			desc = "extradimensional_invasion_1_poi_desc"
+			event_chain = "extradimensional_invasion_chain"
+			location = event_target:extradimensional_system
+		}
+		country_event = { id = crisis.1010 }
+	}
+	option = {
+		name = crisis.1007.a
+		trigger = {
+			has_ethic = "ethic_fanatic_xenophile"
+		}
+		begin_event_chain = {
+			event_chain = "extradimensional_invasion_chain"
+			target = ROOT
+		}
+		create_point_of_interest = {
+			id = extradimensional_invasion_poi.1
+			name = "extradimensional_invasion_1_poi"
+			desc = "extradimensional_invasion_1_poi_desc"
+			event_chain = "extradimensional_invasion_chain"
+			location = event_target:extradimensional_system
+		}
+		country_event = { id = crisis.1010 }
+	}
+	option = {
+		name = crisis.1007.b
+		trigger = {
+			has_ethic = "ethic_fanatic_collectivist"
+		}
+		begin_event_chain = {
+			event_chain = "extradimensional_invasion_chain"
+			target = ROOT
+		}
+		create_point_of_interest = {
+			id = extradimensional_invasion_poi.1
+			name = "extradimensional_invasion_1_poi"
+			desc = "extradimensional_invasion_1_poi_desc"
+			event_chain = "extradimensional_invasion_chain"
+			location = event_target:extradimensional_system
+		}
+		country_event = { id = crisis.1010 }
+	}
+	option = {
+		name = crisis.18.j
+		trigger = {
+			has_ethic = "ethic_fanatic_individualist"
+		}
+		begin_event_chain = {
+			event_chain = "extradimensional_invasion_chain"
+			target = ROOT
+		}
+		create_point_of_interest = {
+			id = extradimensional_invasion_poi.1
+			name = "extradimensional_invasion_1_poi"
+			desc = "extradimensional_invasion_1_poi_desc"
+			event_chain = "extradimensional_invasion_chain"
+			location = event_target:extradimensional_system
+		}
+		country_event = { id = crisis.1010 }
+	}
+}
+
+# Notification
+country_event = {
+	id = crisis.1008
+	title = "crisis.1008.name"
+	desc = "crisis.1008.desc"
+	picture = GFX_evt_physics_research
+	show_sound = event_alien_signal
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = crisis.1008.a
+		hidden_effect = { 
+			country_event = { id = crisis.1009 days = 30 }
+		}
+	}
+}
+
+# Threat Identified
+country_event = {
+	id = crisis.1009
+	title = "crisis.1007.name"
+	desc = "crisis.1009.desc"
+	picture = GFX_evt_wormhole
+	show_sound = event_ex_started
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		random_system = {
+			limit = { has_star_flag = extradimensional_origin_system }
+			save_event_target_as = extradimensional_system
+		}
+	}
+	
+	option = {
+		name = crisis.18.a
+		trigger = {
+			OR = {
+				has_government = theocratic_republic
+				has_government = transcendent_republic
+				has_government = theocratic_oligarchy
+				has_government = transcendent_oligarchy
+				has_government = divine_mandate
+				has_government = transcendent_empire
+			}
+			NOT = {
+				has_ethic = "ethic_fanatic_individualist"
+				has_ethic = "ethic_fanatic_collectivist"
+				has_ethic = "ethic_fanatic_xenophile"
+				has_ethic = "ethic_fanatic_xenophobe"
+			}
+		}
+		begin_event_chain = {
+			event_chain = "extradimensional_invasion_chain"
+			target = ROOT
+		}
+		create_point_of_interest = {
+			id = extradimensional_invasion_poi.1
+			name = "extradimensional_invasion_1_poi"
+			desc = "extradimensional_invasion_1_poi_desc"
+			event_chain = "extradimensional_invasion_chain"
+			location = event_target:extradimensional_system
+		}
+		country_event = { id = crisis.1010 }
+	}
+	option = {
+		name = crisis.18.b
+		trigger = {
+			OR = {
+				has_government = military_dictatorship
+				has_government = martial_empire
+				has_government = military_junta
+				has_government = ordered_stratocracy
+				has_government = military_republic
+				has_government = martial_demarchy
+			}
+			NOT = {
+				has_ethic = "ethic_fanatic_individualist"
+				has_ethic = "ethic_fanatic_collectivist"
+				has_ethic = "ethic_fanatic_xenophile"
+				has_ethic = "ethic_fanatic_xenophobe"
+			}
+		}
+		begin_event_chain = {
+			event_chain = "extradimensional_invasion_chain"
+			target = ROOT
+		}
+		create_point_of_interest = {
+			id = extradimensional_invasion_poi.1
+			name = "extradimensional_invasion_1_poi"
+			desc = "extradimensional_invasion_1_poi_desc"
+			event_chain = "extradimensional_invasion_chain"
+			location = event_target:extradimensional_system
+		}
+		country_event = { id = crisis.1010 }
+	}
+	option = {
+		name = crisis.18.c
+		trigger = {
+			OR = {
+				has_government = despotic_hegemony
+				has_government = ai_overlordship
+				has_government = science_directorate
+				has_government = illuminated_technocracy
+				has_government = direct_democracy
+				has_government = subconscious_consensus
+			}
+			NOT = {
+				has_ethic = "ethic_fanatic_individualist"
+				has_ethic = "ethic_fanatic_collectivist"
+				has_ethic = "ethic_fanatic_xenophile"
+				has_ethic = "ethic_fanatic_xenophobe"
+			}
+		}
+		begin_event_chain = {
+			event_chain = "extradimensional_invasion_chain"
+			target = ROOT
+		}
+		create_point_of_interest = {
+			id = extradimensional_invasion_poi.1
+			name = "extradimensional_invasion_1_poi"
+			desc = "extradimensional_invasion_1_poi_desc"
+			event_chain = "extradimensional_invasion_chain"
+			location = event_target:extradimensional_system
+		}
+		country_event = { id = crisis.1010 }
+	}
+	option = {
+		name = crisis.18.d
+		trigger = {
+			OR = {
+				has_government = moral_democracy
+				has_government = irenic_democracy
+				has_government = peaceful_bureaucracy
+				has_government = irenic_protectorate
+				has_government = enlightened_monarchy
+				has_government = irenic_monarchy
+			}
+			NOT = {
+				has_ethic = "ethic_fanatic_individualist"
+				has_ethic = "ethic_fanatic_collectivist"
+				has_ethic = "ethic_fanatic_xenophile"
+				has_ethic = "ethic_fanatic_xenophobe"
+			}
+		}
+		begin_event_chain = {
+			event_chain = "extradimensional_invasion_chain"
+			target = ROOT
+		}
+		create_point_of_interest = {
+			id = extradimensional_invasion_poi.1
+			name = "extradimensional_invasion_1_poi"
+			desc = "extradimensional_invasion_1_poi_desc"
+			event_chain = "extradimensional_invasion_chain"
+			location = event_target:extradimensional_system
+		}
+		country_event = { id = crisis.1010 }
+	}
+	option = {
+		name = crisis.18.e
+		trigger = {
+			OR = {
+				has_government = plutocratic_oligarchy
+				has_government = mega_corporation
+			}
+			NOT = {
+				has_ethic = "ethic_fanatic_individualist"
+				has_ethic = "ethic_fanatic_collectivist"
+				has_ethic = "ethic_fanatic_xenophile"
+				has_ethic = "ethic_fanatic_xenophobe"
+			}
+		}
+		begin_event_chain = {
+			event_chain = "extradimensional_invasion_chain"
+			target = ROOT
+		}
+		create_point_of_interest = {
+			id = extradimensional_invasion_poi.1
+			name = "extradimensional_invasion_1_poi"
+			desc = "extradimensional_invasion_1_poi_desc"
+			event_chain = "extradimensional_invasion_chain"
+			location = event_target:extradimensional_system
+		}
+		country_event = { id = crisis.1010 }
+	}
+	option = {
+		name = crisis.18.f
+		trigger = {
+			OR = {
+				has_government = despotic_empire
+				has_government = star_empire
+				has_government = indirect_democracy
+				has_government = democratic_utopia
+			}
+			NOT = {
+				has_ethic = "ethic_fanatic_individualist"
+				has_ethic = "ethic_fanatic_collectivist"
+				has_ethic = "ethic_fanatic_xenophile"
+				has_ethic = "ethic_fanatic_xenophobe"
+			}
+		}
+		begin_event_chain = {
+			event_chain = "extradimensional_invasion_chain"
+			target = ROOT
+		}
+		create_point_of_interest = {
+			id = extradimensional_invasion_poi.1
+			name = "extradimensional_invasion_1_poi"
+			desc = "extradimensional_invasion_1_poi_desc"
+			event_chain = "extradimensional_invasion_chain"
+			location = event_target:extradimensional_system
+		}
+		country_event = { id = crisis.1010 }
+	}
+	option = {
+		name = crisis.18.g
+		trigger = {
+			has_ethic = "ethic_fanatic_xenophobe"
+		}
+		begin_event_chain = {
+			event_chain = "extradimensional_invasion_chain"
+			target = ROOT
+		}
+		create_point_of_interest = {
+			id = extradimensional_invasion_poi.1
+			name = "extradimensional_invasion_1_poi"
+			desc = "extradimensional_invasion_1_poi_desc"
+			event_chain = "extradimensional_invasion_chain"
+			location = event_target:extradimensional_system
+		}
+		country_event = { id = crisis.1010 }
+	}
+	option = {
+		name = crisis.1007.a
+		trigger = {
+			has_ethic = "ethic_fanatic_xenophile"
+		}
+		begin_event_chain = {
+			event_chain = "extradimensional_invasion_chain"
+			target = ROOT
+		}
+		create_point_of_interest = {
+			id = extradimensional_invasion_poi.1
+			name = "extradimensional_invasion_1_poi"
+			desc = "extradimensional_invasion_1_poi_desc"
+			event_chain = "extradimensional_invasion_chain"
+			location = event_target:extradimensional_system
+		}
+		country_event = { id = crisis.1010 }
+	}
+	option = {
+		name = crisis.1007.b
+		trigger = {
+			has_ethic = "ethic_fanatic_collectivist"
+		}
+		begin_event_chain = {
+			event_chain = "extradimensional_invasion_chain"
+			target = ROOT
+		}
+		create_point_of_interest = {
+			id = extradimensional_invasion_poi.1
+			name = "extradimensional_invasion_1_poi"
+			desc = "extradimensional_invasion_1_poi_desc"
+			event_chain = "extradimensional_invasion_chain"
+			location = event_target:extradimensional_system
+		}
+		country_event = { id = crisis.1010 }
+	}
+	option = {
+		name = crisis.18.j
+		trigger = {
+			has_ethic = "ethic_fanatic_individualist"
+		}
+		begin_event_chain = {
+			event_chain = "extradimensional_invasion_chain"
+			target = ROOT
+		}
+		create_point_of_interest = {
+			id = extradimensional_invasion_poi.1
+			name = "extradimensional_invasion_1_poi"
+			desc = "extradimensional_invasion_1_poi_desc"
+			event_chain = "extradimensional_invasion_chain"
+			location = event_target:extradimensional_system
+		}
+		country_event = { id = crisis.1010 }
+	}
+}
+
+# Intercepted Transmission
+country_event = {
+	id = crisis.1010
+	title = "crisis.1010.name"
+	desc = "crisis.1010.desc"
+	
+	diplomatic = yes
+	
+	picture_event_data = {
+		portrait = exd1
+		room = "extradimensional_room"
+	}
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		establish_communications_no_message = event_target:extradimensionals
+	}
+	
+	option = {
+		name = crisis.1010.a
+	}
+}
+
+# Colony Bombarded
+planet_event = {
+	id = crisis.1011
+	title = "crisis.1011.name"
+	desc = "crisis.1011.desc"
+	picture = GFX_evt_city_ruins
+	show_sound = event_ghost_town
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		FROM = {
+			owner = { 
+				OR = {
+					is_country_type = extradimensional 
+					is_country_type = extradimensional_2
+					is_country_type = extradimensional_3
+				}
+			}
+		}
+	}
+	
+	immediate = {
+		add_threat = {
+			who = from.owner
+			amount = 10 # scales to pops
+		}
+		while = {
+			limit = {
+				any_tile = {
+					has_blocker = tb_tribal_settlement
+				}
+			}
+			random_tile = {
+				limit = {
+					has_blocker = tb_tribal_settlement
+				}
+				remove_blocker = yes
+			}
+		}
+		destroy_colony = yes
+	}
+	
+	option = {
+		name = crisis.1011.a
+	}
+}
+
+# Portal Destroyed (HIDDEN)
+country_event = {
+	id = crisis.1012
+	hide_window = yes
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		is_country_type = extradimensional
+		FROMFROM = { is_ship_size = dimensional_portal_ed }
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				OR = {
+					NOT = { has_global_flag = extradimensional_second_portal }
+					AND = {
+						has_global_flag = extradimensional_second_portal_destroyed
+						has_global_flag = extradimensional_third_portal_destroyed
+					}
+				}
+			}
+			FROM = { save_event_target_as = portal_killer }
+			every_country = {
+				limit = {
+					is_country_type = default
+					has_communications = FROM
+				}
+				add_opinion_modifier = {
+					who = FROM
+					modifier = opinion_destroyed_portal
+				}
+			}
+			every_country = {
+				limit = { is_country_type = default }
+				add_modifier = {
+					modifier = "extradimensionals_defeated"
+					days = 360
+				}
+			}
+			every_country = {
+				limit = {
+					#is_ai = no
+					is_country_type = default
+				}
+				country_event = { id = crisis.1013 }
+			}
+			break = yes
+		}
+		if = {
+			limit = {
+				has_global_flag = extradimensional_second_portal
+				NOT = {
+					has_global_flag = extradimensional_second_portal_destroyed
+					has_global_flag = extradimensional_third_portal_destroyed
+				}
+			}
+			every_country = {
+				limit = {
+					#is_ai = no
+					is_country_type = default
+				}
+				country_event = { id = crisis.1016 }
+			}
+		}
+	}
+}
+
+# Portal Destroyed
+country_event = {
+	id = crisis.1013
+	title = "crisis.1013.name"
+	desc = "crisis.1013.desc"
+	picture = GFX_evt_wormhole
+	show_sound = event_super_explosion
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		random_system = {
+			limit = { has_star_flag = extradimensional_origin_system }
+			save_event_target_as = extradimensional_system
+		}
+		end_event_chain = "extradimensional_invasion_chain"
+		set_country_flag = extradimensionals_expunged
+	}
+	
+	option = {
+		name = crisis.1013.a
+	}
+}
+
+# Portal Destroyed (Other Portals Exist)
+country_event = {
+	id = crisis.1016
+	title = "crisis.1016.name"
+	desc = "crisis.1016.desc"
+	picture = GFX_evt_wormhole
+	show_sound = event_super_explosion
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		random_system = {
+			limit = { has_star_flag = extradimensional_origin_system }
+			save_event_target_as = extradimensional_system
+		}
+		set_global_flag = extradimensional_first_portal_destroyed
+		remove_point_of_interest = extradimensional_invasion_poi.1
+	}
+	
+	option = {
+		name = crisis.1016.a
+	}
+}
+
+# Military Reinforcements Arrive From Portal (HIDDEN)
+country_event = {
+	id = crisis.1014
+	hide_window = yes
+	
+	trigger = {
+		is_country_type = extradimensional
+		num_ships < 500
+		count_owned_ships = {
+			limit = { is_ship_size = dimensional_portal_ed }
+			count > 0
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 60
+	}
+	
+	immediate = {
+		random_owned_ship = {
+			limit = { is_ship_size = dimensional_portal_ed }
+			save_event_target_as = dimensional_portal
+		}
+		owner_species = { save_event_target_as = extradimensional_species }
+		
+		random_list = {
+		
+			# Main Battle Fleet Arrives
+			50 = {
+				create_fleet = { }
+				random_list = {
+					25 = {
+						create_leader = {
+							type = admiral
+							species = event_target:extradimensional_species
+							name = random
+							skill = 1000
+							traits = {
+								trait = leader_trait_ethereal
+							}
+						}
+					}
+					25 = {
+						create_leader = {
+							type = admiral
+							species = event_target:extradimensional_species
+							name = random
+							skill = 1000
+							traits = {
+								trait = leader_trait_dimensional_stutter
+							}
+						}
+					}
+					50 = {
+						create_leader = {
+							type = admiral
+							species = event_target:extradimensional_species
+							name = random
+							skill = 500
+						}
+					}
+				}
+				last_created_fleet = {
+					set_owner = ROOT
+					create_ship = {
+						name = random
+						design = "Revenant"
+						graphical_culture = "extra_dimensional_01"
+					}
+					assign_leader = last_created_leader
+					create_ship = {
+						name = random
+						design = "Revenant"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Revenant"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Revenant"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Revenant"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Revenant"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Revenant"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Revenant"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Revenant"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Revenant"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Wraith"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Wraith"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Wraith"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Wraith"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Wraith"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Wraith"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Wraith"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Wraith"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Wraith"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Wraith"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Wraith"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Wraith"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Wraith"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Wraith"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Wraith"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Wraith"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Wraith"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Wraith"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Wraith"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Wraith"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Wraith"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Wraith"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Wraith"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Wraith"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Wraith"
+						graphical_culture = "extra_dimensional_01"
+					}
+					set_location = {
+						target = event_target:dimensional_portal
+						distance = 5
+						angle = random
+					}
+					set_fleet_stance = aggressive
+					set_aggro_range = 500
+					set_aggro_range_measure_from = self
+				}
+			}
+			
+			# Light Raiding Fleet Arrives
+			50 = {
+				create_fleet = { }
+				random_list = {
+					25 = {
+						create_leader = {
+							type = admiral
+							species = event_target:extradimensional_species
+							name = random
+							skill = 1000
+							traits = {
+								trait = leader_trait_ethereal
+							}
+						}
+					}
+					25 = {
+						create_leader = {
+							type = admiral
+							species = event_target:extradimensional_species
+							name = random
+							skill = 1000
+							traits = {
+								trait = leader_trait_dimensional_stutter
+							}
+						}
+					}
+					50 = {
+						create_leader = {
+							type = admiral
+							species = event_target:extradimensional_species
+							name = random
+							skill = 500
+						}
+					}
+				}
+				last_created_fleet = {
+					set_owner = ROOT
+					create_ship = {
+						name = random
+						design = "Phantom"
+						graphical_culture = "extra_dimensional_01"
+					}
+					assign_leader = last_created_leader
+					create_ship = {
+						name = random
+						design = "Phantom"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Phantom"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Phantom"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Wraith"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Wraith"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Wraith"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Wraith"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Wraith"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Wraith"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Wraith"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Wraith"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Wraith"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Wraith"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Wraith"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Wraith"
+						graphical_culture = "extra_dimensional_01"
+					}
+					set_location = {
+						target = event_target:dimensional_portal
+						distance = 5
+						angle = random
+					}
+					set_fleet_stance = aggressive
+					set_aggro_range = 500
+					set_aggro_range_measure_from = self
+				}
+			}
+		}
+	}
+}
+
+# Construction Ships Arrive From Portal (HIDDEN)
+country_event = {
+	id = crisis.1015
+	hide_window = yes
+	
+	trigger = {
+		is_country_type = extradimensional
+		count_owned_ships = {
+			limit = { is_ship_size = construction_ship_ed }
+			count < 4
+		}
+		count_owned_ships = {
+			limit = { is_ship_size = dimensional_portal_ed }
+			count > 0
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 60
+	}
+	
+	immediate = {
+		random_owned_ship = {
+			limit = { is_ship_size = dimensional_portal_ed }
+			save_event_target_as = dimensional_portal
+		}
+		create_fleet = { }
+		last_created_fleet = {
+			set_owner = ROOT
+			create_ship = {
+				name = random
+				design = "Void Shaper"
+				graphical_culture = "extra_dimensional_01"
+			}
+			set_location = {
+				target = event_target:dimensional_portal
+				distance = 5
+				angle = random
+			}
+		}
+	}
+}
+
+# Unbidden Diplomacy
+country_event = {
+	id = crisis.1050
+	title = "TRANSMISSION"
+	
+	desc = {
+		text = crisis.1050.desc_01
+	}
+	desc = {
+		text = crisis.1050.desc_01
+	}
+	desc = {
+		text = crisis.1050.desc_01
+	}
+	
+	diplomatic = yes
+	force_open = yes
+	
+	picture_event_data = {
+		portrait = exd1
+		room = "extradimensional_room"
+	}
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		FROM = {
+			is_country_type = extradimensional
+		}
+	}
+	
+	option = {
+		name = crisis.1050.a
+		response_text = crisis.1050.a.response
+	}
+	option = {
+		name = crisis.1050.b
+		trigger = {
+			OR = {
+				has_ethic = "ethic_pacifist"
+				has_ethic = "ethic_fanatic_pacifist"
+			}
+		}
+		response_text = crisis.1050.b.response
+	}
+	option = {
+		name = crisis.1050.c
+		trigger = {
+			OR = {
+				has_ethic = "ethic_militarist"
+				has_ethic = "ethic_fanatic_militarist"
+			}
+		}
+		response_text = crisis.1050.c.response
+	}
+	option = {
+		name = crisis.1050.d
+		trigger = {
+			OR = {
+				has_ethic = "ethic_xenophobe"
+				has_ethic = "ethic_fanatic_xenophobe"
+			}
+		}
+		response_text = crisis.1050.d.response
+	}
+	option = {
+		name = crisis.1050.e
+		trigger = {
+			OR = {
+				has_ethic = "ethic_xenophile"
+				has_ethic = "ethic_fanatic_xenophile"
+			}
+		}
+		response_text = crisis.1050.e.response
+	}
+	option = {
+		name = crisis.1050.f
+		trigger = {
+			OR = {
+				has_ethic = "ethic_spiritualist"
+				has_ethic = "ethic_fanatic_spiritualist"
+			}
+		}
+		response_text = crisis.1050.f.response
+	}
+}
+
+# Aberrant Diplomacy
+country_event = {
+	id = crisis.1051
+	title = "TRANSMISSION"
+	
+	desc = {
+		text = crisis.1051.desc_01
+	}
+	desc = {
+		text = crisis.1051.desc_02
+	}
+	desc = {
+		text = crisis.1051.desc_03
+	}
+	
+	diplomatic = yes
+	force_open = yes
+	
+	picture_event_data = {
+		portrait = exd2
+		room = "extradimensional_orange_room"
+	}
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		FROM = {
+			is_country_type = extradimensional_2
+		}
+	}
+	
+	option = {
+		name = crisis.1051.a
+		response_text = crisis.1051.a.response
+	}
+}
+
+# Vehement Diplomacy
+country_event = {
+	id = crisis.1052
+	title = "TRANSMISSION"
+	
+	desc = {
+		text = crisis.1052.desc_01
+	}
+	desc = {
+		text = crisis.1052.desc_02
+	}
+	desc = {
+		text = crisis.1052.desc_03
+	}
+	
+	diplomatic = yes
+	force_open = yes
+	
+	picture_event_data = {
+		portrait = exd3
+		room = "extradimensional_green_room"
+	}
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		FROM = {
+			is_country_type = extradimensional_3
+		}
+	}
+	
+	option = {
+		name = crisis.1052.a
+		response_text = crisis.1052.a.response
+	}
+}
+
+### Second Portal
+
+# Second Portal Appears (HIDDEN)
+country_event = {
+	id = crisis.1100
+	hide_window = yes
+	fire_only_once = yes
+	
+	trigger = {
+		is_country_type = extradimensional
+		NOT = { has_global_flag = extradimensional_second_portal }
+		galaxy_percentage > 0.20
+	}
+	
+	mean_time_to_happen = {
+		months = 12
+	}
+	
+	immediate = {
+		set_global_flag = extradimensional_second_portal
+		random_system = {
+			limit = { 
+				NOT = { has_star_flag = extradimensional_origin_system }
+			}
+			set_star_flag = extradimensional_second_portal_system
+			save_event_target_as = second_portal_system
+			random_system_planet = {
+				create_species = {
+					name = "Aberrant"
+					class = EXD
+					portrait = exd2
+					traits = random
+				}
+				create_country = {
+					name = "Aberrant"
+					type = "extradimensional_2"
+					species = last_created
+					name_list = "Extradimensional"
+					flag = {
+						icon= {
+							category = "special"
+							file = "extradimensional_02.dds"
+						}
+						background= {
+							category = "backgrounds"
+							file = "triangle_split.dds"
+						}
+						colors={
+							"brown"
+							"orange"
+							"null"
+							"null"
+						}
+					}
+				}
+				last_created_species = { save_event_target_as = extradimensional_hunters_species }
+				last_created_country = {
+
+					# Beef up Extradimensionals depending on difficulty
+					if = {
+						limit = {
+							any_country = {
+								has_modifier = difficulty_insane_ai
+							}
+						}
+						add_modifier = {
+							modifier = exd_strength_insane
+						}
+						else = {
+							if = {
+								limit = {
+									any_country = {
+										has_modifier = difficulty_hard_ai
+									}
+								}
+								add_modifier = {
+									modifier = exd_strength_hard
+									days = -1
+								}
+								else = {
+									add_modifier = {
+										modifier = exd_strength
+										days = -1
+									}	
+								}
+							}
+						}
+					}
+
+					save_event_target_as = extradimensional_hunters
+					create_ship_design = { design = "Void Former" }
+					add_ship_design = last_created_design
+					create_ship_design = { design = "Phantasm Beta" }
+					add_ship_design = last_created_design
+					create_ship_design = { design = "Whisper Beta" }
+					add_ship_design = last_created_design
+					create_fleet = { name = "Dimensional Portal" }
+					last_created_fleet = {
+						set_owner = PREV
+						create_ship = {
+							name = random
+							design = "Orange Dimensional Portal"
+							graphical_culture = "extra_dimensional_01"
+						}
+						set_location = {
+							target = PREVPREV
+							distance = 40
+							angle = random
+						}
+						save_event_target_as = second_portal
+						fleet_event = { id = crisis.1103 days = 150 } # Second Fleet Arrives
+						fleet_event = { id = crisis.1103 days = 400 } # Third Fleet Arrives
+						fleet_event = { id = crisis.1103 days = 550 } # Fourth Fleet Arrives
+						fleet_event = { id = crisis.1106 days = 20 } # First Constructor Arrives
+						fleet_event = { id = crisis.1106 days = 170 } # Second Constructor Arrives
+						fleet_event = { id = crisis.1106 days = 420 } # Third Constructor Arrives
+						fleet_event = { id = crisis.1106 days = 570 } # Fourth Constructor Arrives
+					}
+					create_fleet = { }
+					random_list = {
+						25 = {
+							create_leader = {
+								type = admiral
+								species = event_target:extradimensional_hunters_species
+								name = random
+								skill = 1000
+								traits = {
+									trait = leader_trait_ethereal
+								}
+							}
+						}
+						25 = {
+							create_leader = {
+								type = admiral
+								species = event_target:extradimensional_hunters_species
+								name = random
+								skill = 1000
+								traits = {
+									trait = leader_trait_dimensional_stutter
+								}
+							}
+						}
+						50 = {
+							create_leader = {
+								type = admiral
+								species = event_target:extradimensional_hunters_species
+								name = random
+								skill = 500
+							}
+						}
+					}
+					last_created_fleet = {
+						set_owner = PREV
+						create_ship = {
+							name = random
+							design = "Huntress"
+							graphical_culture = "extra_dimensional_01"
+						}
+						assign_leader = last_created_leader
+						create_ship = {
+							name = random
+							design = "Huntress"
+							graphical_culture = "extra_dimensional_01"
+						}
+						create_ship = {
+							name = random
+							design = "Huntress"
+							graphical_culture = "extra_dimensional_01"
+						}
+						create_ship = {
+							name = random
+							design = "Huntress"
+							graphical_culture = "extra_dimensional_01"
+						}
+						create_ship = {
+							name = random
+							design = "Huntress"
+							graphical_culture = "extra_dimensional_01"
+						}
+						create_ship = {
+							name = random
+							design = "Huntress"
+							graphical_culture = "extra_dimensional_01"
+						}
+						create_ship = {
+							name = random
+							design = "Huntress"
+							graphical_culture = "extra_dimensional_01"
+						}
+						create_ship = {
+							name = random
+							design = "Huntress"
+							graphical_culture = "extra_dimensional_01"
+						}
+						create_ship = {
+							name = random
+							design = "Assassin"
+							graphical_culture = "extra_dimensional_01"
+						}
+						create_ship = {
+							name = random
+							design = "Assassin"
+							graphical_culture = "extra_dimensional_01"
+						}
+						create_ship = {
+							name = random
+							design = "Assassin"
+							graphical_culture = "extra_dimensional_01"
+						}
+						create_ship = {
+							name = random
+							design = "Assassin"
+							graphical_culture = "extra_dimensional_01"
+						}
+						create_ship = {
+							name = random
+							design = "Assassin"
+							graphical_culture = "extra_dimensional_01"
+						}
+						create_ship = {
+							name = random
+							design = "Assassin"
+							graphical_culture = "extra_dimensional_01"
+						}
+						create_ship = {
+							name = random
+							design = "Assassin"
+							graphical_culture = "extra_dimensional_01"
+						}
+						create_ship = {
+							name = random
+							design = "Assassin"
+							graphical_culture = "extra_dimensional_01"
+						}
+						create_ship = {
+							name = random
+							design = "Assassin"
+							graphical_culture = "extra_dimensional_01"
+						}
+						create_ship = {
+							name = random
+							design = "Assassin"
+							graphical_culture = "extra_dimensional_01"
+						}
+						create_ship = {
+							name = random
+							design = "Predator"
+							graphical_culture = "extra_dimensional_01"
+						}
+						create_ship = {
+							name = random
+							design = "Predator"
+							graphical_culture = "extra_dimensional_01"
+						}
+						create_ship = {
+							name = random
+							design = "Predator"
+							graphical_culture = "extra_dimensional_01"
+						}
+						create_ship = {
+							name = random
+							design = "Predator"
+							graphical_culture = "extra_dimensional_01"
+						}
+						create_ship = {
+							name = random
+							design = "Predator"
+							graphical_culture = "extra_dimensional_01"
+						}
+						create_ship = {
+							name = random
+							design = "Predator"
+							graphical_culture = "extra_dimensional_01"
+						}
+						create_ship = {
+							name = random
+							design = "Predator"
+							graphical_culture = "extra_dimensional_01"
+						}
+						create_ship = {
+							name = random
+							design = "Predator"
+							graphical_culture = "extra_dimensional_01"
+						}
+						create_ship = {
+							name = random
+							design = "Predator"
+							graphical_culture = "extra_dimensional_01"
+						}
+						create_ship = {
+							name = random
+							design = "Predator"
+							graphical_culture = "extra_dimensional_01"
+						}
+						create_ship = {
+							name = random
+							design = "Predator"
+							graphical_culture = "extra_dimensional_01"
+						}
+						create_ship = {
+							name = random
+							design = "Predator"
+							graphical_culture = "extra_dimensional_01"
+						}
+						create_ship = {
+							name = random
+							design = "Predator"
+							graphical_culture = "extra_dimensional_01"
+						}
+						create_ship = {
+							name = random
+							design = "Predator"
+							graphical_culture = "extra_dimensional_01"
+						}
+						create_ship = {
+							name = random
+							design = "Predator"
+							graphical_culture = "extra_dimensional_01"
+						}
+						create_ship = {
+							name = random
+							design = "Predator"
+							graphical_culture = "extra_dimensional_01"
+						}
+						create_ship = {
+							name = random
+							design = "Predator"
+							graphical_culture = "extra_dimensional_01"
+						}
+						create_ship = {
+							name = random
+							design = "Predator"
+							graphical_culture = "extra_dimensional_01"
+						}
+						create_ship = {
+							name = random
+							design = "Predator"
+							graphical_culture = "extra_dimensional_01"
+						}
+						set_location = {
+							target = event_target:second_portal
+							distance = 5
+							angle = random
+						}
+						set_fleet_stance = aggressive
+						set_aggro_range = 500
+						set_aggro_range_measure_from = self
+					}
+				}
+			}
+		}
+		every_country = {
+			limit = {
+				#is_ai = no
+				is_country_type = default
+			}
+			country_event = { id = crisis.1110 days = 1 }
+		}
+	}
+}
+
+# Fleet Reinforcements
+fleet_event = {
+	id = crisis.1103
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		event_target:extradimensional_hunters = {
+			create_fleet = { }
+			random_list = {
+				25 = {
+					create_leader = {
+						type = admiral
+						species = event_target:extradimensional_hunters_species
+						name = random
+						skill = 1000
+						traits = {
+							trait = leader_trait_ethereal
+						}
+					}
+				}
+				25 = {
+					create_leader = {
+						type = admiral
+						species = event_target:extradimensional_hunters_species
+						name = random
+						skill = 1000
+						traits = {
+							trait = leader_trait_dimensional_stutter
+						}
+					}
+				}
+				50 = {
+					create_leader = {
+						type = admiral
+						species = event_target:extradimensional_hunters_species
+						name = random
+						skill = 500
+					}
+				}
+			}
+			last_created_fleet = {
+				set_owner = PREV
+				create_ship = {
+					name = random
+					design = "Huntress"
+					graphical_culture = "extra_dimensional_01"
+				}
+				assign_leader = last_created_leader
+				create_ship = {
+					name = random
+					design = "Huntress"
+					graphical_culture = "extra_dimensional_01"
+				}
+				create_ship = {
+					name = random
+					design = "Huntress"
+					graphical_culture = "extra_dimensional_01"
+				}
+				create_ship = {
+					name = random
+					design = "Huntress"
+					graphical_culture = "extra_dimensional_01"
+				}
+				create_ship = {
+					name = random
+					design = "Huntress"
+					graphical_culture = "extra_dimensional_01"
+				}
+				create_ship = {
+					name = random
+					design = "Huntress"
+					graphical_culture = "extra_dimensional_01"
+				}
+				create_ship = {
+					name = random
+					design = "Huntress"
+					graphical_culture = "extra_dimensional_01"
+				}
+				create_ship = {
+					name = random
+					design = "Huntress"
+					graphical_culture = "extra_dimensional_01"
+				}
+				create_ship = {
+					name = random
+					design = "Assassin"
+					graphical_culture = "extra_dimensional_01"
+				}
+				create_ship = {
+					name = random
+					design = "Assassin"
+					graphical_culture = "extra_dimensional_01"
+				}
+				create_ship = {
+					name = random
+					design = "Assassin"
+					graphical_culture = "extra_dimensional_01"
+				}
+				create_ship = {
+					name = random
+					design = "Assassin"
+					graphical_culture = "extra_dimensional_01"
+				}
+				create_ship = {
+					name = random
+					design = "Assassin"
+					graphical_culture = "extra_dimensional_01"
+				}
+				create_ship = {
+					name = random
+					design = "Assassin"
+					graphical_culture = "extra_dimensional_01"
+				}
+				create_ship = {
+					name = random
+					design = "Assassin"
+					graphical_culture = "extra_dimensional_01"
+				}
+				create_ship = {
+					name = random
+					design = "Assassin"
+					graphical_culture = "extra_dimensional_01"
+				}
+				create_ship = {
+					name = random
+					design = "Assassin"
+					graphical_culture = "extra_dimensional_01"
+				}
+				create_ship = {
+					name = random
+					design = "Assassin"
+					graphical_culture = "extra_dimensional_01"
+				}
+				create_ship = {
+					name = random
+					design = "Predator"
+					graphical_culture = "extra_dimensional_01"
+				}
+				create_ship = {
+					name = random
+					design = "Predator"
+					graphical_culture = "extra_dimensional_01"
+				}
+				create_ship = {
+					name = random
+					design = "Predator"
+					graphical_culture = "extra_dimensional_01"
+				}
+				create_ship = {
+					name = random
+					design = "Predator"
+					graphical_culture = "extra_dimensional_01"
+				}
+				create_ship = {
+					name = random
+					design = "Predator"
+					graphical_culture = "extra_dimensional_01"
+				}
+				create_ship = {
+					name = random
+					design = "Predator"
+					graphical_culture = "extra_dimensional_01"
+				}
+				create_ship = {
+					name = random
+					design = "Predator"
+					graphical_culture = "extra_dimensional_01"
+				}
+				create_ship = {
+					name = random
+					design = "Predator"
+					graphical_culture = "extra_dimensional_01"
+				}
+				create_ship = {
+					name = random
+					design = "Predator"
+					graphical_culture = "extra_dimensional_01"
+				}
+				create_ship = {
+					name = random
+					design = "Predator"
+					graphical_culture = "extra_dimensional_01"
+				}
+				create_ship = {
+					name = random
+					design = "Predator"
+					graphical_culture = "extra_dimensional_01"
+				}
+				create_ship = {
+					name = random
+					design = "Predator"
+					graphical_culture = "extra_dimensional_01"
+				}
+				create_ship = {
+					name = random
+					design = "Predator"
+					graphical_culture = "extra_dimensional_01"
+				}
+				create_ship = {
+					name = random
+					design = "Predator"
+					graphical_culture = "extra_dimensional_01"
+				}
+				create_ship = {
+					name = random
+					design = "Predator"
+					graphical_culture = "extra_dimensional_01"
+				}
+				create_ship = {
+					name = random
+					design = "Predator"
+					graphical_culture = "extra_dimensional_01"
+				}
+				create_ship = {
+					name = random
+					design = "Predator"
+					graphical_culture = "extra_dimensional_01"
+				}
+				create_ship = {
+					name = random
+					design = "Predator"
+					graphical_culture = "extra_dimensional_01"
+				}
+				create_ship = {
+					name = random
+					design = "Predator"
+					graphical_culture = "extra_dimensional_01"
+				}
+				set_location = {
+					target = ROOT
+					distance = 5
+					angle = random
+				}
+				set_fleet_stance = aggressive
+				set_aggro_range = 500
+				set_aggro_range_measure_from = self
+			}
+		}
+	}
+}
+
+# Constructor
+fleet_event = {
+	id = crisis.1106
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		event_target:extradimensional_hunters = {
+			create_fleet = { }
+			last_created_fleet = {
+				set_owner = PREV
+				create_ship = {
+					name = random
+					design = "Void Former"
+					graphical_culture = "extra_dimensional_01"
+				}
+				set_location = {
+					target = ROOT
+					distance = 5
+					angle = random
+				}
+			}
+		}
+	}
+}
+
+# Second Portal Notification
+country_event = {
+	id = crisis.1110
+	title = "crisis.1110.name"
+	desc = "crisis.1110.desc"
+	picture = GFX_evt_wormhole
+	show_sound = event_ex_started
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		random_country = {
+			limit = { is_country_type = extradimensional_2 }
+			establish_communications_no_message = ROOT
+		}
+	}
+	
+	option = {
+		name = crisis.1110.a
+		create_point_of_interest = {
+			id = extradimensional_invasion_poi.2
+			name = "extradimensional_invasion_2_poi"
+			desc = "extradimensional_invasion_2_poi_desc"
+			event_chain = "extradimensional_invasion_chain"
+			location = event_target:second_portal_system
+		}
+	}
+}
+
+# Extradimensionals Fight Each Other (HIDDEN)
+country_event = {
+	id = crisis.1111
+	hide_window = yes
+	fire_only_once = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		exists = from
+		NOT = { has_global_flag = extradimensionals_fight }
+		OR = { 
+			is_country_type = extradimensional
+			is_country_type = extradimensional_2
+		}
+		FROM = {
+			OR = { 
+				is_country_type = extradimensional
+				is_country_type = extradimensional_2
+			}
+		}	
+	}
+	
+	immediate = {
+		set_global_flag = extradimensionals_fight
+		every_country = {
+			limit = {
+				#is_ai = no
+				is_country_type = default
+			}
+			country_event = { id = crisis.1112 }
+		}
+	}
+}
+
+# Extradimensionals Fight Each Other
+country_event = {
+	id = crisis.1112
+	title = "crisis.1112.name"
+	desc = "crisis.1112.desc"
+	picture = GFX_evt_wormhole
+	show_sound = event_alien_signal
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = crisis.1112.a
+		hidden_effect = { 
+			country_event = { id = crisis.1113 }
+		}
+	}
+}
+
+# Transmission from Second Portal
+country_event = {
+	id = crisis.1113
+	title = "TRANSMISSION"
+	desc = "crisis.1113.desc"
+	
+	diplomatic = yes
+	
+	picture_event_data = {
+		portrait = exd2
+		room = "extradimensional_orange_room"
+	}
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = crisis.1113.a
+	}
+}
+
+# Second Portal Destroyed (HIDDEN)
+country_event = {
+	id = crisis.1115
+	hide_window = yes
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		is_country_type = extradimensional_2
+		FROMFROM = { is_ship_size = dimensional_portal_ed }
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				has_global_flag = extradimensional_first_portal_destroyed
+				has_global_flag = extradimensional_third_portal_destroyed
+			}
+			every_country = {
+				limit = {
+					#is_ai = no
+					is_country_type = default
+				}
+				country_event = { id = crisis.1116 }
+			}
+			FROM = { save_event_target_as = portal_killer }
+			every_country = {
+				limit = {
+					is_country_type = default
+					has_communications = FROM
+				}
+				add_opinion_modifier = {
+					who = FROM
+					modifier = opinion_destroyed_portal
+				}
+			}
+			every_country = {
+				limit = { is_country_type = default }
+				add_modifier = {
+					modifier = "extradimensionals_defeated"
+					days = 360
+				}
+			}
+			break = yes
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_global_flag = extradimensional_first_portal_destroyed
+					has_global_flag = extradimensional_third_portal_destroyed
+				}
+			}
+			every_country = {
+				limit = {
+					#is_ai = no
+					is_country_type = default
+				}
+				country_event = { id = crisis.1117 }
+			}
+		}
+	}
+}
+
+# Second Portal Destroyed
+country_event = {
+	id = crisis.1116
+	title = "crisis.1116.name"
+	picture = GFX_evt_wormhole
+	show_sound = event_super_explosion
+	
+	desc = {
+		text = "crisis.1116.desc.a"
+		trigger = {
+			has_communications = event_target:portal_killer
+		}
+	}
+	desc = {
+		text = "crisis.1116.desc.b"
+		trigger = {
+			NOT = { has_communications = event_target:portal_killer }
+		}
+	}
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		random_system = {
+			limit = { has_star_flag = extradimensional_second_portal_system }
+			save_event_target_as = extradimensional_system
+		}
+		end_event_chain = "extradimensional_invasion_chain"
+		set_country_flag = extradimensionals_expunged
+	}
+	
+	option = {
+		name = crisis.1013.a
+	}
+}
+
+# Second Portal Destroyed (Other Portals Exist)
+country_event = {
+	id = crisis.1117
+	title = "crisis.1116.name"
+	desc = "crisis.1117.desc"
+	picture = GFX_evt_wormhole
+	show_sound = event_super_explosion
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		random_system = {
+			limit = { has_star_flag = extradimensional_second_portal_system }
+			save_event_target_as = extradimensional_system
+		}
+		set_global_flag = extradimensional_second_portal_destroyed
+		remove_point_of_interest = extradimensional_invasion_poi.2
+	}
+	
+	option = {
+		name = crisis.1016.a
+	}
+}
+
+# Military Reinforcements Arrive From Portal (HIDDEN)
+country_event = {
+	id = crisis.1150
+	hide_window = yes
+	
+	trigger = {
+		is_country_type = extradimensional_2
+		num_ships < 200
+		count_owned_ships = {
+			limit = { is_ship_size = dimensional_portal_ed }
+			count > 0
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 60
+	}
+	
+	immediate = {
+		random_owned_ship = {
+			limit = { is_ship_size = dimensional_portal_ed }
+			save_event_target_as = dimensional_portal
+		}
+		owner_species = { save_event_target_as = extradimensional_species }
+		
+		random_list = {
+		
+			# Main Battle Fleet Arrives
+			50 = {
+				create_fleet = { }
+				random_list = {
+					25 = {
+						create_leader = {
+							type = admiral
+							species = event_target:extradimensional_species
+							name = random
+							skill = 1000
+							traits = {
+								trait = leader_trait_ethereal
+							}
+						}
+					}
+					25 = {
+						create_leader = {
+							type = admiral
+							species = event_target:extradimensional_species
+							name = random
+							skill = 1000
+							traits = {
+								trait = leader_trait_dimensional_stutter
+							}
+						}
+					}
+					50 = {
+						create_leader = {
+							type = admiral
+							species = event_target:extradimensional_species
+							name = random
+							skill = 500
+						}
+					}
+				}
+				last_created_fleet = {
+					set_owner = ROOT
+					create_ship = {
+						name = random
+						design = "Huntress"
+						graphical_culture = "extra_dimensional_01"
+					}
+					assign_leader = last_created_leader
+					create_ship = {
+						name = random
+						design = "Huntress"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Huntress"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Huntress"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Huntress"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Huntress"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Huntress"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Huntress"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Huntress"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Huntress"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Huntress"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Assassin"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Assassin"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Assassin"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Assassin"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Assassin"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Assassin"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Assassin"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Assassin"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Assassin"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Predator"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Predator"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Predator"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Predator"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Predator"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Predator"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Predator"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Predator"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Predator"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Predator"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Predator"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Predator"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Predator"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Predator"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Predator"
+						graphical_culture = "extra_dimensional_01"
+					}
+					set_location = {
+						target = event_target:dimensional_portal
+						distance = 5
+						angle = random
+					}
+					set_fleet_stance = aggressive
+					set_aggro_range = 500
+					set_aggro_range_measure_from = self
+				}
+			}
+			
+			# Light Raiding Fleet Arrives
+			50 = {
+				create_fleet = { }
+				random_list = {
+					25 = {
+						create_leader = {
+							type = admiral
+							species = event_target:extradimensional_species
+							name = random
+							skill = 1000
+							traits = {
+								trait = leader_trait_ethereal
+							}
+						}
+					}
+					25 = {
+						create_leader = {
+							type = admiral
+							species = event_target:extradimensional_species
+							name = random
+							skill = 1000
+							traits = {
+								trait = leader_trait_dimensional_stutter
+							}
+						}
+					}
+					50 = {
+						create_leader = {
+							type = admiral
+							species = event_target:extradimensional_species
+							name = random
+							skill = 500
+						}
+					}
+				}
+				last_created_fleet = {
+					set_owner = ROOT
+					create_ship = {
+						name = random
+						design = "Assassin"
+						graphical_culture = "extra_dimensional_01"
+					}
+					assign_leader = last_created_leader
+					create_ship = {
+						name = random
+						design = "Assassin"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Assassin"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Assassin"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Predator"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Predator"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Predator"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Predator"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Predator"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Predator"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Predator"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Predator"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Predator"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Predator"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Predator"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Predator"
+						graphical_culture = "extra_dimensional_01"
+					}
+					set_location = {
+						target = event_target:dimensional_portal
+						distance = 5
+						angle = random
+					}
+					set_fleet_stance = aggressive
+					set_aggro_range = 500
+					set_aggro_range_measure_from = self
+				}
+			}
+			
+		}
+	}
+}
+
+# Construction Ships Arrive From Portal (HIDDEN)
+country_event = {
+	id = crisis.1151
+	hide_window = yes
+	
+	trigger = {
+		is_country_type = extradimensional_2
+		count_owned_ships = {
+			limit = { is_ship_size = construction_ship_ed }
+			count < 4
+		}
+		count_owned_ships = {
+			limit = { is_ship_size = dimensional_portal_ed }
+			count > 0
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 60
+	}
+	
+	immediate = {
+		random_owned_ship = {
+			limit = { is_ship_size = dimensional_portal_ed }
+			save_event_target_as = dimensional_portal
+		}
+		create_fleet = { }
+		last_created_fleet = {
+			set_owner = ROOT
+			create_ship = {
+				name = random
+				design = "Void Former"
+				graphical_culture = "extra_dimensional_01"
+			}
+			set_location = {
+				target = event_target:dimensional_portal
+				distance = 5
+				angle = random
+			}
+		}
+	}
+}
+
+### Third Portal
+
+# Third Portal Appears (HIDDEN)
+country_event = {
+	id = crisis.1200
+	hide_window = yes
+	fire_only_once = yes
+	
+	trigger = {
+		has_global_flag = extradimensionals_fight
+		NOT = { has_global_flag = extradimensional_third_portal }
+		is_country_type = extradimensional_2
+	}
+	
+	mean_time_to_happen = {
+		months = 280
+	}
+	
+	immediate = {
+		set_global_flag = extradimensional_third_portal
+		random_system = {
+			limit = { 
+				NOT = { 
+					has_star_flag = extradimensional_origin_system 
+					has_star_flag = extradimensional_second_portal_system
+				}
+			}
+			set_star_flag = extradimensional_third_portal_system
+			save_event_target_as = third_portal_system
+			random_system_planet = {
+				create_species = {
+					name = "Vehement"
+					class = EXD
+					portrait = exd3
+					traits = random
+				}
+				create_country = {
+					name = "Vehement"
+					type = "extradimensional_3"
+					species = last_created
+					name_list = "Extradimensional"
+					flag = {
+						icon= {
+							category = "special"
+							file = "extradimensional_03.dds"
+						}
+						background= {
+							category = "backgrounds"
+							file = "stripe.dds"
+						}
+						colors={
+							"green"
+							"teal"
+							"null"
+							"null"
+						}
+					}
+				}
+				last_created_species = { save_event_target_as = extradimensional_trespassers_species }
+				last_created_country = {
+
+					# Beef up Extradimensionals depending on difficulty
+					if = {
+						limit = {
+							any_country = {
+								has_modifier = difficulty_insane_ai
+							}
+						}
+						add_modifier = {
+							modifier = exd_strength_insane
+						}
+						else = {
+							if = {
+								limit = {
+									any_country = {
+										has_modifier = difficulty_hard_ai
+									}
+								}
+								add_modifier = {
+									modifier = exd_strength_hard
+									days = -1
+								}
+								else = {
+									add_modifier = {
+										modifier = exd_strength
+										days = -1
+									}	
+								}
+							}
+						}
+					}
+
+					save_event_target_as = extradimensional_trespassers
+					create_ship_design = { design = "Void Weaver" }
+					add_ship_design = last_created_design
+					create_ship_design = { design = "Phantasm Gamma" }
+					add_ship_design = last_created_design
+					create_ship_design = { design = "Whisper Gamma" }
+					add_ship_design = last_created_design
+					create_fleet = { name = "Dimensional Portal" }
+					last_created_fleet = {
+						set_owner = PREV
+						create_ship = {
+							name = random
+							design = "Green Dimensional Portal"
+							graphical_culture = "extra_dimensional_01"
+						}
+						set_location = {
+							target = PREVPREV
+							distance = 40
+							angle = random
+						}
+						save_event_target_as = third_portal
+						fleet_event = { id = crisis.1203 days = 150 } # Second Fleet Arrives
+						fleet_event = { id = crisis.1203 days = 400 } # Third Fleet Arrives
+						fleet_event = { id = crisis.1203 days = 550 } # Fourth Fleet Arrives
+						fleet_event = { id = crisis.1206 days = 20 } # First Constructor Arrives
+						fleet_event = { id = crisis.1206 days = 170 } # Second Constructor Arrives
+						fleet_event = { id = crisis.1206 days = 420 } # Third Constructor Arrives
+						fleet_event = { id = crisis.1206 days = 570 } # Fourth Constructor Arrives
+					}
+					create_fleet = { }
+					random_list = {
+						25 = {
+							create_leader = {
+								type = admiral
+								species = event_target:extradimensional_trespassers_species
+								name = random
+								skill = 1000
+								traits = {
+									trait = leader_trait_ethereal
+								}
+							}
+						}
+						25 = {
+							create_leader = {
+								type = admiral
+								species = event_target:extradimensional_trespassers_species
+								name = random
+								skill = 1000
+								traits = {
+									trait = leader_trait_dimensional_stutter
+								}
+							}
+						}
+						50 = {
+							create_leader = {
+								type = admiral
+								species = event_target:extradimensional_trespassers_species
+								name = random
+								skill = 500
+							}
+						}
+					}
+					last_created_fleet = {
+						set_owner = PREV
+						create_ship = {
+							name = random
+							design = "Eradicator"
+							graphical_culture = "extra_dimensional_01"
+						}
+						assign_leader = last_created_leader
+						create_ship = {
+							name = random
+							design = "Eradicator"
+							graphical_culture = "extra_dimensional_01"
+						}
+						create_ship = {
+							name = random
+							design = "Eradicator"
+							graphical_culture = "extra_dimensional_01"
+						}
+						create_ship = {
+							name = random
+							design = "Eradicator"
+							graphical_culture = "extra_dimensional_01"
+						}
+						create_ship = {
+							name = random
+							design = "Eradicator"
+							graphical_culture = "extra_dimensional_01"
+						}
+						create_ship = {
+							name = random
+							design = "Eradicator"
+							graphical_culture = "extra_dimensional_01"
+						}
+						create_ship = {
+							name = random
+							design = "Eradicator"
+							graphical_culture = "extra_dimensional_01"
+						}
+						create_ship = {
+							name = random
+							design = "Eradicator"
+							graphical_culture = "extra_dimensional_01"
+						}
+						create_ship = {
+							name = random
+							design = "Annihilator"
+							graphical_culture = "extra_dimensional_01"
+						}
+						create_ship = {
+							name = random
+							design = "Annihilator"
+							graphical_culture = "extra_dimensional_01"
+						}
+						create_ship = {
+							name = random
+							design = "Annihilator"
+							graphical_culture = "extra_dimensional_01"
+						}
+						create_ship = {
+							name = random
+							design = "Annihilator"
+							graphical_culture = "extra_dimensional_01"
+						}
+						create_ship = {
+							name = random
+							design = "Annihilator"
+							graphical_culture = "extra_dimensional_01"
+						}
+						create_ship = {
+							name = random
+							design = "Annihilator"
+							graphical_culture = "extra_dimensional_01"
+						}
+						create_ship = {
+							name = random
+							design = "Annihilator"
+							graphical_culture = "extra_dimensional_01"
+						}
+						create_ship = {
+							name = random
+							design = "Annihilator"
+							graphical_culture = "extra_dimensional_01"
+						}
+						create_ship = {
+							name = random
+							design = "Annihilator"
+							graphical_culture = "extra_dimensional_01"
+						}
+						create_ship = {
+							name = random
+							design = "Annihilator"
+							graphical_culture = "extra_dimensional_01"
+						}
+						create_ship = {
+							name = random
+							design = "Obliterator"
+							graphical_culture = "extra_dimensional_01"
+						}
+						create_ship = {
+							name = random
+							design = "Obliterator"
+							graphical_culture = "extra_dimensional_01"
+						}
+						create_ship = {
+							name = random
+							design = "Obliterator"
+							graphical_culture = "extra_dimensional_01"
+						}
+						create_ship = {
+							name = random
+							design = "Obliterator"
+							graphical_culture = "extra_dimensional_01"
+						}
+						create_ship = {
+							name = random
+							design = "Obliterator"
+							graphical_culture = "extra_dimensional_01"
+						}
+						create_ship = {
+							name = random
+							design = "Obliterator"
+							graphical_culture = "extra_dimensional_01"
+						}
+						create_ship = {
+							name = random
+							design = "Obliterator"
+							graphical_culture = "extra_dimensional_01"
+						}
+						create_ship = {
+							name = random
+							design = "Obliterator"
+							graphical_culture = "extra_dimensional_01"
+						}
+						create_ship = {
+							name = random
+							design = "Obliterator"
+							graphical_culture = "extra_dimensional_01"
+						}
+						create_ship = {
+							name = random
+							design = "Obliterator"
+							graphical_culture = "extra_dimensional_01"
+						}
+						create_ship = {
+							name = random
+							design = "Obliterator"
+							graphical_culture = "extra_dimensional_01"
+						}
+						create_ship = {
+							name = random
+							design = "Obliterator"
+							graphical_culture = "extra_dimensional_01"
+						}
+						create_ship = {
+							name = random
+							design = "Obliterator"
+							graphical_culture = "extra_dimensional_01"
+						}
+						create_ship = {
+							name = random
+							design = "Obliterator"
+							graphical_culture = "extra_dimensional_01"
+						}
+						create_ship = {
+							name = random
+							design = "Obliterator"
+							graphical_culture = "extra_dimensional_01"
+						}
+						create_ship = {
+							name = random
+							design = "Obliterator"
+							graphical_culture = "extra_dimensional_01"
+						}
+						create_ship = {
+							name = random
+							design = "Obliterator"
+							graphical_culture = "extra_dimensional_01"
+						}
+						create_ship = {
+							name = random
+							design = "Obliterator"
+							graphical_culture = "extra_dimensional_01"
+						}
+						create_ship = {
+							name = random
+							design = "Obliterator"
+							graphical_culture = "extra_dimensional_01"
+						}
+						set_location = {
+							target = event_target:third_portal
+							distance = 5
+							angle = random
+						}
+						set_fleet_stance = aggressive
+						set_aggro_range = 500
+						set_aggro_range_measure_from = self
+					}
+				}
+			}
+		}
+		every_country = {
+			limit = {
+				#is_ai = no
+				is_country_type = default
+			}
+			country_event = { id = crisis.1210 days = 1 }
+		}
+	}
+}
+
+# Fleet Reinforcements
+fleet_event = {
+	id = crisis.1203
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		event_target:extradimensional_trespassers = {
+			create_fleet = { }
+			random_list = {
+				25 = {
+					create_leader = {
+						type = admiral
+						species = event_target:extradimensional_trespassers_species
+						name = random
+						skill = 1000
+						traits = {
+							trait = leader_trait_ethereal
+						}
+					}
+				}
+				25 = {
+					create_leader = {
+						type = admiral
+						species = event_target:extradimensional_trespassers_species
+						name = random
+						skill = 1000
+						traits = {
+							trait = leader_trait_dimensional_stutter
+						}
+					}
+				}
+				50 = {
+					create_leader = {
+						type = admiral
+						species = event_target:extradimensional_trespassers_species
+						name = random
+						skill = 500
+					}
+				}
+			}
+			last_created_fleet = {
+				set_owner = PREV
+				create_ship = {
+					name = random
+					design = "Eradicator"
+					graphical_culture = "extra_dimensional_01"
+				}
+				assign_leader = last_created_leader
+				create_ship = {
+					name = random
+					design = "Eradicator"
+					graphical_culture = "extra_dimensional_01"
+				}
+				create_ship = {
+					name = random
+					design = "Eradicator"
+					graphical_culture = "extra_dimensional_01"
+				}
+				create_ship = {
+					name = random
+					design = "Eradicator"
+					graphical_culture = "extra_dimensional_01"
+				}
+				create_ship = {
+					name = random
+					design = "Eradicator"
+					graphical_culture = "extra_dimensional_01"
+				}
+				create_ship = {
+					name = random
+					design = "Eradicator"
+					graphical_culture = "extra_dimensional_01"
+				}
+				create_ship = {
+					name = random
+					design = "Eradicator"
+					graphical_culture = "extra_dimensional_01"
+				}
+				create_ship = {
+					name = random
+					design = "Eradicator"
+					graphical_culture = "extra_dimensional_01"
+				}
+				create_ship = {
+					name = random
+					design = "Annihilator"
+					graphical_culture = "extra_dimensional_01"
+				}
+				create_ship = {
+					name = random
+					design = "Annihilator"
+					graphical_culture = "extra_dimensional_01"
+				}
+				create_ship = {
+					name = random
+					design = "Annihilator"
+					graphical_culture = "extra_dimensional_01"
+				}
+				create_ship = {
+					name = random
+					design = "Annihilator"
+					graphical_culture = "extra_dimensional_01"
+				}
+				create_ship = {
+					name = random
+					design = "Annihilator"
+					graphical_culture = "extra_dimensional_01"
+				}
+				create_ship = {
+					name = random
+					design = "Annihilator"
+					graphical_culture = "extra_dimensional_01"
+				}
+				create_ship = {
+					name = random
+					design = "Annihilator"
+					graphical_culture = "extra_dimensional_01"
+				}
+				create_ship = {
+					name = random
+					design = "Annihilator"
+					graphical_culture = "extra_dimensional_01"
+				}
+				create_ship = {
+					name = random
+					design = "Annihilator"
+					graphical_culture = "extra_dimensional_01"
+				}
+				create_ship = {
+					name = random
+					design = "Annihilator"
+					graphical_culture = "extra_dimensional_01"
+				}
+				create_ship = {
+					name = random
+					design = "Obliterator"
+					graphical_culture = "extra_dimensional_01"
+				}
+				create_ship = {
+					name = random
+					design = "Obliterator"
+					graphical_culture = "extra_dimensional_01"
+				}
+				create_ship = {
+					name = random
+					design = "Obliterator"
+					graphical_culture = "extra_dimensional_01"
+				}
+				create_ship = {
+					name = random
+					design = "Obliterator"
+					graphical_culture = "extra_dimensional_01"
+				}
+				create_ship = {
+					name = random
+					design = "Obliterator"
+					graphical_culture = "extra_dimensional_01"
+				}
+				create_ship = {
+					name = random
+					design = "Obliterator"
+					graphical_culture = "extra_dimensional_01"
+				}
+				create_ship = {
+					name = random
+					design = "Obliterator"
+					graphical_culture = "extra_dimensional_01"
+				}
+				create_ship = {
+					name = random
+					design = "Obliterator"
+					graphical_culture = "extra_dimensional_01"
+				}
+				create_ship = {
+					name = random
+					design = "Obliterator"
+					graphical_culture = "extra_dimensional_01"
+				}
+				create_ship = {
+					name = random
+					design = "Obliterator"
+					graphical_culture = "extra_dimensional_01"
+				}
+				create_ship = {
+					name = random
+					design = "Obliterator"
+					graphical_culture = "extra_dimensional_01"
+				}
+				create_ship = {
+					name = random
+					design = "Obliterator"
+					graphical_culture = "extra_dimensional_01"
+				}
+				create_ship = {
+					name = random
+					design = "Obliterator"
+					graphical_culture = "extra_dimensional_01"
+				}
+				create_ship = {
+					name = random
+					design = "Obliterator"
+					graphical_culture = "extra_dimensional_01"
+				}
+				create_ship = {
+					name = random
+					design = "Obliterator"
+					graphical_culture = "extra_dimensional_01"
+				}
+				create_ship = {
+					name = random
+					design = "Obliterator"
+					graphical_culture = "extra_dimensional_01"
+				}
+				create_ship = {
+					name = random
+					design = "Obliterator"
+					graphical_culture = "extra_dimensional_01"
+				}
+				create_ship = {
+					name = random
+					design = "Obliterator"
+					graphical_culture = "extra_dimensional_01"
+				}
+				create_ship = {
+					name = random
+					design = "Obliterator"
+					graphical_culture = "extra_dimensional_01"
+				}
+				set_location = {
+					target = ROOT
+					distance = 5
+					angle = random
+				}
+				set_fleet_stance = aggressive
+				set_aggro_range = 500
+				set_aggro_range_measure_from = self
+			}
+		}
+	}
+}
+
+# Constructor
+fleet_event = {
+	id = crisis.1206
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		event_target:extradimensional_trespassers = {
+			create_fleet = { }
+			last_created_fleet = {
+				set_owner = PREV
+				create_ship = {
+					name = random
+					design = "Void Weaver"
+					graphical_culture = "extra_dimensional_01"
+				}
+				set_location = {
+					target = ROOT
+					distance = 5
+					angle = random
+				}
+			}
+		}
+	}
+}
+
+# Third Portal Notification
+country_event = {
+	id = crisis.1210
+	title = "crisis.1210.name"
+	desc = "crisis.1210.desc"
+	picture = GFX_evt_wormhole
+	show_sound = event_ex_started
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		random_country = {
+			limit = { is_country_type = extradimensional_3 }
+			establish_communications_no_message = ROOT
+		}
+	}
+	
+	option = {
+		name = crisis.1210.a
+		create_point_of_interest = {
+			id = extradimensional_invasion_poi.3
+			name = "extradimensional_invasion_3_poi"
+			desc = "extradimensional_invasion_3_poi_desc"
+			event_chain = "extradimensional_invasion_chain"
+			location = event_target:third_portal_system
+		}
+		hidden_effect = {
+			country_event = { id = crisis.1211 }
+		}
+	}
+}
+
+# Transmission from Third Portal
+country_event = {
+	id = crisis.1211
+	title = "TRANSMISSION"
+	desc = "crisis.1211.desc"
+	
+	diplomatic = yes
+	
+	picture_event_data = {
+		portrait = exd3
+		room = "extradimensional_green_room"
+	}
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = crisis.1211.a
+	}
+}
+
+# Third Portal Destroyed (HIDDEN)
+country_event = {
+	id = crisis.1215
+	hide_window = yes
+	
+	fire_only_once = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		is_country_type = extradimensional_3
+		FROMFROM = { is_ship_size = dimensional_portal_ed }
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				has_global_flag = extradimensional_first_portal_destroyed
+				has_global_flag = extradimensional_second_portal_destroyed
+			}
+			every_country = {
+				limit = {
+					#is_ai = no
+					is_country_type = default
+				}
+				country_event = { id = crisis.1216 }
+			}
+			FROM = { save_event_target_as = portal_killer }
+			every_country = {
+				limit = {
+					is_country_type = default
+					has_communications = FROM
+				}
+				add_opinion_modifier = {
+					who = FROM
+					modifier = opinion_destroyed_portal
+				}
+			}
+			every_country = {
+				limit = { is_country_type = default }
+				add_modifier = {
+					modifier = "extradimensionals_defeated"
+					days = 360
+				}
+			}
+			break = yes
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_global_flag = extradimensional_first_portal_destroyed
+					has_global_flag = extradimensional_second_portal_destroyed
+				}
+			}
+			every_country = {
+				limit = {
+					#is_ai = no
+					is_country_type = default
+				}
+				country_event = { id = crisis.1217 }
+			}
+		}
+	}
+}
+
+# Third Portal Destroyed
+country_event = {
+	id = crisis.1216
+	title = "crisis.1216.name"
+	picture = GFX_evt_wormhole
+	show_sound = event_super_explosion
+	
+	desc = {
+		text = "crisis.1216.desc.a"
+		trigger = {
+			has_communications = event_target:portal_killer
+		}
+	}
+	desc = {
+		text = "crisis.1216.desc.b"
+		trigger = {
+			NOT = { has_communications = event_target:portal_killer }
+		}
+	}
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		random_system = {
+			limit = { has_star_flag = extradimensional_third_portal_system }
+			save_event_target_as = extradimensional_system
+		}
+		end_event_chain = "extradimensional_invasion_chain"
+		set_country_flag = extradimensionals_expunged
+	}
+	
+	option = {
+		name = crisis.1013.a
+	}
+}
+
+# Third Portal Destroyed (Other Portals Exist)
+country_event = {
+	id = crisis.1217
+	title = "crisis.1216.name"
+	desc = "crisis.1217.desc"
+	picture = GFX_evt_wormhole
+	show_sound = event_super_explosion
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		random_system = {
+			limit = { has_star_flag = extradimensional_third_portal_system }
+			save_event_target_as = extradimensional_system
+		}
+		set_global_flag = extradimensional_third_portal_destroyed
+		remove_point_of_interest = extradimensional_invasion_poi.3
+	}
+	
+	option = {
+		name = crisis.1016.a
+	}
+}
+
+# Military Reinforcements Arrive From Portal (HIDDEN)
+country_event = {
+	id = crisis.1250
+	hide_window = yes
+	
+	trigger = {
+		is_country_type = extradimensional_3
+		num_ships < 200
+		count_owned_ships = {
+			limit = { is_ship_size = dimensional_portal_ed }
+			count > 0
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 60
+	}
+	
+	immediate = {
+		random_owned_ship = {
+			limit = { is_ship_size = dimensional_portal_ed }
+			save_event_target_as = dimensional_portal
+		}
+		owner_species = { save_event_target_as = extradimensional_species }
+		
+		random_list = {
+		
+			# Main Battle Fleet Arrives
+			50 = {
+				create_fleet = { }
+				random_list = {
+					25 = {
+						create_leader = {
+							type = admiral
+							species = event_target:extradimensional_species
+							name = random
+							skill = 1000
+							traits = {
+								trait = leader_trait_ethereal
+							}
+						}
+					}
+					25 = {
+						create_leader = {
+							type = admiral
+							species = event_target:extradimensional_species
+							name = random
+							skill = 1000
+							traits = {
+								trait = leader_trait_dimensional_stutter
+							}
+						}
+					}
+					50 = {
+						create_leader = {
+							type = admiral
+							species = event_target:extradimensional_species
+							name = random
+							skill = 500
+						}
+					}
+				}
+				last_created_fleet = {
+					set_owner = ROOT
+					create_ship = {
+						name = random
+						design = "Eradicator"
+						graphical_culture = "extra_dimensional_01"
+					}
+					assign_leader = last_created_leader
+					create_ship = {
+						name = random
+						design = "Eradicator"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Eradicator"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Eradicator"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Eradicator"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Eradicator"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Eradicator"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Eradicator"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Eradicator"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Eradicator"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Eradicator"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Annihilator"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Annihilator"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Annihilator"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Annihilator"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Annihilator"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Annihilator"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Annihilator"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Annihilator"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Annihilator"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Obliterator"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Obliterator"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Predator"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Obliterator"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Obliterator"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Obliterator"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Obliterator"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Obliterator"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Obliterator"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Obliterator"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Obliterator"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Obliterator"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Obliterator"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Obliterator"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Obliterator"
+						graphical_culture = "extra_dimensional_01"
+					}
+					set_location = {
+						target = event_target:dimensional_portal
+						distance = 5
+						angle = random
+					}
+					set_fleet_stance = aggressive
+					set_aggro_range = 500
+					set_aggro_range_measure_from = self
+				}
+			}
+			
+			# Light Raiding Fleet Arrives
+			50 = {
+				create_fleet = { }
+				random_list = {
+					25 = {
+						create_leader = {
+							type = admiral
+							species = event_target:extradimensional_species
+							name = random
+							skill = 1000
+							traits = {
+								trait = leader_trait_ethereal
+							}
+						}
+					}
+					25 = {
+						create_leader = {
+							type = admiral
+							species = event_target:extradimensional_species
+							name = random
+							skill = 1000
+							traits = {
+								trait = leader_trait_dimensional_stutter
+							}
+						}
+					}
+					50 = {
+						create_leader = {
+							type = admiral
+							species = event_target:extradimensional_species
+							name = random
+							skill = 500
+						}
+					}
+				}
+				last_created_fleet = {
+					set_owner = ROOT
+					create_ship = {
+						name = random
+						design = "Annihilator"
+						graphical_culture = "extra_dimensional_01"
+					}
+					assign_leader = last_created_leader
+					create_ship = {
+						name = random
+						design = "Annihilator"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Annihilator"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Annihilator"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Obliterator"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Obliterator"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Obliterator"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Obliterator"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Obliterator"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Obliterator"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Obliterator"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Obliterator"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Obliterator"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Obliterator"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Obliterator"
+						graphical_culture = "extra_dimensional_01"
+					}
+					create_ship = {
+						name = random
+						design = "Obliterator"
+						graphical_culture = "extra_dimensional_01"
+					}
+					set_location = {
+						target = event_target:dimensional_portal
+						distance = 5
+						angle = random
+					}
+					set_fleet_stance = aggressive
+					set_aggro_range = 500
+					set_aggro_range_measure_from = self
+				}
+			}
+		}
+	}
+}
+
+# Construction Ships Arrive From Portal (HIDDEN)
+country_event = {
+	id = crisis.1251
+	hide_window = yes
+	
+	trigger = {
+		is_country_type = extradimensional_3
+		count_owned_ships = {
+			limit = { is_ship_size = construction_ship_ed }
+			count < 4
+		}
+		count_owned_ships = {
+			limit = { is_ship_size = dimensional_portal_ed }
+			count > 0
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 60
+	}
+	
+	immediate = {
+		random_owned_ship = {
+			limit = { is_ship_size = dimensional_portal_ed }
+			save_event_target_as = dimensional_portal
+		}
+		create_fleet = { }
+		last_created_fleet = {
+			set_owner = ROOT
+			create_ship = {
+				name = random
+				design = "Void Weaver"
+				graphical_culture = "extra_dimensional_01"
+			}
+			set_location = {
+				target = event_target:dimensional_portal
+				distance = 5
+				angle = random
+			}
+		}
+	}
+}
+
+# Reinforcements in 60 days if <81 military ships
+# and any portal still active
+country_event = {
+	id = crisis.1252
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		OR = {
+			is_country_type = extradimensional
+			is_country_type = extradimensional_2
+			is_country_type = extradimensional_3
+		}
+	}
+
+	immediate = {
+		country_event = { id = crisis.1253 days = 60 }
+	}
+}
+
+# Check if reinforcements are needed and portal is still active
+country_event = {
+	id = crisis.1253
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		OR = {
+			is_country_type = extradimensional
+			is_country_type = extradimensional_2
+			is_country_type = extradimensional_3
+		}
+		count_owned_ships = {
+			limit = { is_ship_class = shipclass_military }
+			count < 81
+		}
+		any_owned_ship = { is_ship_size = dimensional_portal_ed }
+	}
+
+	immediate = {
+		save_event_target_as = extradimensional_trespassers
+		random_owned_ship = {
+			limit = { is_ship_size = dimensional_portal_ed }
+			fleet = { fleet_event = { id = crisis.1203 } }
+		}
+	}
+}
+
+# Destroy EXDs if no portals and only 5 or less ships remain
+# On yearly pulse
+event = {
+	id = crisis.1254
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		any_country = {
+			is_country_type = swarm
+		}
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				any_country = {
+					OR = {
+						is_country_type = extradimensional
+						is_country_type = extradimensional_2
+						is_country_type = extradimensional_3
+					}
+					OR = {
+						AND = {
+							has_global_flag = extradimensional_first_portal_destroyed
+							NOT = { has_global_flag = extradimensional_second_portal }
+							NOT = { has_global_flag = extradimensional_third_portal }
+						}
+						AND = {
+							has_global_flag = extradimensional_first_portal_destroyed
+							has_global_flag = extradimensional_second_portal_destroyed
+							NOT = { has_global_flag = extradimensional_third_portal }
+						}
+						AND = {
+							has_global_flag = extradimensional_first_portal_destroyed
+							has_global_flag = extradimensional_second_portal_destroyed
+							has_global_flag = extradimensional_third_portal_destroyed
+						}
+					}
+
+					num_ships < 6
+
+					NOT = {
+						any_owned_ship = { is_ship_size = dimensional_portal_ed }
+					}
+
+					NOT = {
+						any_system = {
+							any_planet = {
+								controller = {
+									OR = {
+										is_country_type = extradimensional
+										is_country_type = extradimensional_2
+										is_country_type = extradimensional_3
+									}
+								}
+							}
+						}
+					}
+
+					NOT = {
+						any_system = {
+							any_planet = {
+								owner = {
+									OR = {
+										is_country_type = extradimensional
+										is_country_type = extradimensional_2
+										is_country_type = extradimensional_3
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+
+			every_country = {
+				limit = {
+					OR = {
+						is_country_type = extradimensional
+						is_country_type = extradimensional_2
+						is_country_type = extradimensional_3
+					}
+				}
+				destroy_country = yes
+			}
+		}
+	}
+}

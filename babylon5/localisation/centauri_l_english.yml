@@ -1,0 +1,17 @@
+﻿l_english:
+
+ name_list_CENTAURI1:0 "Centauri"
+ IS_SPECIES_CLASS_TRIGGER:0 "Is corresponding species class"
+ 
+ FLAG_CATEGORY_centauri:0 "Centauri"
+ 
+ START_SCREEN_CEN:0 "Centauri Start screen\n\n new line"
+ 
+ EMPIRE_DESIGN_centauri:0 "Centauri Indirect Republic"
+ EMPIRE_DESIGN_centauri_desc:0 "Do you really want to know what I want? Do you really want to know the truth? I want my people to reclaim their rightful place in the galaxy. I want to see the Centauri stretch forth their hand again and command the stars. I want a rebirth of glory, a renaissance of power! I want to stop running through my life like a man late for an appointment, afraid to look back or look forward. I want us to be what we used to be! I want... I want it all back the way it was."
+
+ CEN:0 "centauri"
+
+ personality_centauri_cpu:0 "Traders of the stars"
+ personality_centauri_cpu_desc:0 "Money can buy everything. You can pay enough to become a Centauri yourself"
+

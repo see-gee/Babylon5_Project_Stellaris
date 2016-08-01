@@ -1,0 +1,17 @@
+﻿l_english:
+
+ name_list_VORLON1:0 "Vorlon"
+ IS_SPECIES_CLASS_TRIGGER:0 "Is corresponding species class"
+ 
+ FLAG_CATEGORY_vorlon:0 "Vorlon"
+ 
+ START_SCREEN_VOR:0 "Vorlon Start screen\n\n new line"
+ 
+ EMPIRE_DESIGN_vorlon:0 "Vorlon Bionic Empire"
+ EMPIRE_DESIGN_vorlon_desc:0 "Vorlons are masters of the universe. And who are you?"
+
+ VOR:0 "Vorlon"
+
+ personality_vorlon_cpu:0 "Organic Unification"
+ personality_vorlon_cpu_desc:0 "Vorlon Organic Unification is ancient empire that has overcome burdens of rough materials and mastered art of bioengineering. Unification form of government surpasses restrictions of leadership choice and allows for unified thought."
+

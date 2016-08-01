@@ -1,0 +1,64 @@
+centauri = {
+	name = "Centauri Republic"
+	spawn_enabled = always # yes / no / always
+	
+	name_list = "CENTAURI1"
+	ship_prefix = "CSV"
+	
+	species_name = "Centauri"
+	species_plural = "Centauri"
+	species_adjective = "Centauri"
+	species_class = "MAM"
+	trait="trait_thrifty"
+	trait="trait_decadent"
+	trait="trait_communal"
+	portrait = "centauri"
+	adjective = "Centauri"
+	
+	species_bio = "The Centauri Republic is a major galactic power and noted for being the first alien government with which Earth had open contact. The Republic is based on Centauri Prime but spans a number of other colonies and worlds. Despite its 'Republic' moniker, the Centauri Republic is a nominal constitutional monarchy headed by an imperial family. It is ruled by an emperor, who has enormous power in Centauri society, and all Centauri are taught to be deferential to the ruling monarch."
+	
+	government="despotic_empire"
+	ethic="ethic_collectivist"
+	ethic="ethic_xenophobe"
+	ethic="ethic_militarist"
+
+	flags = { centauristart_1 centauri_cpu }
+	
+	weapon="tech_mass_drivers_1"
+	ftl=wormhole
+	
+	planet_name = "Centauri Prime"
+	planet_class="pc_continental"
+	# Actual Centauri Homeworld Sector
+	system_name = "Sector 130"
+	
+	graphical_culture="arthropoid_01"
+	city_graphical_culture="mammalian_01"
+	
+	empire_flag={
+		icon={
+			category="babylon5"
+			file="centauri_flag_1.dds"
+		}
+		background={
+			category="backgrounds"
+			file="00_solid.dds"
+		}
+		colors={
+			"dark_purple"
+			"orange"
+			"null"
+			"null"
+		}
+	}
+
+	
+	ruler={
+		gender=male
+		name="Londo Mollari"
+		portrait="centauri_londo_1"
+		texture=0
+		hair=28
+		clothes=0
+	}
+}

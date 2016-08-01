@@ -1,0 +1,12 @@
+# Minor Race Species Classes
+#ABBAI = {
+#	custom_portraits = {
+#		portraits = {
+#			abbai_1
+#		}
+#	}
+#	graphical_culture="reptilian_01"
+#	
+#}
+
+#BALOSIAN = {}

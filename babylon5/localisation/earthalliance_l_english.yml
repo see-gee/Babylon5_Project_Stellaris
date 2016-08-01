@@ -1,0 +1,17 @@
+﻿l_english:
+
+ name_list_EARTH1:0 "Earth Alliance"
+ IS_SPECIES_CLASS_TRIGGER:0 "Is corresponding species class"
+ 
+ FLAG_CATEGORY_earthalliance:0 "Earth Alliance"
+ 
+ START_SCREEN_CEN:0 "Earth Alliance Start screen\n\n new line"
+ 
+ EMPIRE_DESIGN_earthalliance:0 "Earth Alliance Democratic Republic"
+ EMPIRE_DESIGN_earthalliance_desc:0 "I'll tell you one thing. If the primates that we came from had known that someday politicians would come out of the gene pool, they'd have stayed up in the trees and written evolution off as a bad idea! Hell, I always thought the opposable thumb was overrated!  - John Sheridan"
+
+ CEN:0 "Earth Alliance"
+
+ personality_earthalliance_cpu:0 "Explorers and Diplomats"
+ personality_earthalliance_cpu_desc:0 "We shall nobly save or meanly lose our last, best hope of Earth."
+

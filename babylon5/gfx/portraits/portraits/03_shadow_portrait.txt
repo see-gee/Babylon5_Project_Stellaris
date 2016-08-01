@@ -1,0 +1,108 @@
+portraits = {
+	shadow_mother_1 = { texturefile = "gfx/portraits/shadow/shadow_mother_1.dds"}
+	shadow_morden_1 = { texturefile = "gfx/portraits/shadow/shadow_morden_1.dds"}
+#	narn_civ = { texturefile = "gfx/portraits/narn/narn_civ_1.dds"}
+#	narn_mil = { texturefile = "gfx/portraits/narn/narn_mil_1.dds"}
+#	narn_arm = { texturefile = "gfx/portraits/narn/narn_arm_1.dds"}
+#	narn_gov = { texturefile = "gfx/portraits/narn/narn_gov_1.dds"}
+#	narn_sci = { texturefile = "gfx/portraits/narn/narn_sci_1.dds"}
+}
+portrait_groups = {
+	shadow = {
+		default = shadow_mother_1
+		game_setup = { #will run with a limited country scope. species and government is set but the country does not actually exist
+			add = {
+				portraits = {
+					shadow_mother_1
+				}
+			}
+		}		
+		
+		#species scope
+		species = { #generic portrait for a species
+			set = {
+				portraits = {
+					mol14
+				}
+			}
+		}		
+		
+		#pop scope
+		pop = { #for a specific pop
+			add = {
+				portraits = {
+					mol14
+				}
+			}
+		}
+		
+		#leader scope
+		leader = { #scientists, generals, admirals, governor
+			set = {
+				trigger = {
+					gender = male
+				}
+				portraits = {
+					mol14
+				}
+			}
+			
+			set = {
+				trigger = {
+					leader_class = general
+				}
+				portraits = {
+					mol14
+				}
+			}
+			
+			add = {
+				trigger = {
+					leader_class = admiral
+				}
+				portraits = {
+					mol14
+				}
+			}
+			
+			add = {
+				trigger = {
+					leader_class = scientist
+				}
+				portraits = {
+					mol14
+				}
+			}
+			
+			add = {
+				trigger = {
+					leader_class = governor
+				}
+				portraits = {
+					mol14
+				}
+			}
+			
+			add = {
+				trigger = {
+					leader_class = ruler
+				}
+				portraits = {
+					shadow_mother_1
+				}
+			}
+		}
+
+			
+		#leader scope 
+		ruler = {
+			add = {
+				portraits = {
+					shadow_mother_1
+				}
+			}
+		}
+		
+		
+	}
+}
