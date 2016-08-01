@@ -32,7 +32,7 @@
 
 abbai_cpu = {
         aggressiveness = 0.5
-        trade_willingness = 0.9
+        trade_willingness = 1
         bravery = 1
         
         military_spending = 0.8
@@ -63,7 +63,7 @@ abbai_cpu = {
         }
         
         allow = {
-                has_country_flag = babylonstart_1
+                has_country_flag = abbaistart_1
         }
         
         weight_modifier = {
