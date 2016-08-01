@@ -1,0 +1,27 @@
+﻿l_english:
+
+ BBL:0 "Babylon 5 Nations"
+ 
+ FLAG_CATEGORY_babylon5:0 "Babylon 5"
+ PORTRAIT_CATEGORY_minbari:0 "Minbari"
+
+#ALLIANCE_PREFIX_01:0 "League of"
+#ALLIANCE_PREFIX_02:0 "Provisional"
+#ALLIANCE_PREFIX_03:0 "Army of"
+#ALLIANCE_PREFIX_04:0 "Interstellar"
+#ALLIANCE_PREFIX_03:0 "Earth"
+
+#ALLIANCE_PREFIX_01:0 "Non-Aligned Worlds"
+#ALLIANCE_PREFIX_02:0 "Accord"
+
+#ALLIANCE_NAME:0 "$PREFIX$ $NAME$"
+
+ALLIANCE_NAME_01:0 "League of Non-Aligned Worlds"
+ALLIANCE_NAME_02:0 "Army of Light"
+ALLIANCE_NAME_03:0 "Interstellar Alliance"
+ALLIANCE_NAME_04:0 "Mars Provisional Accord"
+ALLIANCE_NAME_05:0 "Grey Council"
+ALLIANCE_NAME_06:0 "Earth Alliance"
+
+
+ALLIANCE_NAME:0 "$NAME$"

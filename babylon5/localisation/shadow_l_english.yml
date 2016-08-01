@@ -1,0 +1,17 @@
+﻿l_english:
+
+ name_list_SHADOW1:0 "Sha'dow"
+ IS_SPECIES_CLASS_TRIGGER:0 "Is corresponding species class"
+ 
+ FLAG_CATEGORY_shadow:0 "Sha'dow"
+ 
+ START_SCREEN_VOR:0 "Sha'dow Start screen\n\n new line"
+ 
+ EMPIRE_DESIGN_shadow:0 "Sha'dow Eugenic Meritocracy"
+ EMPIRE_DESIGN_shadow_desc:0 "Each sha'de, before deserving right to remain alive, must answer one and only quastion - What does he want?"
+
+ VOR:0 "Sha'dow"
+
+ personality_shadow_cpu:0 "Competitive Dominion"
+ personality_shadow_cpu_desc:0 "Competitive dominion allows only best of its species to achieve ruling positions. Unworthy are killed in battle and their bodies are used in organic reactors for the better of society. Thouse who try to avoid wight will not be tolerated."
+

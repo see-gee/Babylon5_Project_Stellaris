@@ -1,0 +1,13 @@
+# Generated species derive their names from here
+
+
+
+#BBL = {
+#	genericbbl = {
+#		name = "Babylon 5 Nations"
+#		plural = "Plural Name"
+#		home_planet = "Home Planet"
+#		home_system = "Home System"
+#		name_list = "VORLON1"
+#	}
+#}

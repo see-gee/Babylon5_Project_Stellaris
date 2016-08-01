@@ -1,0 +1,10 @@
+#portraits = {
+#	abbai_1 = { texturefile = "gfx/portraits/minor/abbai_1.dds"}
+#}
+
+#portrait_groups = {
+#	abbai = {
+#		default = abbai_1
+#		species = abbai_1
+#		}
+#}

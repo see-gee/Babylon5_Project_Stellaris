@@ -1,0 +1,62 @@
+minbari = {
+	name = "Minbari Federation"
+	spawn_enabled = always # yes / no / always
+	
+	name_list = "MINBARI1"
+	ship_prefix = "MSS"
+	
+	species_name = "Minbari"
+	species_plural = "Minbari"
+	species_adjective = "Minbar"
+	species_class = "MAM"
+	trait="trait_intelligent"
+	trait="trait_charismatic"
+	trait="trait_slow_breeders"
+	portrait = "minbari"
+	adjective = "Minbar"
+	
+	species_bio "The Minbari are a deeply spiritual, highly ritualistic and disciplined people. They seek conformity and enlightenment above all. Honor is everything and they generally do not lie, except to save another or to help another save face. From birth to adulthood, they are taught to be selfless and learn the importance of service to all aspects of life. Working for generations, they create a legacy for themselves and are ready to sacrifice their lives, their blood, or their honor for others."
+	
+	government="peaceful_bureaucracy"
+	ethic="ethic_fanatic_pacifist"
+	ethic="ethic_spiritualist"
+
+	flags = { minbaristart_1 minbari_cpu}
+	
+	#not sure if you can give tech 4 lasers @ gamestart without giving the relevant techs first through an empire start event... Can it be defined as a valid starting tech?
+	weapon="tech_lasers_1"
+	ftl=hyperdrive
+	
+	planet_name="Minbar Prime"
+	planet_class="pc_continental"
+	system_name = "Minbar"
+	
+	graphical_culture="fungoid_01"
+	city_graphical_culture="avian_01"
+	
+	empire_flag={
+		icon={
+			category="babylon5"
+			file="minbari_flag_1.dds"
+		}
+		background={
+			category="backgrounds"
+			file="new_dawn.dds"
+		}
+		colors={
+			"pink"
+			"blue"
+			"null"
+			"null"
+		}
+	}
+
+	ruler={
+		gender=female
+		name="Delenn Furlan"
+		portrait=minbari_delenn_1
+		texture=0
+		hair=2
+		clothes=0
+	}
+}

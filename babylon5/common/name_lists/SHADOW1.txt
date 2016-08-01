@@ -1,0 +1,188 @@
+﻿SHADOW1 = {
+	ship_names = {
+		generic = {
+		}
+
+		corvette = {
+			"Ssha'" 
+		}
+		
+		constructor = {
+			"Kama'ze"
+		}
+		
+		colonizer = {
+			sequential_name = "Domo'so"
+		}
+
+		destroyer = {
+			"Ssha'd" 
+		}
+		
+		cruiser = {
+			"Sha'dar"
+		}
+		
+		battleship = {
+			"Sha'rness"
+		}
+		
+		science = {
+			"Tik'esh"
+		}
+
+		orbital_station = {
+			"Vasuh'da"
+		}
+
+		mining_station = {
+			"Ko'dame"
+		}
+
+		research_station = {
+			"Tik'ame"
+		}
+
+		wormhole_station = {
+			"Do'mutu"
+		}
+
+		terraform_station = {
+			"Doto'dum"
+		}
+
+		observation_station = {
+			"Vasa'zu"
+		}
+
+		outpost_station = {
+			"Dar'de"
+		}
+		
+		transport = {
+			"Do'shade"
+		}
+		
+		military_station_small = {
+		}
+		
+		military_station_medium = {
+		}
+		
+		military_station_large = {
+		}
+	}
+	
+	fleet_names = {
+		random_names = { "Shears" "Bleaks" "Penumbra" "Occluder" "Obscurity-1" "Darkmares"
+		}
+		sequential_name = "%O% Sha'dow Fleet"
+	}
+
+
+	army_names = {
+	
+		defense_army = {
+			sequential_name = "%O% Sha'de Curtains"
+		}
+			
+		assault_army = {
+			sequential_name = "%O% Sha'de Dimlights"
+		}
+		
+		slave_army = {
+			sequential_name = "%O% Sha'de Reflex"
+		}
+		
+		clone_army = {
+			sequential_name = "%O% Sha'de Sunset"
+		}
+		
+		robotic_army = {
+			sequential_name = "%O% Sha'de Antiprism"
+		}
+		
+		android_army = {
+			sequential_name = "%O% Sha'de Light-trap"
+		}
+		
+		psionic_army = {
+			sequential_name = "%O% Sha'de Psyborgs"
+		}
+		
+		xenomorph_army = {
+			sequential_name = "%O% Ghathanothoa"
+		}
+		
+		gene_warrior_army = {
+			sequential_name = "%O% Sha'dare Za'Ha"
+		}
+	}
+
+	
+	planet_names = {
+	
+		generic = {
+			names = {
+			}
+		}
+		
+		pc_desert = {
+			names = { "Dum"
+			}
+		}
+		
+		pc_tropical = {
+			names = { "Ton"
+			}
+		}
+		
+		pc_arid = {
+			names = { "Dam"
+			}
+		}
+		
+		pc_continental = {
+			names = { "Pun"
+			}
+		}
+		
+		pc_ocean = {
+			names = { "Nol"
+			}
+		}
+		
+		pc_tundra = {
+			names = { "Tun"
+			}
+		}
+		
+		pc_arctic = {
+			names = { "Uuk"
+			}
+		}
+		
+	}
+
+	
+	character_names = {
+		default = {
+			#A complete name
+			full_names = {  
+			}
+			
+			# Always combined with a second name
+			first_names = { "Da'ha" "Sa'Du" "Den'to" "Mor'de" "Ku'to" "Po'do" "Ha'te" "Mu're" "Ka'to" "So'to" 
+			}
+			
+			# Always combined with a first name
+			second_names = { "Tme" "Nta" "Gha" "Hto" "Kma" "Tku" "Phu" "Khe" "Ngo" "Kpu" 
+ 			}
+			
+			regnal_first_names = { 
+			}
+			regnal_second_names = { 
+			}
+		}
+	}
+}

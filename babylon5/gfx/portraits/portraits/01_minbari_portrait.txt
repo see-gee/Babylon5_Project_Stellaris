@@ -1,0 +1,101 @@
+portraits = {
+	minbari_delenn_1= { texturefile = "gfx/portraits/minbari/minbari_delenn_1.dds"}
+	minbari_delenn_2= { texturefile = "gfx/portraits/minbari/minbari_delenn_2.dds"}
+	minbari_dukhat_1 = { texturefile = "gfx/portraits/minbari/minbari_dukhat_1.dds"}
+	minbari_lennier_1 = { texturefile = "gfx/portraits/minbari/minbari_lennier_1.dds"}
+#	minbari_civ = { texturefile = "gfx/portraits/minbari/minbari_civ_1.dds"}
+#	minbari_mil = { texturefile = "gfx/portraits/minbari/minbari_mil_1.dds"}
+#	minbari_arm = { texturefile = "gfx/portraits/minbari/minbari_arm_1.dds"}
+#	minbari_gov = { texturefile = "gfx/portraits/minbari/minbari_gov_1.dds"}
+#	minbari_sci = { texturefile = "gfx/portraits/minbari/minbari_sci_1.dds"}
+}
+portrait_groups = {
+	minbari = {
+		default = minbari_delenn_1
+		game_setup = { #will run with a limited country scope. species and government is set but the country does not actually exist
+			add = {
+				trigger = {
+					ruler = { gender = male }
+				}
+				portraits = {
+					minbari_dukhat_1
+					minbari_lennier_1
+				}
+			}
+			add = {
+				trigger = {
+					ruler = { gender = female }
+				}
+				portraits = {
+					minbari_delenn_1
+				}
+			}
+			#set = {
+			#	trigger = { ... }
+			#	portraits = { ... }
+			#	#using "set =" instead of "add" will first clear any portraits already added
+			#}
+		}		
+		
+		#species scope
+		species = { #generic portrait for a species
+			add = {
+				portraits = {
+					human_female_01
+					human_male_01
+				}
+			}
+		}		
+		
+		#pop scope
+		pop = { #for a specific pop
+			add = {
+				portraits = {
+					human_female_01
+					human_male_01
+				}
+			}
+		}
+		
+		#leader scope
+		leader = { #scientists, generals, admirals, governor
+			add = {
+				trigger = {
+					gender = female
+				}
+				portraits = {
+					minbari_delenn_1
+				}
+			}
+			add = {
+				trigger = {
+					gender = male
+				}
+				portraits = {
+					minbari_lennier_1
+				}
+			}
+		}
+
+			
+		#leader scope 
+		ruler = {
+			add = {
+				trigger = {
+					gender = female
+				}
+				portraits = {
+					minbari_delenn_1
+				}
+			}
+			add = {
+				trigger = {
+					gender = male
+				}
+				portraits = {
+					minbari_dukhat_1
+				}
+			}
+		}
+	}
+}

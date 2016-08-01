@@ -1,0 +1,100 @@
+portraits = {
+	centauri_londo_1 = { texturefile = "gfx/portraits/centauri/centauri_londo_mollari_1.dds"}
+	centauri_timov_1 = { texturefile = "gfx/portraits/centauri/centauri_timov_1.dds"}
+	#centauri_vir_1 = { texturefile = "gfx/portraits/centauri/centauri_vir_cotto_1.dds"}
+#	narn_civ = { texturefile = "gfx/portraits/narn/narn_civ_1.dds"}
+#	narn_mil = { texturefile = "gfx/portraits/narn/narn_mil_1.dds"}
+#	narn_arm = { texturefile = "gfx/portraits/narn/narn_arm_1.dds"}
+#	narn_gov = { texturefile = "gfx/portraits/narn/narn_gov_1.dds"}
+#	narn_sci = { texturefile = "gfx/portraits/narn/narn_sci_1.dds"}
+}
+portrait_groups = {
+	centauri = {
+		default = centauri_londo_1
+		game_setup = { #will run with a limited country scope. species and government is set but the country does not actually exist
+			add = {
+				trigger = {
+					ruler = { gender = male }
+				}
+				portraits = {
+					centauri_londo_1
+				}
+			}
+			add = {
+				trigger = {
+					ruler = { gender = female }
+				}
+				portraits = {
+					centauri_timov_1
+				}
+			}
+			#set = {
+			#	trigger = { ... }
+			#	portraits = { ... }
+			#	#using "set =" instead of "add" will first clear any portraits already added
+			#}
+		}		
+		
+		#species scope
+		species = { #generic portrait for a species
+			add = {
+				portraits = {
+					human_female_02
+					human_male_02
+				}
+			}
+		}		
+		
+		#pop scope
+		pop = { #for a specific pop
+			add = {
+				portraits = {
+					human_female_02
+					human_male_02
+				}
+			}
+		}
+		
+		#leader scope
+		leader = { #scientists, generals, admirals, governor
+			add = {
+				trigger = {
+					gender = female
+				}
+				portraits = {
+					human_female_02
+				}
+			}
+			add = {
+				trigger = {
+					gender = male
+				}
+				portraits = {
+					centauri_londo_1
+					centauri_vir_1
+				}
+			}
+		}
+
+			
+		#leader scope 
+		ruler = {
+			add = {
+				trigger = {
+					gender = female
+				}
+				portraits = {
+					centauri_timov_1
+				}
+			}
+			add = {
+				trigger = {
+					gender = male
+				}
+				portraits = {
+					centauri_londo_1
+				}
+			}
+		}
+	}
+}
