@@ -1,5 +1,5 @@
 
-
+### EarthAlliance ###
 earthalliance = {
 	name_list="EARTH1"
 	ship_prefix="EAS"
@@ -55,6 +55,7 @@ earthalliance = {
 	trait="trait_resilient"
 }
 
+### Minbari ###
 minbari = {
 	name = "Minbari Federation"
 	spawn_enabled = always # yes / no / always
@@ -118,6 +119,7 @@ minbari = {
 	}
 }
 
+### Centauri ###
 centauri = {
 	name = "Centauri Republic"
 	spawn_enabled = always # yes / no / always
@@ -183,6 +185,7 @@ centauri = {
 	}
 }
 
+### Narn ###
 narn = {
 	name = "Narn Regime"
 	spawn_enabled = always # yes / no / always
@@ -248,6 +251,7 @@ narn = {
 	}
 }
 
+### Shadow ###
 shadow = {
 	name = "Sha'dow Matriarchat"
 	spawn_enabled = always # yes / no / always
@@ -313,6 +317,7 @@ shadow = {
 	}
 }
 
+### Vorlon ###
 vorlon = {
 	name = "Vorlon Empire"
 	spawn_enabled = always # yes / no / always
