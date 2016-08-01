@@ -1,6 +1,6 @@
 ### Dilgar ###
 dilgar = {
-	name = "Sha'dow Matriarchat"
+	name = "Dilgar Empire"
 	spawn_enabled = always # yes / no / always
 	
 	name_list = "DILGAR1"
@@ -9,21 +9,21 @@ dilgar = {
 	species_name = "Dilgar"
 	species_plural = "Dilgar"
 	species_adjective = "Dilgar"
-	species_class = "ART"
+	species_class = "MAM"
 	
 	# portrait = "rep2"
 	portrait = "dilgar"
-	adjective = "Sha'den"
+	adjective = "Dilgar"
 	
-	trait="trait_strong"
-	trait="trait_enduring"
-	trait="trait_nomadic"
-	trait="trait_solitary"
+	# Species Start with 2 points
+	trait="trait_decadent" #Cost -1
+	trait="trait_very_strong" #Cost 3
+	
 		
-	species_bio = "The Shadows are insectoid hexapeds that resemble a cross between an Earth spider and praying mantis. The Shadows believe that for a race to evolve into their full potential, they must do so through a cycle of chaos; growth through pain and struggle, conflict and war. Weak races die. Strong races are made even stronger. With this they developed their First Principles: chaos through warfare; evolution through bloodshed; perfection through victory."
+	species_bio = "The Dilgar were a feline-like humanoid species. They were aggressive and expanded their empire between 2229 and 2232 as the Centauri Republic began its decline. The Dilgar War broke out, and with the help of the Earth Alliance, the Dilgar were forced to their homeworld. After the war ended, the Dilgar sun went supernova, effectively wiping out the entire species. Only Deathwalker survived but was killed by the Vorlons in 2258, making the Dilgar extinct."
 	
 	government="martial_empire"
-	ethic="ethic_collectivist"
+	ethic="ethic_xenophobe"
 	ethic="ethic_fanatic_militarist"
 
 	flags = { dilgarstart_1 dilgar_cpu }
