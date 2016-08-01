@@ -86,7 +86,7 @@ minbari = {
 	ftl=hyperdrive
 	
 	planet_name="Minbar Prime"
-	planet_class="pc_continental"
+	planet_class="pc_tundra"
 	system_name = "Minbar"
 	
 	graphical_culture="fungoid_01"
