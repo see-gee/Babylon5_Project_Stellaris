@@ -85,9 +85,9 @@ minbari = {
 	weapon="tech_lasers_1"
 	ftl=hyperdrive
 	
-	planet_name="Minbar Prime"
+	planet_name="Minbar"
 	planet_class="pc_tundra"
-	system_name = "Minbar"
+	system_name = "Chi Draconis"
 	
 	graphical_culture="fungoid_01"
 	city_graphical_culture="avian_01"
