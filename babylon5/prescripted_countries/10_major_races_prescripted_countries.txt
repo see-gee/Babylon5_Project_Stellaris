@@ -75,8 +75,9 @@ minbari = {
 	
 	species_bio "The Minbari are a deeply spiritual, highly ritualistic and disciplined people. They seek conformity and enlightenment above all. Honor is everything and they generally do not lie, except to save another or to help another save face. From birth to adulthood, they are taught to be selfless and learn the importance of service to all aspects of life. Working for generations, they create a legacy for themselves and are ready to sacrifice their lives, their blood, or their honor for others."
 	
-	government="peaceful_bureaucracy"
-	ethic="ethic_fanatic_pacifist"
+	government="theocratic_oligarchy"
+	ethic="ethic_individualist"
+	ethic="ethic_militarist"
 	ethic="ethic_spiritualist"
 
 	flags = { minbaristart_1 minbari_cpu}
