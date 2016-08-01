@@ -1,0 +1,67 @@
+### Dilgar ###
+dilgar = {
+	name = "Sha'dow Matriarchat"
+	spawn_enabled = always # yes / no / always
+	
+	name_list = "DILGAR1"
+	ship_prefix = ""
+	
+	species_name = "Dilgar"
+	species_plural = "Dilgar"
+	species_adjective = "Dilgar"
+	species_class = "ART"
+	
+	# portrait = "rep2"
+	portrait = "dilgar"
+	adjective = "Sha'den"
+	
+	trait="trait_strong"
+	trait="trait_enduring"
+	trait="trait_nomadic"
+	trait="trait_solitary"
+		
+	species_bio = "The Shadows are insectoid hexapeds that resemble a cross between an Earth spider and praying mantis. The Shadows believe that for a race to evolve into their full potential, they must do so through a cycle of chaos; growth through pain and struggle, conflict and war. Weak races die. Strong races are made even stronger. With this they developed their First Principles: chaos through warfare; evolution through bloodshed; perfection through victory."
+	
+	government="martial_empire"
+	ethic="ethic_collectivist"
+	ethic="ethic_fanatic_militarist"
+
+	flags = { dilgarstart_1 dilgar_cpu }
+	
+	weapon="tech_lasers_1"
+	ftl=hyperspace
+	
+	planet_name="Omelos"
+	planet_class="pc_desert"
+	#Actual system of Shadow Homeworld 
+	system_name="Caliban"
+	
+	graphical_culture="avian_01"
+	city_graphical_culture="arthropoid_01"
+	
+	empire_flag={
+		icon={
+			category="babylon5"
+			file="dilgar_flag_1.dds"
+		}
+		background={
+			category="backgrounds"
+			file="pattern_01.dds"
+		}
+		colors={
+			"black"
+			"dark_grey"
+			"null"
+			"null"
+		}
+	}
+		
+	ruler={
+		gender=female
+		name="Daha'tme"
+		portrait="shadow_mother_1"
+		texture=3
+		hair=0
+		clothes=0
+	}
+}
