@@ -1,0 +1,376 @@
+
+
+earthalliance = {
+	name_list="EARTH1"
+	ship_prefix="EAS"
+	species_name="Human"
+	species_plural="Humans"
+	species_class="MAM"
+	species_adjective="Human"
+	
+	species_bio= "The Earth Alliance was founded in 2085 in the aftermath of World War III. The founding nations made great gains in colonizing space by building bases on Luna and a colony on Mars by 2090.In the mid-22nd century, contact was made between the Earth Alliance and the Centauri Republic. The Centauri gave the Earth Alliance access to its technology in exchange for some trade agreements. Initially the Earth Alliance used Centauri jumpgates but soon began to build their own. The Earth Alliance experienced a great deal of growth soon after the introduction of new technologies. It began to expand across multiple systems, meeting many new species."
+	
+	portrait="earthalliance"
+	name="Earth Alliance"
+	adjective="Terran"
+	government="direct_democracy"
+	ftl=warp
+	weapon="tech_mass_drivers_1"
+	planet_name="Earth"
+	planet_class="pc_continental"
+	system_name="Sol"
+	initializer="sol_system_initializer"
+	graphical_culture="mammalian_01"
+	city_graphical_culture="mammalian_01"
+	empire_flag={
+		icon={
+			category="babylon5"
+			file="earthalliance_flag_1.dds"
+		}
+		background={
+			category="backgrounds"
+			file="00_solid.dds"
+		}
+		colors={
+			"indigo"
+			"orange"
+			"null"
+			"null"
+		}
+	}
+	ruler={
+		gender=male
+		name="Luis Santiago"
+		portrait="earthalliance_santiago_1"
+		texture=0
+		hair=7
+		clothes=2
+		ruler_title="President"
+	}
+	spawn_enabled=yes
+	ethic="ethic_individualist"
+	ethic="ethic_xenophobe"
+	ethic="ethic_materialist"
+	trait="trait_quick_learners"
+	trait="trait_resilient"
+}
+
+minbari = {
+	name = "Minbari Federation"
+	spawn_enabled = always # yes / no / always
+	
+	name_list = "MINBARI1"
+	ship_prefix = "MSS"
+	
+	species_name = "Minbari"
+	species_plural = "Minbari"
+	species_adjective = "Minbar"
+	species_class = "MAM"
+	trait="trait_intelligent"
+	trait="trait_charismatic"
+	trait="trait_slow_breeders"
+	portrait = "minbari"
+	adjective = "Minbar"
+	
+	species_bio "The Minbari are a deeply spiritual, highly ritualistic and disciplined people. They seek conformity and enlightenment above all. Honor is everything and they generally do not lie, except to save another or to help another save face. From birth to adulthood, they are taught to be selfless and learn the importance of service to all aspects of life. Working for generations, they create a legacy for themselves and are ready to sacrifice their lives, their blood, or their honor for others."
+	
+	government="peaceful_bureaucracy"
+	ethic="ethic_fanatic_pacifist"
+	ethic="ethic_spiritualist"
+
+	flags = { minbaristart_1 minbari_cpu}
+	
+	#not sure if you can give tech 4 lasers @ gamestart without giving the relevant techs first through an empire start event... Can it be defined as a valid starting tech?
+	weapon="tech_lasers_1"
+	ftl=hyperdrive
+	
+	planet_name="Minbar Prime"
+	planet_class="pc_continental"
+	system_name = "Minbar"
+	
+	graphical_culture="fungoid_01"
+	city_graphical_culture="avian_01"
+	
+	empire_flag={
+		icon={
+			category="babylon5"
+			file="minbari_flag_1.dds"
+		}
+		background={
+			category="backgrounds"
+			file="new_dawn.dds"
+		}
+		colors={
+			"pink"
+			"blue"
+			"null"
+			"null"
+		}
+	}
+
+	ruler={
+		gender=female
+		name="Delenn Furlan"
+		portrait=minbari_delenn_1
+		texture=0
+		hair=2
+		clothes=0
+	}
+}
+
+centauri = {
+	name = "Centauri Republic"
+	spawn_enabled = always # yes / no / always
+	
+	name_list = "CENTAURI1"
+	ship_prefix = "CSV"
+	
+	species_name = "Centauri"
+	species_plural = "Centauri"
+	species_adjective = "Centauri"
+	species_class = "MAM"
+	trait="trait_thrifty"
+	trait="trait_decadent"
+	trait="trait_communal"
+	portrait = "centauri"
+	adjective = "Centauri"
+	
+	species_bio = "The Centauri Republic is a major galactic power and noted for being the first alien government with which Earth had open contact. The Republic is based on Centauri Prime but spans a number of other colonies and worlds. Despite its 'Republic' moniker, the Centauri Republic is a nominal constitutional monarchy headed by an imperial family. It is ruled by an emperor, who has enormous power in Centauri society, and all Centauri are taught to be deferential to the ruling monarch."
+	
+	government="despotic_empire"
+	ethic="ethic_collectivist"
+	ethic="ethic_xenophobe"
+	ethic="ethic_militarist"
+
+	flags = { centauristart_1 centauri_cpu }
+	
+	weapon="tech_mass_drivers_1"
+	ftl=wormhole
+	
+	planet_name = "Centauri Prime"
+	planet_class="pc_continental"
+	# Actual Centauri Homeworld Sector
+	system_name = "Sector 130"
+	
+	graphical_culture="arthropoid_01"
+	city_graphical_culture="mammalian_01"
+	
+	empire_flag={
+		icon={
+			category="babylon5"
+			file="centauri_flag_1.dds"
+		}
+		background={
+			category="backgrounds"
+			file="00_solid.dds"
+		}
+		colors={
+			"dark_purple"
+			"orange"
+			"null"
+			"null"
+		}
+	}
+
+	
+	ruler={
+		gender=male
+		name="Londo Mollari"
+		portrait="centauri_londo_1"
+		texture=0
+		hair=28
+		clothes=0
+	}
+}
+
+narn = {
+	name = "Narn Regime"
+	spawn_enabled = always # yes / no / always
+	
+	name_list = "NARN1"
+	ship_prefix = ""
+	
+	species_name = "Narn"
+	species_plural = "Narns"
+	species_adjective = "Narn"
+	species_bio = "Narns were once a peaceful and agrarian people, though after a century of slavery under the Centauri, the once peaceful people had become bitter and hostile, turning more to their warrior traditions than they once did. Even before the Centauri occupation, life on Narn was hard and often very short, out of this grew the tradition of giving newborn pouchlings temporary names until the age of ten, when he or she decides which of their religions to follow and to choose their 'true name' from that faith. Narn pride themselves on physical perfection and even a minor disability such as poor eyesight is considered a source of great shame."
+	species_class = "REP"
+	trait="trait_agrarian"
+	trait="trait_strong"
+	trait="trait_repugnant"
+	# portrait = "rep2"
+	portrait = "narn"
+	adjective = "Narn"
+	
+	government="military_junta"
+	ethic="ethic_individualist"
+	ethic="ethic_militarist"
+	ethic="ethic_spiritualist"
+
+	flags = { narnstart_1 narn_cpu }
+	
+	weapon="tech_lasers_1"
+	ftl=hyperdrive
+	
+	planet_name = "Narn"
+	planet_class = "pc_tropical"
+	#Actual name of system containing Narn Homeworld
+	system_name = "Sector 160"
+	
+	graphical_culture="reptilian_01"
+	city_graphical_culture="reptilian_01"
+	
+	empire_flag={
+		icon={
+			category="babylon5"
+			file="narn_flag_1.dds"
+		}
+		background={
+			category="backgrounds"
+			file="v.dds"
+		}
+		colors={
+			"red"
+			"dark_brown"
+			"null"
+			"null"
+		}
+	}
+
+	
+	ruler={
+		gender=male
+		name="G'kar of G'Quan"
+		portrait= narn_gkar_1
+		texture=0
+		hair=0
+		clothes=0
+	}
+}
+
+shadow = {
+	name = "Sha'dow Matriarchat"
+	spawn_enabled = always # yes / no / always
+	
+	name_list = "SHADOW1"
+	ship_prefix = "SSS"
+	
+	species_name = "Sha'de"
+	species_plural = "Sha'des"
+	species_adjective = "Sha'den"
+	species_class = "ART"
+	trait="trait_strong"
+	trait="trait_enduring"
+	trait="trait_nomadic"
+	trait="trait_solitary"
+	# portrait = "rep2"
+	portrait = "shadow"
+	adjective = "Sha'den"
+	
+	species_bio = "The Shadows are insectoid hexapeds that resemble a cross between an Earth spider and praying mantis. The Shadows believe that for a race to evolve into their full potential, they must do so through a cycle of chaos; growth through pain and struggle, conflict and war. Weak races die. Strong races are made even stronger. With this they developed their First Principles: chaos through warfare; evolution through bloodshed; perfection through victory."
+	
+	government="martial_empire"
+	ethic="ethic_collectivist"
+	ethic="ethic_fanatic_militarist"
+
+	flags = { shadowstart_1 shadow_cpu }
+	
+	weapon="tech_lasers_1"
+	ftl=warp
+	
+	planet_name="Z'ha'dum"
+	planet_class="pc_desert"
+	#Actual system of Shadow Homeworld 
+	system_name="Alpha Omega"
+	
+	graphical_culture="avian_01"
+	city_graphical_culture="arthropoid_01"
+	
+	empire_flag={
+		icon={
+			category="babylon5"
+			file="shadow_flag_1.dds"
+		}
+		background={
+			category="backgrounds"
+			file="pattern_01.dds"
+		}
+		colors={
+			"black"
+			"dark_grey"
+			"null"
+			"null"
+		}
+	}
+		
+	ruler={
+		gender=female
+		name="Daha'tme"
+		portrait="shadow_mother_1"
+		texture=3
+		hair=0
+		clothes=0
+	}
+}
+
+vorlon = {
+	name = "Vorlon Empire"
+	spawn_enabled = always # yes / no / always
+	
+	name_list = "VORLON1"
+	ship_prefix = ""
+	
+	species_name = "Vorlon"
+	species_plural = "Vorlons"
+	species_adjective = "Vorlon"
+	species_class = "MOL"
+	trait="trait_intelligent"
+	trait="trait_natural_physicists"
+	trait="trait_slow_breeders"
+	portrait = "vorlon"
+	adjective = "Vorlon"
+	
+	species_bio = "As with all things Vorlon, next to nothing is known by non-Vorlons about the Empire's governmental structure. No mention is ever made of a specific governing body or head of state, although it is known to have existed in one form or another for at least a million years. It is worth noting that representatives of the Empire seem proficent at manipulating the beureaucratic structures and governmental systems of other states."
+	
+	government="ai_overlordship"
+	ethic="ethic_collectivist"
+	ethic="ethic_fanatic_materialist"
+
+	flags = { vorlonstart_1 vorlon_cpu }
+	
+	weapon="tech_lasers_1"
+	ftl=wormhole
+	
+	planet_name = "Vorlon Homeworld"
+	planet_class = "pc_nuked"
+	system_name = "Vorlon"
+	
+	graphical_culture="molluscoid_01"
+	city_graphical_culture="fungoid_01"
+	
+	empire_flag={
+		icon={
+			category="babylon5"
+			file="vorlon_flag_1.dds"
+		}
+		background={
+			category="backgrounds"
+			file="sinus.dds"
+		}
+		colors={
+			"green"
+			"teal"
+			"null"
+			"null"
+		}
+	}
+		
+	ruler={
+		gender=male
+		name="Kosh"
+		portrait="vorlon_kosh_1"
+		texture=0
+		hair=0
+		clothes=0
+	}
+}
