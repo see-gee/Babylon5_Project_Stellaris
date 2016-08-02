@@ -1,7 +1,7 @@
 # Babylon5_Project_Stellaris
 The Babylon 5 Project: A Stellaris Mod
 
-Babylon 5 Project - Steam Workshop 
+Babylon 5 Project - Steam Workshop
 http://steamcommunity.com/sharedfiles/filedetails/?id=732055137
 
 Babylon 5 Project - Steam Workshop Discussions
