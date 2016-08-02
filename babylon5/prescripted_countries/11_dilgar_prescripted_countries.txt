@@ -57,10 +57,10 @@ dilgar = {
 	}
 		
 	ruler={
-		gender=female
-		name="Daha'tme"
-		portrait="shadow_mother_1"
-		texture=3
+		gender=male
+		name="J'Hadome"
+		portrait="rep2"
+		texture=0
 		hair=0
 		clothes=0
 	}
