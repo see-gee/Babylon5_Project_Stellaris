@@ -9,3 +9,6 @@ http://steamcommunity.com/sharedfiles/filedetails/discussions/732055137
 
 Babylon 5 Project - Paradox Forums
 https://forum.paradoxplaza.com/forum/index.php?threads/mod-the-babylon-5-project.960792/
+
+Babylon 5 Project - Paradox Group
+https://forum.paradoxplaza.com/forum/index.php?groups/the-babylon-5-project-a-stellaris-mod.70/extra&type=information
