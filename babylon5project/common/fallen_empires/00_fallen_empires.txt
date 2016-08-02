@@ -32,7 +32,7 @@ fallen_empire_2 = {
 	create_country_effect = {
 		create_species = {
 			name = "Walkers of Sigma-957"
-			class = EXD
+			class = random
 			portrait = random
 			traits = random
 		}
