@@ -67,7 +67,7 @@ abbai = {
 
 # http://babylon5.wikia.com/wiki/Balosian
 # Little is known about this race, so most things are a best guess
-Balosian = {
+balosian = {
 	#randomized = no
 	spawn_enabled = yes
 	name = "Balosian"
