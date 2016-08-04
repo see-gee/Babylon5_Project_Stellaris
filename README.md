@@ -1,6 +1,11 @@
 # Babylon5_Project_Stellaris
 The Babylon 5 Project: A Stellaris Mod
 
+Welcome to the DEVELOPMENT Branch of the Babylon 5 Project. 
+This is the most up to date, and untested (beta) version of the Mod. 
+
+If you are looking for the current STABLE release, please check out the master branch. This branch should be in sync with the Steam Workshop 
+
 Babylon 5 Project - Steam Workshop
 http://steamcommunity.com/sharedfiles/filedetails/?id=732055137
 
