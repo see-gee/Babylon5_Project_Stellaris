@@ -100,6 +100,46 @@ portrait_groups = {
 					earthalliance_franklin_2
 				}
 			}
+			add = {
+				trigger = {
+					gender = female
+					leader_class = governor
+				}
+				portraits = {
+					earthalliance_ivanova_1
+					earthalliance_ivanova_2
+				}
+			}
+			add = {
+				trigger = {
+					gender = male
+					leader_class = scientist
+				}
+				portraits = {
+					earthalliance_franklin_1
+					earthalliance_franklin_2
+				}
+			}
+			add = {
+				trigger = {
+					gender = male
+					leader_class = admiral
+				}
+				portraits = {
+					earthalliance_sheridan_1
+					earthalliance_sheridan_2
+				}
+			}
+			add = {
+				trigger = {
+					gender = male
+					leader_class = general
+				}
+				portraits = {
+					earthalliance_garibaldi_1
+					earthalliance_garibaldi_2
+				}
+			}
 		}
 
 			
