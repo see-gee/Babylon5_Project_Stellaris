@@ -4,6 +4,7 @@
  IS_SPECIES_CLASS_TRIGGER:0 "Is corresponding species class"
  
  FLAG_CATEGORY_earthalliance:0 "Earth Alliance"
+ PORTRAIT_CATEGORY_earthalliance:0 "Earth Alliance"
  
  START_SCREEN_CEN:0 "Earth Alliance Start screen\n\n new line"
  

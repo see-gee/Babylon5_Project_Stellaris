@@ -4,6 +4,7 @@
  IS_SPECIES_CLASS_TRIGGER:0 "Is corresponding species class"
  
  FLAG_CATEGORY_centauri:0 "Centauri"
+ PORTRAIT_CATEGORY_centauri:0 "Centauri"
  
  START_SCREEN_CEN:0 "Centauri Start screen\n\n new line"
  
