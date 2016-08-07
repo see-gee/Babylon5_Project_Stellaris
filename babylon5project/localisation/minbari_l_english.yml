@@ -4,6 +4,7 @@
  IS_SPECIES_CLASS_TRIGGER:0 "Is corresponding species class"
  
  FLAG_CATEGORY_minbari:0 "Minbari"
+ PORTRAIT_CATEGORY_minbari:0 "Minbari"
  
  START_SCREEN_MIN:0 "Minbari Start screen\n\n new line"
  
