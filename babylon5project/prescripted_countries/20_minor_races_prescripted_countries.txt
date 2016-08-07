@@ -3,7 +3,6 @@
 
 # http://babylon5.wikia.com/wiki/Abbai
 abbai = {
-	#randomized = no
 	spawn_enabled = always
 	name = "Abbai"
 	spawn_enabled = yes # yes / no / always

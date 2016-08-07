@@ -5,7 +5,7 @@
 # can specify randomized=no to filter specified class from randomization.
 
 
- Minor Race Species Classes
+# Minor Race Species Classes
 ABBAI = {
   playable = no
   randomized = no
