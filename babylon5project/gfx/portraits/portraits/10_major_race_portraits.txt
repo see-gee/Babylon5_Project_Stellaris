@@ -407,7 +407,7 @@ portrait_groups = {
 		species = { #generic portrait for a species
 			set = {
 				portraits = {
-					rep2
+					narn_gkar
 				}
 			}
 		}		
@@ -423,54 +423,17 @@ portrait_groups = {
 		
 		#leader scope
 		leader = { #scientists, generals, admirals, governor
-			set = {
+			add = {
+				trigger = {
+					gender = female
+				}
+				portraits = {
+					narn_natoth
+				}
+			}
+			add = {
 				trigger = {
 					gender = male
-				}
-				portraits = {
-					rep2
-				}
-			}
-			
-			set = {
-				trigger = {
-					leader_class = general
-				}
-				portraits = {
-					rep2
-				}
-			}
-			
-			add = {
-				trigger = {
-					leader_class = admiral
-				}
-				portraits = {
-					rep2
-				}
-			}
-			
-			add = {
-				trigger = {
-					leader_class = scientist
-				}
-				portraits = {
-					rep2
-				}
-			}
-			
-			add = {
-				trigger = {
-					leader_class = governor
-				}
-				portraits = {
-					rep2
-				}
-			}
-			
-			add = {
-				trigger = {
-					leader_class = ruler
 				}
 				portraits = {
 					narn_gkar
@@ -482,6 +445,17 @@ portrait_groups = {
 		#leader scope 
 		ruler = {
 			add = {
+				trigger = {
+					gender = female
+				}
+				portraits = {
+					narn_natoth
+				}
+			}
+			add = {
+				trigger = {
+					gender = male
+				}
 				portraits = {
 					narn_gkar
 				}
@@ -496,6 +470,7 @@ portrait_groups = {
 portraits = {
 	shadow_mother_1 = { texturefile = "gfx/portraits/shadow/shadow_mother_1.dds"}
 	shadow_morden_1 = { texturefile = "gfx/portraits/shadow/shadow_morden_1.dds"}
+	shadow_civ_1 = { texturefile = "gfx/portraits/shadow/shadow_civ_1.dds"}
 #	narn_civ = { texturefile = "gfx/portraits/narn/narn_civ_1.dds"}
 #	narn_mil = { texturefile = "gfx/portraits/narn/narn_mil_1.dds"}
 #	narn_arm = { texturefile = "gfx/portraits/narn/narn_arm_1.dds"}
@@ -517,7 +492,7 @@ portrait_groups = {
 		species = { #generic portrait for a species
 			set = {
 				portraits = {
-					mol14
+					shadow_mother_1
 				}
 			}
 		}		
@@ -526,7 +501,7 @@ portrait_groups = {
 		pop = { #for a specific pop
 			add = {
 				portraits = {
-					mol14
+					shadow_civ_1
 				}
 			}
 		}
@@ -538,7 +513,7 @@ portrait_groups = {
 					gender = male
 				}
 				portraits = {
-					mol14
+					shadow_mother_1
 				}
 			}
 			
@@ -547,7 +522,7 @@ portrait_groups = {
 					leader_class = general
 				}
 				portraits = {
-					mol14
+					shadow_mother_1
 				}
 			}
 			
@@ -556,7 +531,7 @@ portrait_groups = {
 					leader_class = admiral
 				}
 				portraits = {
-					mol14
+					shadow_mother_1
 				}
 			}
 			
@@ -565,7 +540,7 @@ portrait_groups = {
 					leader_class = scientist
 				}
 				portraits = {
-					mol14
+					shadow_mother_1
 				}
 			}
 			
@@ -574,7 +549,7 @@ portrait_groups = {
 					leader_class = governor
 				}
 				portraits = {
-					mol14
+					shadow_mother_1
 				}
 			}
 			
@@ -628,7 +603,7 @@ portrait_groups = {
 		species = { #generic portrait for a species
 			set = {
 				portraits = {
-					vorlon_civ_1
+					vorlon_kosh_1
 				}
 			}
 		}		
