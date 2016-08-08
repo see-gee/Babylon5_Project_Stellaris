@@ -63,7 +63,7 @@ abbai_cpu = {
         }
         
         allow = {
-                has_country_flag = abbaistart_1
+                has_country_flag = abbai_cpu
         }
         
         weight_modifier = {
