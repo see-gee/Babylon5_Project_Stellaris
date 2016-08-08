@@ -6,16 +6,16 @@
 
 
 # Minor Race Species Classes
-ABBAI = {
-  playable = no
-  randomized = no
-	#custom_portraits = {
-	#	portraits = {
-	#		abbai_1
-	#	}
-	}
-	graphical_culture="reptilian_01"
+#ABBAI = {
+#  playable = no
+#  randomized = no
+#	custom_portraits = {
+#		portraits = {
+#			abbai_1
+#		}
+#	}
+#	graphical_culture="reptilian_01"
 	
-}
+#}
 
 #BALOSIAN = {}

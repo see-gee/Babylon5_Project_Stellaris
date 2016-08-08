@@ -1,11 +1,10 @@
 
 # Generated species derive their names from here
 
-MINBARI = {
-	minbari = {
-	
-	}
-}
+#MINBARI = {
+#	minbari = {
+#	}
+#}
 
 
 
