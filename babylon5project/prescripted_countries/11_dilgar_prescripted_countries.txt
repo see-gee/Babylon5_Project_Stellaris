@@ -1,0 +1,67 @@
+### Dilgar ###
+dilgar = {
+	name = "Dilgar Empire"
+	spawn_enabled = always # yes / no / always
+	
+	name_list = "DILGAR1"
+	ship_prefix = ""
+	
+	species_name = "Dilgar"
+	species_plural = "Dilgar"
+	species_adjective = "Dilgar"
+	species_class = "MAM"
+	
+	# portrait = "rep2"
+	portrait = "dilgar"
+	adjective = "Dilgar"
+	
+	# Species Start with 2 points
+	trait="trait_decadent" #Cost -1
+	trait="trait_very_strong" #Cost 3
+	
+		
+	species_bio = "The Dilgar were a feline-like humanoid species. They were aggressive and expanded their empire between 2229 and 2232 as the Centauri Republic began its decline. The Dilgar War broke out, and with the help of the Earth Alliance, the Dilgar were forced to their homeworld. After the war ended, the Dilgar sun went supernova, effectively wiping out the entire species. Only Deathwalker survived but was killed by the Vorlons in 2258, making the Dilgar extinct."
+	
+	government="martial_empire"
+	ethic="ethic_xenophobe"
+	ethic="ethic_fanatic_militarist"
+
+	flags = { dilgarstart_1 dilgar_cpu }
+	
+	weapon="tech_lasers_1"
+	ftl=hyperspace
+	
+	planet_name="Omelos"
+	planet_class="pc_desert"
+	#Actual system of Shadow Homeworld 
+	system_name="Caliban"
+	
+	graphical_culture="avian_01"
+	city_graphical_culture="arthropoid_01"
+	
+	empire_flag={
+		icon={
+			category="babylon5"
+			file="dilgar_flag_1.dds"
+		}
+		background={
+			category="backgrounds"
+			file="pattern_01.dds"
+		}
+		colors={
+			"black"
+			"dark_grey"
+			"null"
+			"null"
+		}
+	}
+		
+	ruler={
+		gender=male
+		name="J'Hadome"
+		portrait="rep2"
+		texture=0
+		hair=0
+		clothes=0
+	}
+}
