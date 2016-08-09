@@ -1,0 +1,40 @@
+dilgar_cpu = { 
+	aggressiveness = 1.2
+	trade_willingness = 0.7
+	bravery = 1.1
+
+	military_spending = 1.5
+	colony_spending = 0.7
+	
+	alliance_acceptance = -20
+	federation_acceptance = -40
+	
+	threat_modifier = 1.0
+	friction_modifier = 1.2
+	
+	behaviour = {
+		conqueror = yes
+		subjugator = yes
+		liberator = no
+		opportunist = yes
+		slaver = yes
+		uplifter = no
+		purger = yes
+		infiltrator = yes
+		dominator = yes
+		robot_exploiter = no
+		robot_liberator = no
+		migrator = no
+		propagator = no
+		ideologue = yes
+		multispecies = no
+	}
+	
+	allow = {
+		has_country_flag = dilgarstart_1
+	}
+	
+	weight_modifier = {
+		weight = 1000
+	}
+}

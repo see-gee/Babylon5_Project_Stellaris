@@ -1,0 +1,128 @@
+# Minor Races: AI Controlled Races
+
+
+# http://babylon5.wikia.com/wiki/Abbai
+abbai = {
+	spawn_enabled = always
+	name = "Abbai"
+	spawn_enabled = yes # yes / no / always
+	
+	species_name = "Abbai"
+	species_plural = "Abbai"	
+	species_adjective = "Abbaian"
+	adjective = "Abbai"
+	
+	species_class = "REP"
+	portrait = "rep2"
+	name_list = "FUN1"
+	ship_prefix = ""
+		
+	trait = "trait_slow_breeders" #Cost -1
+	trait = "trait_communal" #Cost 1
+	trait = "trait_charismatic" #Cost 1
+	#trait = "trait_talented" #Cost 2
+	
+	planet_name = "Abba IV"
+	planet_class = "pc_tropical"
+	system_name = "Abbai"
+	
+	government = "peaceful_bureaucracy"
+	ethic = "ethic_pacifist"
+	ethic = "ethic_xenophile"	
+	flags = { abbaistart_1 abbai_cpu}
+	
+	weapon = "tech_lasers_1"
+	ftl = hyperdrive
+	
+	graphical_culture = "avian_01"
+	city_graphical_culture = "avian_01"
+	
+	empire_flag = {
+		icon= {
+			category = "zoological"
+			file = "flag_zoological_6.dds"
+		}
+		background= {
+			category = "backgrounds"
+			file = "stripes.dds"
+		}
+		colors={
+			"blue"
+			"dark_blue"
+			"null"
+			"null"
+		}
+	}
+	
+	ruler = {
+		name = "Natar"
+		gender = female
+		portrait = "rep2"
+		texture = 1
+		#hair = 0
+		clothes = 3
+	}
+}
+
+# http://babylon5.wikia.com/wiki/Balosian
+# Little is known about this race, so most things are a best guess
+balosian = {
+	#randomized = no
+	spawn_enabled = yes
+	name = "Balosian"
+	spawn_enabled = yes # yes / no / always
+	
+	species_name = "Balosian"
+	species_plural = "Balosi"	
+	species_adjective = "Balosian"
+	adjective = "Balosian"
+	
+	species_class = "MAM"
+	portrait = "mam2"
+	name_list = "MAM2"
+	ship_prefix = ""
+	
+	#Traits should total 4 points
+	trait = "trait_communal" #Cost 1
+	trait = "trait_charismatic" #Cost 1
+		
+	planet_name = "Balos III"
+	planet_class = "pc_tundra"
+	system_name = "Balos"
+	
+	government = "peaceful_bureaucracy"
+	ethic = "ethic_pacifist"
+	ethic = "ethic_xenophile"	
+	
+	weapon = "tech_lasers_1"
+	ftl = hyperdrive
+	
+	graphical_culture = "avian_01"
+	city_graphical_culture = "avian_01"
+	
+	empire_flag = {
+		icon= {
+			category = "zoological"
+			file = "flag_zoological_6.dds"
+		}
+		background= {
+			category = "backgrounds"
+			file = "stripes.dds"
+		}
+		colors={
+			"blue"
+			"dark_blue"
+			"null"
+			"null"
+		}
+	}
+	
+	ruler = {
+		name = "Natar"
+		gender = female
+		portrait = "mam2"
+		texture = 1
+		#hair = 0
+		clothes = 3
+	}
+}

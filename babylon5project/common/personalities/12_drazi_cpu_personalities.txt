@@ -1,0 +1,75 @@
+##### Types:
+# honorbound -> Cares about honor and martial prowess above all else
+# capitalist -> Cares about trade and material profit above all else
+# hegemon -> Cares about the superiority of their own empire above all else
+# ideologue -> Cares about combating opposing ethoses above all else
+# isolationist -> Cares about maintaining their isolation from other empires above all else
+# federation_builder -> Cares about bringing different species together in a federation above all else
+# propagator -> Cares about the propagation of its species above all else
+# purifier -> Cares about purifying the galaxy of other species above all else
+# explorer -> Cares about exploring the galaxy and making scientific/spiritual discoveries above all else
+
+# NOTE: Weight is additive!
+
+drazi_cpu = { 
+	
+	##### Modifiers:
+	# aggressiveness -> Chance of declaring wars
+	# trade_willingness -> At 1.0 willingness they will accept a deal that is equally good for both sides
+	# bravery -> Affects the chance that they will pick rivals & war targets of similar strength instead of picking on the weak
+	# military_spending -> Affects mineral & energy budget that goes to navies and armies
+	# colony_spending -> Affects mineral & energy budget that goes to new colonies
+	
+	aggressiveness = 1.0 
+	trade_willingness = 0.9
+	bravery = 0.8
+	military_spending = 1.2
+	colony_spending = 0.9
+	
+	##### Diplomacy:
+	# alliance_acceptance -> Added directly to chance of accepting an alliance
+	# federation_acceptance -> Added directly to chance of accepting to form/join a federation
+	
+	alliance_acceptance = 20
+	federation_acceptance = 40
+	
+	##### Behaviours:
+	# conqueror -> Will they conquer planets from other empires?
+	# subjugator -> Will they vassalise other empires?
+	# liberator -> Will they liberate conquered empires?
+	# opportunist -> Are they more likely to attack someone already embroiled in war?
+	# uplifter -> Will they uplift and enlighten other species?
+	# infiltrator -> Will they infiltrate primitives?
+	# dominator -> Will they invade primitives?
+	# slaver -> Will they enslave pops?
+	# purger -> Will they purge alien pops?
+	# robot_exploiter -> Will they use robots for menial labor?
+	# robot_liberator -> Will they give rights to robots?
+	# migrator -> Will they want to migrate to other empires?
+
+	behaviour = {
+		conqueror = yes
+		subjugator = yes
+		liberator = no
+		opportunist = yes
+		slaver = yes
+		uplifter = no
+		purger = yes
+		infiltrator = yes
+		dominator = yes
+		robot_exploiter = no
+		robot_liberator = no
+		migrator = yes
+		propagator = no
+		ideologue = no
+		multispecies = yes
+	}
+	
+	allow = {
+		has_country_flag = dilgarstart_1
+	}
+	
+	weight_modifier = {
+		weight = 1000
+	}
+}

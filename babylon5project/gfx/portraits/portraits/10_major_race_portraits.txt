@@ -1,0 +1,689 @@
+### Earth Alliance
+portraits = {
+	# Rulers
+	earthalliance_luchenko_1 = { texturefile = "gfx/portraits/earthalliance/earthalliance_susanna_luchenko_1.dds"}
+	earthalliance_santiago_1 = { texturefile = "gfx/portraits/earthalliance/earthalliance_luis_santiago_1.dds"}
+#	earthalliance_clark_1 = { texturefile = "gfx/portraits/earthalliance/earthalliance_william_clark_1.dds"}
+
+	# Leaders
+	earthalliance_ivanova_1 = { texturefile = "gfx/portraits/earthalliance/earthalliance_susan_ivanova_1.dds"}
+	earthalliance_ivanova_2 = { texturefile = "gfx/portraits/earthalliance/earthalliance_susan_ivanova_2.dds"}
+	earthalliance_sheridan_1 = { texturefile = "gfx/portraits/earthalliance/earthalliance_john_sheridan_1.dds"}
+	earthalliance_sheridan_2 = { texturefile = "gfx/portraits/earthalliance/earthalliance_john_sheridan_2.dds"}
+	earthalliance_garibaldi_1 = { texturefile = "gfx/portraits/earthalliance/earthalliance_michael_garibaldi_1.dds"}
+	earthalliance_garibaldi_2 = { texturefile = "gfx/portraits/earthalliance/earthalliance_michael_garibaldi_2.dds"}
+	earthalliance_franklin_1 = { texturefile = "gfx/portraits/earthalliance/earthalliance_stephen_franklin_1.dds"}
+	earthalliance_franklin_2 = { texturefile = "gfx/portraits/earthalliance/earthalliance_stephen_franklin_2.dds"}
+	
+	# Pops
+#	earthalliance_civ = { texturefile = "gfx/portraits/earthalliance/earthalliance_civ_1.dds"}
+#	earthalliance_mil = { texturefile = "gfx/portraits/earthalliance/earthalliance_mil_1.dds"}
+#	earthalliance_arm = { texturefile = "gfx/portraits/earthalliance/earthalliance_arm_1.dds"}
+#	earthalliance_gov = { texturefile = "gfx/portraits/earthalliance/earthalliance_gov_1.dds"}
+#	earthalliance_sci = { texturefile = "gfx/portraits/earthalliance/earthalliance_sci_1.dds"}
+
+}
+portrait_groups = {
+	earthalliance = {
+		default = earthalliance_santiago_1
+		game_setup = { #will run with a limited country scope. species and government is set but the country does not actually exist
+			add = {
+				trigger = {
+					ruler = { gender = male }
+				}
+				portraits = {
+					earthalliance_santiago_1
+					#earthalliance_clark_1
+				}
+			}
+			add = {
+				trigger = {
+					ruler = { gender = female }
+				}
+				portraits = {
+					earthalliance_luchenko_1
+				}
+			}
+			#set = {
+			#	trigger = { ... }
+			#	portraits = { ... }
+			#	#using "set =" instead of "add" will first clear any portraits already added
+			#}
+		}		
+		
+		#species scope
+		species = { #generic portrait for a species
+			add = {
+				portraits = {
+					human_female_01
+					human_male_01
+				}
+			}
+		}		
+		
+		#pop scope
+		pop = { #for a specific pop
+			add = {
+				portraits = {
+				#	earthalliance_civ
+				#	earthalliance_mil
+				#	earthalliance_arm
+				#	earthalliance_gov
+				#	earthalliance_sci
+					human_female_01
+					human_male_01
+				}
+			}
+		}
+		
+		#leader scope
+		leader = { #scientists, generals, admirals, governor
+			add = {
+				trigger = {
+					gender = female
+				}
+				portraits = {
+					earthalliance_ivanova_1
+					earthalliance_ivanova_2
+				}
+			}
+			add = {
+				trigger = {
+					gender = male
+				}
+				portraits = {
+					earthalliance_garibaldi_1
+					earthalliance_sheridan_1
+					earthalliance_franklin_1
+					earthalliance_garibaldi_2
+					earthalliance_sheridan_2
+					earthalliance_franklin_2
+				}
+			}
+			add = {
+				trigger = {
+					gender = female
+					leader_class = governor
+				}
+				portraits = {
+					earthalliance_ivanova_1
+					earthalliance_ivanova_2
+				}
+			}
+			add = {
+				trigger = {
+					gender = male
+					leader_class = scientist
+				}
+				portraits = {
+					earthalliance_franklin_1
+					earthalliance_franklin_2
+				}
+			}
+			add = {
+				trigger = {
+					gender = male
+					leader_class = admiral
+				}
+				portraits = {
+					earthalliance_sheridan_1
+					earthalliance_sheridan_2
+				}
+			}
+			add = {
+				trigger = {
+					gender = male
+					leader_class = general
+				}
+				portraits = {
+					earthalliance_garibaldi_1
+					earthalliance_garibaldi_2
+				}
+			}
+		}
+
+			
+		#leader scope 
+		ruler = {
+			add = {
+				trigger = {
+					gender = female
+				}
+				portraits = {
+					earthalliance_luchenko_1
+				}
+			}
+			add = {
+				trigger = {
+					gender = male
+				}
+				portraits = {
+					earthalliance_santiago_1
+				}
+			}
+		}
+	}
+}
+
+### Minbari Portraits
+portraits = {
+	minbari_delenn_1= { texturefile = "gfx/portraits/minbari/minbari_delenn_1.dds"}
+	minbari_delenn_2= { texturefile = "gfx/portraits/minbari/minbari_delenn_2.dds"}
+	minbari_dukhat_1 = { texturefile = "gfx/portraits/minbari/minbari_dukhat_1.dds"}
+	minbari_lennier_1 = { texturefile = "gfx/portraits/minbari/minbari_lennier_1.dds"}
+#	minbari_civ = { texturefile = "gfx/portraits/minbari/minbari_civ_1.dds"}
+#	minbari_mil = { texturefile = "gfx/portraits/minbari/minbari_mil_1.dds"}
+#	minbari_arm = { texturefile = "gfx/portraits/minbari/minbari_arm_1.dds"}
+#	minbari_gov = { texturefile = "gfx/portraits/minbari/minbari_gov_1.dds"}
+#	minbari_sci = { texturefile = "gfx/portraits/minbari/minbari_sci_1.dds"}
+}
+portrait_groups = {
+	minbari = {
+		default = minbari_delenn_1
+		game_setup = { #will run with a limited country scope. species and government is set but the country does not actually exist
+			add = {
+				trigger = {
+					ruler = { gender = male }
+				}
+				portraits = {
+					minbari_dukhat_1
+					minbari_lennier_1
+				}
+			}
+			add = {
+				trigger = {
+					ruler = { gender = female }
+				}
+				portraits = {
+					minbari_delenn_1
+				}
+			}
+			#set = {
+			#	trigger = { ... }
+			#	portraits = { ... }
+			#	#using "set =" instead of "add" will first clear any portraits already added
+			#}
+		}		
+		
+		#species scope
+		species = { #generic portrait for a species
+			add = {
+				portraits = {
+					human_female_01
+					human_male_01
+				}
+			}
+		}		
+		
+		#pop scope
+		pop = { #for a specific pop
+			add = {
+				portraits = {
+					human_female_01
+					human_male_01
+				}
+			}
+		}
+		
+		#leader scope
+		leader = { #scientists, generals, admirals, governor
+			add = {
+				trigger = {
+					gender = female
+				}
+				portraits = {
+					minbari_delenn_1
+				}
+			}
+			add = {
+				trigger = {
+					gender = male
+				}
+				portraits = {
+					minbari_lennier_1
+				}
+			}
+		}
+
+			
+		#leader scope 
+		ruler = {
+			add = {
+				trigger = {
+					gender = female
+				}
+				portraits = {
+					minbari_delenn_1
+				}
+			}
+			add = {
+				trigger = {
+					gender = male
+				}
+				portraits = {
+					minbari_dukhat_1
+				}
+			}
+		}
+	}
+}
+
+### Centauri Portraits
+portraits = {
+	centauri_londo_1 = { texturefile = "gfx/portraits/centauri/centauri_londo_mollari_1.dds"}
+	centauri_timov_1 = { texturefile = "gfx/portraits/centauri/centauri_timov_1.dds"}
+	#centauri_vir_1 = { texturefile = "gfx/portraits/centauri/centauri_vir_cotto_1.dds"}
+#	narn_civ = { texturefile = "gfx/portraits/narn/narn_civ_1.dds"}
+#	narn_mil = { texturefile = "gfx/portraits/narn/narn_mil_1.dds"}
+#	narn_arm = { texturefile = "gfx/portraits/narn/narn_arm_1.dds"}
+#	narn_gov = { texturefile = "gfx/portraits/narn/narn_gov_1.dds"}
+#	narn_sci = { texturefile = "gfx/portraits/narn/narn_sci_1.dds"}
+}
+portrait_groups = {
+	centauri = {
+		default = centauri_londo_1
+		game_setup = { #will run with a limited country scope. species and government is set but the country does not actually exist
+			add = {
+				trigger = {
+					ruler = { gender = male }
+				}
+				portraits = {
+					centauri_londo_1
+				}
+			}
+			add = {
+				trigger = {
+					ruler = { gender = female }
+				}
+				portraits = {
+					centauri_timov_1
+				}
+			}
+			#set = {
+			#	trigger = { ... }
+			#	portraits = { ... }
+			#	#using "set =" instead of "add" will first clear any portraits already added
+			#}
+		}		
+		
+		#species scope
+		species = { #generic portrait for a species
+			add = {
+				portraits = {
+					human_female_02
+					human_male_02
+				}
+			}
+		}		
+		
+		#pop scope
+		pop = { #for a specific pop
+			add = {
+				portraits = {
+					human_female_02
+					human_male_02
+				}
+			}
+		}
+		
+		#leader scope
+		leader = { #scientists, generals, admirals, governor
+			add = {
+				trigger = {
+					gender = female
+				}
+				portraits = {
+					human_female_02
+				}
+			}
+			add = {
+				trigger = {
+					gender = male
+				}
+				portraits = {
+					centauri_londo_1
+					centauri_vir_1
+				}
+			}
+		}
+
+			
+		#leader scope 
+		ruler = {
+			add = {
+				trigger = {
+					gender = female
+				}
+				portraits = {
+					centauri_timov_1
+				}
+			}
+			add = {
+				trigger = {
+					gender = male
+				}
+				portraits = {
+					centauri_londo_1
+				}
+			}
+		}
+	}
+}
+
+### Narn Portraits
+portraits = {
+	narn_gkar_1 = { texturefile = "gfx/portraits/narn/narn_gkar_1.dds"}
+	narn_natoth_1 = { texturefile = "gfx/portraits/narn/narn_natoth_1.dds"}
+#	narn_civ = { texturefile = "gfx/portraits/narn/narn_civ_1.dds"}
+#	narn_mil = { texturefile = "gfx/portraits/narn/narn_mil_1.dds"}
+#	narn_arm = { texturefile = "gfx/portraits/narn/narn_arm_1.dds"}
+#	narn_gov = { texturefile = "gfx/portraits/narn/narn_gov_1.dds"}
+#	narn_sci = { texturefile = "gfx/portraits/narn/narn_sci_1.dds"}
+}
+portrait_groups = {
+	narn = {
+		default = narn_gkar
+		game_setup = { 
+			add = {
+				trigger = {
+					ruler = { gender = male }
+				}
+				portraits = {
+					narn_gkar
+				}
+			}
+			add = {
+				trigger = {
+					ruler = { gender = female }
+				}
+				portraits = {
+					narn_natoth
+				}
+			}
+
+		}			
+		
+		#species scope
+		species = { #generic portrait for a species
+			set = {
+				portraits = {
+					narn_gkar
+				}
+			}
+		}		
+		
+		#pop scope
+		pop = { #for a specific pop
+			add = {
+				portraits = {
+					rep2
+				}
+			}
+		}
+		
+		#leader scope
+		leader = { #scientists, generals, admirals, governor
+			add = {
+				trigger = {
+					gender = female
+				}
+				portraits = {
+					narn_natoth
+				}
+			}
+			add = {
+				trigger = {
+					gender = male
+				}
+				portraits = {
+					narn_gkar
+				}
+			}
+		}
+
+			
+		#leader scope 
+		ruler = {
+			add = {
+				trigger = {
+					gender = female
+				}
+				portraits = {
+					narn_natoth
+				}
+			}
+			add = {
+				trigger = {
+					gender = male
+				}
+				portraits = {
+					narn_gkar
+				}
+			}
+		}
+		
+		
+	}
+}
+
+### Shadow Portraits
+portraits = {
+	shadow_mother_1 = { texturefile = "gfx/portraits/shadow/shadow_mother_1.dds"}
+	shadow_morden_1 = { texturefile = "gfx/portraits/shadow/shadow_morden_1.dds"}
+	shadow_civ_1 = { texturefile = "gfx/portraits/shadow/shadow_civ_1.dds"}
+#	narn_civ = { texturefile = "gfx/portraits/narn/narn_civ_1.dds"}
+#	narn_mil = { texturefile = "gfx/portraits/narn/narn_mil_1.dds"}
+#	narn_arm = { texturefile = "gfx/portraits/narn/narn_arm_1.dds"}
+#	narn_gov = { texturefile = "gfx/portraits/narn/narn_gov_1.dds"}
+#	narn_sci = { texturefile = "gfx/portraits/narn/narn_sci_1.dds"}
+}
+portrait_groups = {
+	shadow = {
+		default = shadow_mother_1
+		game_setup = { #will run with a limited country scope. species and government is set but the country does not actually exist
+			add = {
+				portraits = {
+					shadow_mother_1
+				}
+			}
+		}		
+		
+		#species scope
+		species = { #generic portrait for a species
+			set = {
+				portraits = {
+					shadow_mother_1
+				}
+			}
+		}		
+		
+		#pop scope
+		pop = { #for a specific pop
+			add = {
+				portraits = {
+					shadow_civ_1
+				}
+			}
+		}
+		
+		#leader scope
+		leader = { #scientists, generals, admirals, governor
+			set = {
+				trigger = {
+					gender = male
+				}
+				portraits = {
+					shadow_mother_1
+				}
+			}
+			
+			set = {
+				trigger = {
+					leader_class = general
+				}
+				portraits = {
+					shadow_mother_1
+				}
+			}
+			
+			add = {
+				trigger = {
+					leader_class = admiral
+				}
+				portraits = {
+					shadow_mother_1
+				}
+			}
+			
+			add = {
+				trigger = {
+					leader_class = scientist
+				}
+				portraits = {
+					shadow_mother_1
+				}
+			}
+			
+			add = {
+				trigger = {
+					leader_class = governor
+				}
+				portraits = {
+					shadow_mother_1
+				}
+			}
+			
+			add = {
+				trigger = {
+					leader_class = ruler
+				}
+				portraits = {
+					shadow_mother_1
+				}
+			}
+		}
+
+			
+		#leader scope 
+		ruler = {
+			add = {
+				portraits = {
+					shadow_mother_1
+				}
+			}
+		}
+		
+		
+	}
+}
+
+### Vorlon Portraits
+portraits = {
+	vorlon_kosh_1 = { texturefile = "gfx/portraits/vorlon/vorlon_kosh_1.dds"}
+	vorlon_kosh_2 = { texturefile = "gfx/portraits/vorlon/vorlon_kosh_2.dds"}
+	vorlon_civ_1 = { texturefile = "gfx/portraits/vorlon/vorlon_civ_1.dds"}
+	vorlon_mil_1	= { texturefile = "gfx/portraits/vorlon/vorlon_mil_1.dds"}
+	vorlon_arm_1 = { texturefile = "gfx/portraits/vorlon/vorlon_arm_1.dds"}
+	vorlon_gov_1 = { texturefile = "gfx/portraits/vorlon/vorlon_gov_1.dds"}
+	vorlon_sci_1 = { texturefile = "gfx/portraits/vorlon/vorlon_sci_1.dds"}
+}
+portrait_groups = {
+	vorlon = {
+		default = vorlon_kosh_1
+		game_setup = { #will run with a limited country scope. species and government is set but the country does not actually exist
+			add = {
+				portraits = {
+					vorlon_kosh_1
+					vorlon_kosh_2
+				}
+			}
+		}		
+		
+		#species scope
+		species = { #generic portrait for a species
+			set = {
+				portraits = {
+					vorlon_kosh_1
+				}
+			}
+		}		
+		
+		#pop scope
+		pop = { #for a specific pop
+			add = {
+				portraits = {
+					vorlon_civ_1
+				}
+			}
+		}
+		
+		#leader scope
+		leader = { #scientists, generals, admirals, governor
+			set = {
+				trigger = {
+					gender = male
+				}
+				portraits = {
+					vorlon_civ_1
+				}
+			}
+			
+			set = {
+				trigger = {
+					leader_class = general
+				}
+				portraits = {
+					vorlon_arm_1
+				}
+			}
+			
+			add = {
+				trigger = {
+					leader_class = admiral
+				}
+				portraits = {
+					vorlon_mil_1
+				}
+			}
+			
+			add = {
+				trigger = {
+					leader_class = scientist
+				}
+				portraits = {
+					vorlon_sci_1
+				}
+			}
+			
+			add = {
+				trigger = {
+					leader_class = governor
+				}
+				portraits = {
+					vorlon_gov_1
+				}
+			}
+			
+			add = {
+				trigger = {
+					leader_class = ruler
+				}
+				portraits = {
+					vorlon_kosh_1
+				}
+			}
+		}
+
+			
+		#leader scope 
+		ruler = {
+			add = {
+				portraits = {
+					vorlon_kosh_1
+				}
+			}
+		}
+		
+		
+	}
+}
