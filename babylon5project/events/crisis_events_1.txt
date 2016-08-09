@@ -1,0 +1,8 @@
+############################
+#
+# crisis_events_1.txt
+#
+# This file is deliberately left blank to erase the Prethoryn Scourge event from the B5 Mod.
+# Keep the file name AS IS otherwise the contents will be APPENDED instead of OVERWRITTEN
+#
+############################
