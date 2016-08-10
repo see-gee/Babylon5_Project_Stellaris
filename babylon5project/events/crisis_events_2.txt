@@ -2,6 +2,9 @@
 #
 # Thirdspace Alien Invasion
 #
+# This is a modification of the vanilla crisis_events_2.txt which changes the Unbidden Crisis Event into the Thirdspace Alien Event.
+# The majority of this file is stock, it's mostly a cosmetic change to adapt it to the B5 Universe
+#
 ############################
 
 namespace = crisis
