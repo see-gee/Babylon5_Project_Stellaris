@@ -1,0 +1,56 @@
+﻿l_english:
+ ### This file is a customization of the stock l_english.yml file. Try to keep the sections in this file in the same order as the vanilla game file to make future editing easier
+ BBL:0 "Babylon 5 Nations"
+ 
+ FLAG_CATEGORY_babylon5:0 "Babylon 5"
+ 
+ 
+ ####################################
+ # Misc
+ ####################################
+ QUIT_TITLE:0 "Exit Game"
+ QUIT_DESC:0 "Are you sure you want to give up our final refuge for dreams . . . and our last, best hope for peace"
+ RESIGN_TITLE:0 "Return to Command"
+ RESIGN_DESC:0 "Return to Command Immediately?"
+
+ FTL_TRAIL_KNOWN_SYSTEM:0 "The Jumpgate logs indicates that the Pirates jumped to a previously known system, $SYSTEM|H$"
+ FTL_TRAIL_FOUND_SYSTEM:0 "Analysis of the Jumpgate logs has revealed a hidden base in uncharted space! It has been added to our galaxy map."
+ FTL_TRAIL_FAILED:0 "The Jumpgate log analysis was not able to give us a target location at this time."
+ ####################################
+ # Armies
+ ####################################
+ psionic_army:0 "Telepath Army"
+ psionic_army_plural:0 "Telepath Armies"
+ psionic_army_desc:0 "Telepaths are highly trained military specialists with a minimum of a P7 rating. They perform invasive scans, and do not adhere to the standard moral conventions of most Telepaths."
+ 
+ ####################################
+ # Hull Sizes
+ ####################################
+ wormhole_station:0 "Jumpgate"
+ wormhole_station_plural:0 "Jumpgates"
+ 
+ ############################################
+ # Alliances
+ ############################################
+ #ALLIANCE_PREFIX_01:0 "League of"
+ #ALLIANCE_PREFIX_02:0 "Provisional"
+ #ALLIANCE_PREFIX_03:0 "Army of"
+ #ALLIANCE_PREFIX_04:0 "Interstellar"
+ #ALLIANCE_PREFIX_03:0 "Earth"
+
+ #ALLIANCE_PREFIX_01:0 "Non-Aligned Worlds"
+ #ALLIANCE_PREFIX_02:0 "Accord" 
+
+ #ALLIANCE_NAME:0 "$PREFIX$ $NAME$"
+ 
+ ALLIANCE_NAME_01:0 "League of Non-Aligned Worlds"
+ ALLIANCE_NAME_02:0 "Army of Light"
+ ALLIANCE_NAME_03:0 "Interstellar Alliance"
+ ALLIANCE_NAME_04:0 "Mars Provisional Accord"
+ ALLIANCE_NAME_05:0 "Grey Council"
+ ALLIANCE_NAME_06:0 "Earth Alliance"
+ ALLIANCE_NAME_07:0 "Army of Sha'dow"
+ ALLIANCE_NAME_08:0 "Independent Star Systems"
+
+
+ ALLIANCE_NAME:0 "$NAME$"
