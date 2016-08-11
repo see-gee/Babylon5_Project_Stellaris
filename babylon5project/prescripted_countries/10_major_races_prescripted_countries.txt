@@ -14,7 +14,7 @@ earthalliance = {
 	name="Earth Alliance"
 	adjective="Terran"
 	government="direct_democracy"
-	ftl=warp
+	ftl=wormhole
 	weapon="tech_mass_drivers_1"
 	planet_name="Earth"
 	planet_class="pc_continental"
@@ -84,7 +84,7 @@ minbari = {
 	
 	#not sure if you can give tech 4 lasers @ gamestart without giving the relevant techs first through an empire start event... Can it be defined as a valid starting tech?
 	weapon="tech_lasers_1"
-	ftl=hyperdrive
+	ftl=wormhole
 	
 	planet_name="Minbar"
 	planet_class="pc_tundra"
@@ -214,7 +214,7 @@ narn = {
 	flags = { narnstart_1 narn_cpu }
 	
 	weapon="tech_lasers_1"
-	ftl=hyperdrive
+	ftl=wormhole
 	
 	planet_name = "Narn"
 	planet_class = "pc_tropical"
