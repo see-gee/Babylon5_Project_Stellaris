@@ -12,15 +12,13 @@ dilgar = {
 	species_class = "MAM"
 	
 	# portrait = "rep2"
-	portrait = "dilgar"
+	portrait = "mam14"
 	adjective = "Dilgar"
 	
 	# Species Start with 2 points
-	trait="trait_decadent" #Cost -1
-	trait="trait_very_strong" #Cost 3
-	
-		
-	species_bio = "The Dilgar were a feline-like humanoid species. They were aggressive and expanded their empire between 2229 and 2232 as the Centauri Republic began its decline. The Dilgar War broke out, and with the help of the Earth Alliance, the Dilgar were forced to their homeworld. After the war ended, the Dilgar sun went supernova, effectively wiping out the entire species. Only Deathwalker survived but was killed by the Vorlons in 2258, making the Dilgar extinct."
+	trait="trait_adaptive" #Cost -2
+			
+	species_bio = "The Dilgar were a feline-like humanoid species. They were aggressive and expanded their empire between 2229 and 2232 as the Centauri Republic began its decline. The Dilgar War broke out, and with the help of the Earth Alliance, the Dilgar were forced to their homeworld. After the war ended, the Dilgar sun went supernova, effectively wiping out the entire species. Only Deathwalker survived but was killed by the Vorlons in 2258, making the Dilgar extinct. (Until Now!)"
 	
 	government="martial_empire"
 	ethic="ethic_xenophobe"
@@ -29,11 +27,11 @@ dilgar = {
 	flags = { dilgarstart_1 dilgar_cpu }
 	
 	weapon="tech_lasers_1"
-	ftl=hyperspace
+	ftl=wormhole
 	
 	planet_name="Omelos"
 	planet_class="pc_desert"
-	#Actual system of Shadow Homeworld 
+	#Actual system of Dilgar?
 	system_name="Caliban"
 	
 	graphical_culture="avian_01"
@@ -59,7 +57,7 @@ dilgar = {
 	ruler={
 		gender=male
 		name="J'Hadome"
-		portrait="rep2"
+		portrait="mam14"
 		texture=0
 		hair=0
 		clothes=0
