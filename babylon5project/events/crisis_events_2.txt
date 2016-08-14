@@ -143,13 +143,13 @@ country_event = {
 					create_ship_design = { design = "Whisper Alpha" }
 					add_ship_design = last_created_design
 					save_event_target_as = extradimensionals
-					create_fleet = { name = "Dimensional Portal" }
+					create_fleet = { name = "Thirdspace Portal" }
 					last_created_fleet = {
 						set_owner = PREV
 						create_ship = {
 							# Actual name of B5 Gate
 							name = "Well of Souls"
-							design = "Dimensional Portal"
+							design = "Thirdspace Portal"
 							graphical_culture = "extra_dimensional_01"
 						}
 						set_location = {
@@ -2099,7 +2099,7 @@ country_event = {
 					add_ship_design = last_created_design
 					create_ship_design = { design = "Whisper Beta" }
 					add_ship_design = last_created_design
-					create_fleet = { name = "Dimensional Portal" }
+					create_fleet = { name = "Thirdspace Portal" }
 					last_created_fleet = {
 						set_owner = PREV
 						create_ship = {
@@ -3386,7 +3386,7 @@ country_event = {
 					add_ship_design = last_created_design
 					create_ship_design = { design = "Whisper Gamma" }
 					add_ship_design = last_created_design
-					create_fleet = { name = "Dimensional Portal" }
+					create_fleet = { name = "Thirdspace Portal" }
 					last_created_fleet = {
 						set_owner = PREV
 						create_ship = {
