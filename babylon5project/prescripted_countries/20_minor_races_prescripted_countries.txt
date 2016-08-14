@@ -3,7 +3,9 @@
 
 # http://babylon5.wikia.com/wiki/Abbai
 abbai = {
+	
 	spawn_enabled = always
+	playable = no
 	name = "Abbai"
 	spawn_enabled = yes # yes / no / always
 	
