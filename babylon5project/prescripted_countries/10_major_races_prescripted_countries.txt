@@ -1,6 +1,7 @@
 
 ### EarthAlliance ###
 earthalliance = {
+	spawn_enabled = always # yes / no / always
 	name_list="EARTH1"
 	ship_prefix="EAS"
 	species_name="Human"
@@ -57,6 +58,8 @@ earthalliance = {
 
 ### Minbari ###
 minbari = {
+	spawn_enabled = always # yes / no / always
+	
 	name = "Minbari Federation"
 	spawn_enabled = always # yes / no / always
 	
