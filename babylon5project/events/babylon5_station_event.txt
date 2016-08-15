@@ -1,7 +1,7 @@
 ### Babylon 5 Station AI Event
-
+namespace = crisis
 country_event = {
-	id = babylonstation.1000
+	id = babylon5_nation.1000
 	hide_window = yes
 	fire_only_once = yes
 	
@@ -11,8 +11,8 @@ country_event = {
 	}
 	
 	mean_time_to_happen = {
-	# Bring B5 Station online 100 years after game start
-	months = 1200
+		# Bring B5 Station online 100 years after game start
+		months = 1200
 	}
 	
 	immediate = {
@@ -30,8 +30,8 @@ country_event = {
 					}
 				}
 			}
-			set_star_flag = babylon5_nation_home_system
-			save_event_target_as = babylon5_nation_home_system
+			set_star_flag = babylon5_nation_origin_system
+			save_event_target_as = babylon5_nation_system
 			random_system_planet = {
 				# Create B5 Species
 				create_species = {
@@ -63,7 +63,9 @@ country_event = {
 						}
 					}
 				}
-				last_created_species = { save_event_target_as = babylon5_nation_species }
+				last_created_species = { 
+					save_event_target_as = babylon5_nation_species
+				}
 				
 				### Create Star System Objects
 				
@@ -73,13 +75,14 @@ country_event = {
 					### Create Ship Designs
 					create_ship_design = { design = "White Star" }
 					add_ship_design = last_created_design
-					create_ship_design = { design = "Phantasm Alpha" }
+					create_ship_design = { design = "Victory" }
 					add_ship_design = last_created_design
-					create_ship_design = { design = "Whisper Alpha" }
+					create_ship_design = { design = "Valen" }
 					add_ship_design = last_created_design
-					create_ship_design = { design = "Whisper Alpha" }
+					create_ship_design = { design = "Freedom" }
 					add_ship_design = last_created_design
-					save_event_target_as = babylon5_station
+					
+					save_event_target_as = babylon5_nation
 					
 					### Create B5 Station
 					create_fleet = { name = "Babylon 5" }
@@ -87,8 +90,8 @@ country_event = {
 						set_owner = PREV
 						create_ship = {
 							# Actual name of B5 Gate
-							name = "Well of Souls"
-							design = "Thirdspace Portal"
+							name = "Babylon 5"
+							design = "O'Neill" # Actual name of B5 Station Class
 							graphical_culture = "extra_dimensional_01"
 						}
 						set_location = {
@@ -97,205 +100,221 @@ country_event = {
 							angle = random
 						}
 						save_event_target_as = babylon5_nation
+						
+						fleet_event = { id = babylon5_nation.1006 days = 30 } # First Constructor Arrives
+						fleet_event = { id = babylon5_nation.1006 days = 60 } # Second Constructor Arrives
+						fleet_event = { id = babylon5_nation.1006 months = 6 } # Third Constructor Arrives
+						fleet_event = { id = babylon5_nation.1006 months = 12 } # Fourth Constructor Arrives
+					}
+					}
 					
+					### Create Ship Fleets
 					create_fleet = { }
+					
+					### Configure Fleet Admiral
 					create_leader = {
 						type = admiral
-						species = event_target:extradimensional_species
+						species = event_target:babylon5_nation_species
 						name = "John Sheridan"
-						skill = 500
+						skill = 1200
 						traits = {
-							trait = leader_trait_ethereal
+							trait = leader_trait_trickster
 						}
 					}
 					
-					###################################
+					### Create First Fleet of Ships
 					last_created_fleet = {
 						set_owner = PREV
+						
+						## Create 8 "White Star" class ships
 						create_ship = {
 							name = random
-							design = "Revenant"
+							design = "White Star"
 							graphical_culture = "extra_dimensional_01"
 						}
 						assign_leader = last_created_leader
 						create_ship = {
 							name = random
-							design = "Revenant"
+							design = "White Star"
 							graphical_culture = "extra_dimensional_01"
 						}
 						create_ship = {
 							name = random
-							design = "Revenant"
+							design = "White Star"
 							graphical_culture = "extra_dimensional_01"
 						}
 						create_ship = {
 							name = random
-							design = "Revenant"
+							design = "White Star"
 							graphical_culture = "extra_dimensional_01"
 						}
 						create_ship = {
 							name = random
-							design = "Revenant"
+							design = "White Star"
 							graphical_culture = "extra_dimensional_01"
 						}
 						create_ship = {
 							name = random
-							design = "Revenant"
+							design = "White Star"
 							graphical_culture = "extra_dimensional_01"
 						}
 						create_ship = {
 							name = random
-							design = "Revenant"
+							design = "White Star"
 							graphical_culture = "extra_dimensional_01"
 						}
 						create_ship = {
 							name = random
-							design = "Revenant"
+							design = "White Star"
+							graphical_culture = "extra_dimensional_01"
+						}
+						
+						### Create 10 "Victory" Class Ships
+						create_ship = {
+							name = random
+							design = "Victory"
 							graphical_culture = "extra_dimensional_01"
 						}
 						create_ship = {
 							name = random
-							design = "Phantom"
+							design = "Victory"
 							graphical_culture = "extra_dimensional_01"
 						}
 						create_ship = {
 							name = random
-							design = "Phantom"
+							design = "Victory"
 							graphical_culture = "extra_dimensional_01"
 						}
 						create_ship = {
 							name = random
-							design = "Phantom"
+							design = "Victory"
 							graphical_culture = "extra_dimensional_01"
 						}
 						create_ship = {
 							name = random
-							design = "Phantom"
+							design = "Victory"
 							graphical_culture = "extra_dimensional_01"
 						}
 						create_ship = {
 							name = random
-							design = "Phantom"
+							design = "Victory"
 							graphical_culture = "extra_dimensional_01"
 						}
 						create_ship = {
 							name = random
-							design = "Phantom"
+							design = "Victory"
 							graphical_culture = "extra_dimensional_01"
 						}
 						create_ship = {
 							name = random
-							design = "Phantom"
+							design = "Victory"
 							graphical_culture = "extra_dimensional_01"
 						}
 						create_ship = {
 							name = random
-							design = "Phantom"
+							design = "Victory"
 							graphical_culture = "extra_dimensional_01"
 						}
 						create_ship = {
 							name = random
-							design = "Phantom"
+							design = "Victory"
+							graphical_culture = "extra_dimensional_01"
+						}
+						
+						### Create 20 "Valen" Class Ships
+						create_ship = {
+							name = random
+							design = "Valen"
 							graphical_culture = "extra_dimensional_01"
 						}
 						create_ship = {
 							name = random
-							design = "Phantom"
+							design = "Valen"
 							graphical_culture = "extra_dimensional_01"
 						}
 						create_ship = {
 							name = random
-							design = "Wraith"
+							design = "Valen"
 							graphical_culture = "extra_dimensional_01"
 						}
 						create_ship = {
 							name = random
-							design = "Wraith"
+							design = "Valen"
 							graphical_culture = "extra_dimensional_01"
 						}
 						create_ship = {
 							name = random
-							design = "Wraith"
+							design = "Valen"
 							graphical_culture = "extra_dimensional_01"
 						}
 						create_ship = {
 							name = random
-							design = "Wraith"
+							design = "Valen"
 							graphical_culture = "extra_dimensional_01"
 						}
 						create_ship = {
 							name = random
-							design = "Wraith"
+							design = "Valen"
 							graphical_culture = "extra_dimensional_01"
 						}
 						create_ship = {
 							name = random
-							design = "Wraith"
+							design = "Valen"
 							graphical_culture = "extra_dimensional_01"
 						}
 						create_ship = {
 							name = random
-							design = "Wraith"
+							design = "Valen"
 							graphical_culture = "extra_dimensional_01"
 						}
 						create_ship = {
 							name = random
-							design = "Wraith"
+							design = "Valen"
 							graphical_culture = "extra_dimensional_01"
 						}
 						create_ship = {
 							name = random
-							design = "Wraith"
+							design = "Valen"
 							graphical_culture = "extra_dimensional_01"
 						}
 						create_ship = {
 							name = random
-							design = "Wraith"
+							design = "Valen"
 							graphical_culture = "extra_dimensional_01"
 						}
 						create_ship = {
 							name = random
-							design = "Wraith"
+							design = "Valen"
 							graphical_culture = "extra_dimensional_01"
 						}
 						create_ship = {
 							name = random
-							design = "Wraith"
+							design = "Valen"
 							graphical_culture = "extra_dimensional_01"
 						}
 						create_ship = {
 							name = random
-							design = "Wraith"
+							design = "Valen"
 							graphical_culture = "extra_dimensional_01"
 						}
 						create_ship = {
 							name = random
-							design = "Wraith"
+							design = "Valen"
 							graphical_culture = "extra_dimensional_01"
 						}
 						create_ship = {
 							name = random
-							design = "Wraith"
+							design = "Valen"
 							graphical_culture = "extra_dimensional_01"
 						}
 						create_ship = {
 							name = random
-							design = "Wraith"
+							design = "Valen"
 							graphical_culture = "extra_dimensional_01"
 						}
 						create_ship = {
 							name = random
-							design = "Wraith"
-							graphical_culture = "extra_dimensional_01"
-						}
-						create_ship = {
-							name = random
-							design = "Wraith"
-							graphical_culture = "extra_dimensional_01"
-						}
-						create_ship = {
-							name = random
-							design = "Wraith"
+							design = "Valen"
 							graphical_culture = "extra_dimensional_01"
 						}
 						set_location = {
@@ -303,14 +322,42 @@ country_event = {
 							distance = 5
 							angle = random
 						}
-						set_fleet_stance = aggressive
-						set_aggro_range = 500
-						set_aggro_range_measure_from = self
+						set_fleet_stance = defensive
+						#set_aggro_range = 500
+						#set_aggro_range_measure_from = self
 					}					
-					}
-					
 				}
 			}
+		}
+	} #Close
+
 			
-### END 
+#########################################
+### Constructor
+#########################################
+fleet_event = {
+	id = babylon5_nation.1006
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		event_target:extradimensionals = {
+			create_fleet = { }
+			last_created_fleet = {
+				set_owner = PREV
+				create_ship = {
+					name = random
+					design = "Void Shaper"
+					graphical_culture = "extra_dimensional_01"
+				}
+				set_location = {
+					target = ROOT
+					distance = 5
+					angle = random
+				}
+			}
+		}
+	}
 }
+### END 
