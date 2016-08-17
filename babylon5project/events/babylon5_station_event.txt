@@ -1,7 +1,7 @@
 ### Babylon 5 Station AI Event
-namespace = crisis
+namespace = babylon5
 country_event = {
-	id = babylon5_nation.1000
+	id = babylon5.1000
 	hide_window = yes
 	fire_only_once = yes
 	
@@ -18,6 +18,7 @@ country_event = {
 	immediate = {
 		### Create Independent B5 Nation
 		set_global_flag = babylon5_nation
+		set_global_flag = galactic_crisis_happened
 		
 		random_system = {
 			limit = {
@@ -40,7 +41,7 @@ country_event = {
 					portrait = earthalliance_sheridan_1
 					traits = trait_talented
 				}
-				#### Create B5 Country
+				### Create B5 Country
 				create_country = {
 					name = "Babylon 5"
 					type = "babylon5_nation"
@@ -63,15 +64,14 @@ country_event = {
 						}
 					}
 				}
-				last_created_species = { 
-					save_event_target_as = babylon5_nation_species
-				}
+				last_created_species = { save_event_target_as = babylon5_nation_species }				
 				
 				### Create Star System Objects
-				
-				
+								
 				### Create Fleet Elements
 				last_created_country = {
+					save_event_target_as = babylon5_nation
+					
 					### Create Ship Designs
 					create_ship_design = { design = "White Star" }
 					add_ship_design = last_created_design
@@ -101,12 +101,12 @@ country_event = {
 						}
 						save_event_target_as = babylon5_nation
 						
-						fleet_event = { id = babylon5_nation.1006 days = 30 } # First Constructor Arrives
-						fleet_event = { id = babylon5_nation.1006 days = 60 } # Second Constructor Arrives
-						fleet_event = { id = babylon5_nation.1006 months = 6 } # Third Constructor Arrives
-						fleet_event = { id = babylon5_nation.1006 months = 12 } # Fourth Constructor Arrives
+						fleet_event = { id = babylon5.1006 days = 30 } # First Constructor Arrives
+						fleet_event = { id = babylon5.1006 days = 60 } # Second Constructor Arrives
+						fleet_event = { id = babylon5.1006 months = 6 } # Third Constructor Arrives
+						fleet_event = { id = babylon5.1006 months = 12 } # Fourth Constructor Arrives
 					}
-					}
+				
 					
 					### Create Ship Fleets
 					create_fleet = { }
@@ -325,18 +325,19 @@ country_event = {
 						set_fleet_stance = defensive
 						#set_aggro_range = 500
 						#set_aggro_range_measure_from = self
-					}					
-				}
-			}
-		}
-	} #Close
-
+					
+					} #-last_created_fleet					
+				} #-last_created_country
+			} #-random_system_planet
+		} #-random_system	
+	} # -immediate
+} # -country_event
 			
 #########################################
 ### Constructor
 #########################################
 fleet_event = {
-	id = babylon5_nation.1006
+	id = babylon5.1006
 	hide_window = yes
 	
 	is_triggered_only = yes
