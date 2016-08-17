@@ -1,5 +1,5 @@
 star_names = {
-	### Babylon 5 Star Names ###
+	### Babylon 5 Star Names (Current Count = 123 Known Systems) ###
 	"Abba"
 	"Aicha"
 	"Alpha Omega"
@@ -28,7 +28,6 @@ star_names = {
 	"Daltron"
 	"Deneb"
 	"Dorak"
-	"Dorak"
 	"Dramocles"
 	"Drathun"
 	"Dura"
@@ -41,7 +40,6 @@ star_names = {
 	"Heptharg"
 	"Herig"
 	"Hylak"
-	"Ikarra"
 	"Ikarra"
 	"Ikosh"
 	"Immolan"
@@ -59,8 +57,6 @@ star_names = {
 	"Orion"
 	"Praxis"
 	"Proxima"
-	"Proxima"
-	"Ragesh"
 	"Ragesh"
 	"Regula"
 	"Riga"
@@ -119,9 +115,7 @@ star_names = {
 	"Tolonius"
 	"Tumbor"
 	"Vega"
-	"Vega"
 	"Vemini"
-	"Ventauri"
 	"Ventauri"
 	"Viscus"
 	"Vorlon"
