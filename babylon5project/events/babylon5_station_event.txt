@@ -2,7 +2,7 @@
 namespace = babylon5
 country_event = {
 	id = babylon5.1000
-	hide_window = yes
+	hide_window = no
 	fire_only_once = yes
 	
 	
@@ -81,6 +81,18 @@ country_event = {
 						ethos = owner
 					}
 				}
+				random_tile = {
+					limit = {
+						has_blocker = no
+						has_building = no
+						has_grown_pop = yes
+					}
+					set_building = "building_colony_shelter"
+				}
+				#spaceport = {
+				#	set_spaceport_level = 6
+				#}
+				
 				### Create Star System Objects
 								
 				### Create Fleet Elements
@@ -118,8 +130,8 @@ country_event = {
 						
 						fleet_event = { id = babylon5.1006 days = 30 } # First Constructor Arrives
 						fleet_event = { id = babylon5.1006 days = 60 } # Second Constructor Arrives
-						fleet_event = { id = babylon5.1006 months = 6 } # Third Constructor Arrives
-						fleet_event = { id = babylon5.1006 months = 12 } # Fourth Constructor Arrives
+						fleet_event = { id = babylon5.1006 days = 180 } # Third Constructor Arrives
+						fleet_event = { id = babylon5.1006 days = 360 } # Fourth Constructor Arrives
 					}
 				
 					
@@ -332,11 +344,11 @@ country_event = {
 							design = "Valen"
 							graphical_culture = "extra_dimensional_01"
 						}
-						set_location = {
-							target = event_target:dimensional_portal
-							distance = 5
-							angle = random
-						}
+						#set_location = {
+						#	target = event_target:dimensional_portal
+						#	distance = 5
+						#	angle = random
+						#}
 						set_fleet_stance = defensive
 						#set_aggro_range = 500
 						#set_aggro_range_measure_from = self
@@ -358,7 +370,7 @@ fleet_event = {
 	is_triggered_only = yes
 	
 	immediate = {
-		event_target:extradimensionals = {
+		event_target:babylon5_nation = {
 			create_fleet = { }
 			last_created_fleet = {
 				set_owner = PREV
