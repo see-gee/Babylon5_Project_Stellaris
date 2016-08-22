@@ -63,7 +63,50 @@
 #	}
 #}
 
-
+babylon5_country = {
+	can_own_empty_planets = yes
+	playable = no
+	as_fortifications = yes
+	shuffle_pop_ethos = no
+	sub_title = "BABYLON5_COUNTRY"
+	sub_title_desc = "BABYLON5_COUNTRY_DESC"
+	needs_survey = yes
+	has_capital = yes
+	enforces_borders = no
+	can_planets_be_attacked = yes
+	orbital_bomardment = no
+	diplomatic_wars = yes
+	share_communications = yes
+	relations = no
+	fallen_empire = no
+	default_closed_borders = no
+	auto_delete = no
+	generate_borders = yes
+	needs_colony = no
+	hostile_when_attacked = yes
+	show_borders_in_us = yes
+}
+	
+ai = {
+	enabled = yes
+	declare_war = no
+	colonizer = no
+	internal_policies = no
+	construction = yes
+	limited_construction = yes
+	tech = yes
+	modules = {
+		military_minister_module
+		foreign_minister_module
+		interior_minister_module
+	}
+}
+modules = {
+	all_technology_module = {}
+	standard_event_module = {}
+	standard_leader_module = {}
+	standard_economy_module = {}
+}
 
 
 
