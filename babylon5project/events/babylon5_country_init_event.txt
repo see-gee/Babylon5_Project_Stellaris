@@ -1,18 +1,52 @@
-### Babylon 5 Station AI Event
+### Babylon 5 Country Spawn AI Event
 namespace = babylon5
-planet_event = {
+
+event = {
+    id = babylon5.1
+    hide_window = yes
+    is_triggered_only = yes
+
+    immediate = {
+         event = {
+             id = babylon5.1000 
+             months = 1200 # Exactly 100 yrs from game start, no variable
+			 #days = 32400  # 90 years
+             #random = 7200 # + 0 - 20 years
+		}
+    }
+}
+
+
+
+event = {
 	id = babylon5.1000
-	hide_window = yes
+	hide_window = no
+	# title = "babylon5.1000.name"
+	# picture = GFX_babylon5_station_event # Need to make this asset
+	# show_sound = babylon5_intro_sound # Need to make this asset
+	# desc = babylon5.1000.desc # Need to write/add this asset
+	
 	is_triggered_only = yes
 	fire_only_once = yes
 	
-	mean_time_to_happen = {
-		# Bring B5 Station online 100 years after game start
-		months = 1200
-	}
+	#trigger = {
+	#	# Bring B5 Station online 100 years after game start
+	#	months = 1200
+	#}
+	
+	
 	
 	immediate = {
-		set_global_flag = babylon5_country
+		random_ststem = {
+			limit = {
+				
+			}
+				
+		}
+		set_global_flag = babylon5_country_spawned
+		
+		set_country_flag = babylon5_country
+		
 		create_species = {
 		  name = "Human"
 		  class = "MAM"
@@ -22,9 +56,10 @@ planet_event = {
 			trait = trait_talented
 		  }
 		}
+		save 
 		create_country = {
 			name = "Babylon 5"
-			type = babylon5_country
+			type = babylon5_cpu
 			government = random
 			species = last_created
 			ethos = random
@@ -45,32 +80,34 @@ planet_event = {
 					"null"
 				}
 			}
-		create_colony = {
-			owner = last_created_country
-			species = last_created
-			ethos = owner
 		}
-		### random_title = { #No idea what this is for. It was pasted from the example code on the paradox forum
-		limit = {
-			  has_blocker = no
-			  has_grown_pop = no
-			  has_growing_pop = no
-		}
-		create_pop = {
-			species = last_created
-			ethos = owner
-		}
-		random_tile = {
-			limit = {
-				  has_blocker = no
-				  has_building = no
-				  has_grown_pop = yes
-				}
-			set_building = "building_colony_shelter"
-		}
-		create_spaceport = {
-			name = "Babylon 5"
-			set_spaceport_level = 6
-		}
+		#create_colony = {
+		#	owner = last_created_country
+		#	species = last_created
+		#	ethos = owner
+		#}
+		#random_tile = { #No idea what this is for. It was pasted from the example code on the paradox forum
+		#	limit = {
+		#		has_blocker = no
+		#		has_grown_pop = no
+		#		has_growing_pop = no
+		#	}
+		#}
+		#create_pop = {
+		#	species = last_created
+		#	ethos = owner
+		#}
+		#random_tile = {
+		#	limit = {
+		#		  has_blocker = no
+		#		  has_building = no
+		#		  has_grown_pop = yes
+		#		}
+		#	set_building = "building_colony_shelter"
+		#}
+		#create_spaceport = {
+		#	name = "Babylon 5"
+		#	set_spaceport_level = 6
+		
 	}
 }

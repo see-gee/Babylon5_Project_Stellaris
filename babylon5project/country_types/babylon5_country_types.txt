@@ -64,7 +64,7 @@
 
 
 
-baylon5_nation = {
+baylon5_cpu = {
 	can_own_empty_planets 					#no by default, decides if empty planets belonging to country are automatically removed from the country.
 	playable = no							#if this type is available for players. used when listing countries for hot-joining players
 	as_fortifications = yes					#does this type use planetary fortifications?
