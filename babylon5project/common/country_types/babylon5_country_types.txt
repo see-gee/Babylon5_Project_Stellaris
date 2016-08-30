@@ -65,9 +65,9 @@
 
 
 baylon5_cpu = {
-	can_own_empty_planets 					#no by default, decides if empty planets belonging to country are automatically removed from the country.
+	can_own_empty_planets = yes					#no by default, decides if empty planets belonging to country are automatically removed from the country.
 	playable = no							#if this type is available for players. used when listing countries for hot-joining players
-	as_fortifications = yes					#does this type use planetary fortifications?
+	has_fortifications = yes					#does this type use planetary fortifications?
 	shuffle_pop_ethos = no					#if pops belonging to this country type should mutate their ethos every now and then
 	sub_title = "EXAMPLE_COUNTRY"			#sub title that will be shown for this empire. Like "Example Federation - Fallen Empire"
 	sub_title_desc = "EXAMPLE_COUNTRY_DESC" #description for the sub title. used in tooltips
@@ -83,7 +83,7 @@ baylon5_cpu = {
 	relations = yes							#default no, this controls whether the country makes us of opinion
 	fallen_empire = no						#default no, this controls whether the empire uses the special Fallen Empire AI
 	default_closed_borders = no				#default no, controls if the country has closed borders as default
-	closed_borders_message_key = x			#default "NO_ACCESS_TO_COUNTRY_SYSTEMS", the message when hovering a system you don't have access to.
+	closed_borders_message_key = "NO_ACCESS_TO_COUNTRY_SYSTEMS"		#default "NO_ACCESS_TO_COUNTRY_SYSTEMS", the message when hovering a system you don't have access to.
 
 	faction = {							#these values are copied to the country and can be changed during the game
 		neutral = no						#if yes, fleets will never attack anything and will never be attacked
