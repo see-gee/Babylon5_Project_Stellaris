@@ -7,14 +7,14 @@ event = {
     is_triggered_only = yes
 
     immediate = {
-         event = {
-             id = babylon5.1000 
-             months = 1200 # Exactly 100 yrs from game start, no variable
-			 #days = 32400  # 90 years
-             #random = 7200 # + 0 - 20 years
-		}
-    }
+        #event = {
+        #	id = babylon5.1000 
+        #	months = 1200 # Exactly 100 yrs from game start, no variable
+		#	#days = 32400  # 90 years
+		#	#random = 7200 # + 0 - 20 years
+	}
 }
+
 
 
 
@@ -39,75 +39,74 @@ event = {
 	immediate = {
 		random_ststem = {
 			limit = {
-				
+				flag = babylon5_home_system
 			}
 				
-		}
-		set_global_flag = babylon5_country_spawned
-		
-		set_country_flag = babylon5_country
-		
-		create_species = {
-		  name = "Human"
-		  class = "MAM"
-		  portrait = earthalliance_sheridan_1
-		  homeworld = THIS
-		  traits = {
-			trait = trait_talented
-		  }
-		}
-		save 
-		create_country = {
-			name = "Babylon 5"
-			type = babylon5_cpu
-			government = random
-			species = last_created
-			ethos = random
-			name_list = "Human"
-			flag = {
-				icon= {
-					category = "babylon5"
-					file = "babylon5_station_1.dds"
-				}
-				background= {
-					category = "backgrounds"
-					file = "circle.dds"
-				}
-				colors={
-					"indigo"
-					"blue"
-					"null"
-					"null"
+			set_global_flag = babylon5_country_spawned
+			
+			set_country_flag = babylon5_country
+			
+			create_species = {
+			  name = "Human"
+			  class = "MAM"
+			  portrait = earthalliance_sheridan_1
+			  homeworld = THIS
+			  traits = {
+				trait = trait_talented
+			  }
+			}
+			save 
+			create_country = {
+				name = "Babylon 5"
+				type = babylon5_cpu
+				government = random
+				species = last_created
+				ethos = random
+				name_list = "Human"
+				flag = {
+					icon= {
+						category = "babylon5"
+						file = "babylon5_station_1.dds"
+					}
+					background= {
+						category = "backgrounds"
+						file = "circle.dds"
+					}
+					colors={
+						"indigo"
+						"blue"
+						"null"
+						"null"
+					}
 				}
 			}
+			#create_colony = {
+			#	owner = last_created_country
+			#	species = last_created
+			#	ethos = owner
+			#}
+			#random_tile = { #No idea what this is for. It was pasted from the example code on the paradox forum
+			#	limit = {
+			#		has_blocker = no
+			#		has_grown_pop = no
+			#		has_growing_pop = no
+			#	}
+			#}
+			#create_pop = {
+			#	species = last_created
+			#	ethos = owner
+			#}
+			#random_tile = {
+			#	limit = {
+			#		  has_blocker = no
+			#		  has_building = no
+			#		  has_grown_pop = yes
+			#		}
+			#	set_building = "building_colony_shelter"
+			#}
+			#create_spaceport = {
+			#	name = "Babylon 5"
+			#	set_spaceport_level = 6
 		}
-		#create_colony = {
-		#	owner = last_created_country
-		#	species = last_created
-		#	ethos = owner
-		#}
-		#random_tile = { #No idea what this is for. It was pasted from the example code on the paradox forum
-		#	limit = {
-		#		has_blocker = no
-		#		has_grown_pop = no
-		#		has_growing_pop = no
-		#	}
-		#}
-		#create_pop = {
-		#	species = last_created
-		#	ethos = owner
-		#}
-		#random_tile = {
-		#	limit = {
-		#		  has_blocker = no
-		#		  has_building = no
-		#		  has_grown_pop = yes
-		#		}
-		#	set_building = "building_colony_shelter"
-		#}
-		#create_spaceport = {
-		#	name = "Babylon 5"
-		#	set_spaceport_level = 6
-		
 	}
 }

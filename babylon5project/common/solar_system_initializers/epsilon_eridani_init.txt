@@ -12,7 +12,7 @@
 epsilon_eridani_system = {
 	name = "Epsilon Eridani"						#Name of the system.
 	class = "sc_f"								#system's star class. [random] picks a random class from all available system classes. ["name_of_class"] picks a specific class. ["name_of_random_list"] picks a random class from the specified random_list ( random_list are found in the same files as the star classes )
-	asteroids_distance = { min = 20 max = 30 }	#asteroid field distance from center
+	asteroids_distance = { min = 40 max = 70 }	#asteroid field distance from center
 	flags = { babylon5_home_system }					#flags that can be used in triggers and effects
 	
 	#Initializers can specify how the game can use them.
@@ -74,13 +74,15 @@ epsilon_eridani_system = {
 		#flags = { }		#flags usable by effects and triggers
 		
 		#A moon works the same as planets, with the only exception that they orbit the parent planet instead of the system center
-		moon = {
-			class = random
-			orbit_distance = 10			#orbit for moons are only relative to other moons around this planet
-			size = 1
-		}
+		#moon = {
+		#	name = "Epsilon I"
+		#	class = random
+		#	orbit_distance = 10			#orbit for moons are only relative to other moons around this planet
+		#	size = 1
+		#}
 		#spawn 1-3 random moons
 		moon = {
+			name = "Epsilon I"
 			count = { min = 1 max = 3 }
 			orbit_distance = 2.5
 			size = 1
@@ -108,7 +110,7 @@ epsilon_eridani_system = {
 		home_planet = no
 		
 		moon = {
-			count = { min = 1 max = 3 }
+			count = 1
 			class = random
 			orbit_distance = { min = 2 max = 5 }
 			size = { min = 1 max = 10 }
