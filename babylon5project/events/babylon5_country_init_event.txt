@@ -1,25 +1,25 @@
 ### Babylon 5 Country Spawn AI Event
 namespace = babylon5
 
+#event = {
+#    id = babylon5.9
+#    hide_window = yes
+#    is_triggered_only = yes
+#
+#    immediate = {
+#        #event = {
+#        #	id = babylon5.1000 
+#        #	months = 1200 # Exactly 100 yrs from game start, no variable
+#		#	#days = 32400  # 90 years
+#		#	#random = 7200 # + 0 - 20 years
+#	}
+#}
+
+
+
+
 event = {
-    id = babylon5.1
-    hide_window = yes
-    is_triggered_only = yes
-
-    immediate = {
-        #event = {
-        #	id = babylon5.1000 
-        #	months = 1200 # Exactly 100 yrs from game start, no variable
-		#	#days = 32400  # 90 years
-		#	#random = 7200 # + 0 - 20 years
-	}
-}
-
-
-
-
-event = {
-	id = babylon5.1000
+	id = babylon5.1
 	hide_window = no
 	# title = "babylon5.1000.name"
 	# picture = GFX_babylon5_station_event # Need to make this asset
@@ -39,7 +39,7 @@ event = {
 	immediate = {
 		random_ststem = {
 			limit = {
-				flag = babylon5_home_system
+				flag = { babylon5_home_system }
 			}
 				
 			set_global_flag = babylon5_country_spawned

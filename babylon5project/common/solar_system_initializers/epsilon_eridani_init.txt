@@ -61,7 +61,7 @@ epsilon_eridani_system = {
 		###
 		
 		orbit_distance = { min = 30 max = 40 }	#distance from center, relative to previous planets orbit. ( if the previous planet was placed at distance 100 from the center, orbit_distance = 10 would put us 110 from the center ).
-		orbit_angle = 1							#orbit angle from previous planet, in degrees. orbit_distance and orbit_angle together makes the polar coordinate of the planet
+		orbit_angle = 100							#orbit angle from previous planet, in degrees. orbit_distance and orbit_angle together makes the polar coordinate of the planet
 		size = 30								#planet size. remember that all numeric values support { min = x max = y } syntax
 		has_ring = no
 		
@@ -80,12 +80,15 @@ epsilon_eridani_system = {
 		#	orbit_distance = 10			#orbit for moons are only relative to other moons around this planet
 		#	size = 1
 		#}
+		
 		#spawn 1-3 random moons
 		moon = {
 			name = "Epsilon I"
 			count = { min = 1 max = 3 }
-			orbit_distance = 2.5
-			size = 1
+			orbit_distance = { min = 2.5 max = 4 }
+			orbit_angle = { min = 90 max = 270 }
+			size = { min = 1 max = 5}
+			class = random
 		}
 		
 		#when the planet is done initializing the init_effect will be executed
@@ -126,30 +129,22 @@ epsilon_eridani_system = {
 		size = 25
 		has_ring = no
 		home_planet = yes
-		
-		
-		
 	}
-	#this is where the tree part comes in in 'Initializer Tree'
-	#Each initializer can have any number of child initializers scripted with in a "neighbor_system" body
-	neighbor_system = {
-		#The game will test all systems within the distance limit
-		#untill it finds a system that fulfills the trigger ( see below ).
-		#it will do this in a nearest-first order
-		distance = { min = 10 max = 100 }
+	planet = {
+		name = "Epislon IV"
+		class = pc_barren_cold
+		orbit_distance = { min = 20 max = 30 }
+		orbit_angle = random
+		size = 25
+		has_ring = yes
+		home_planet = yes
 		
-		#if the trigger is left empty it will always succeed. The first closest system that is within the distance limits will be picked
-		trigger = {
-			#scope = galactic_object ( parent ). root = root gal obj. prev = closest parent. prev prev = grand parent...
-			#check stuff
-		}		
-		
-		#finally the initializer to be used for the picked system
-		initializer = "example_neighbor"
-	}
-	neighbor_system = {
-		distance = { min = 10 max = 100 }
-		initializer = "example_neighbor"
+		moon = {
+			count = 1
+			class = random
+			orbit_distance = { min = 2 max = 5 }
+			size = { min = 1 max = 10 }
+		}
 	}
 }
 
