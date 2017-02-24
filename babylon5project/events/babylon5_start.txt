@@ -2,55 +2,55 @@
 
 namespace = babylon5_start
 
-#Vorlon Init
-country_event = {
-	id = babylon5_start.1
+### Vorlon Init
+# country_event = {
+	# id = babylon5_start.1
 	
-	show_sound = event_laboratory_sound
-	location = root
+	# show_sound = event_laboratory_sound
+	# location = root
 	
-	hide_window = yes
-	is_triggered_only = no
-	fire_only_once = yes
+	# hide_window = yes
+	# is_triggered_only = no
+	# fire_only_once = yes
 	
-	immediate = {
-		every_country = {
-			limit = { has_country_flag = vorlonstart_1 }
-			give_technology = tech_energy_lance_2
-			give_technology = tech_regenerative_hull_tissue
-			give_technology = tech_arctic_colonization
-			capital_scope = {
-				create_fleet = { name = "Vorlon Guardian" }
-				last_created_fleet = {
-					set_owner = PREV
-					create_ship = {
-						name = "(())()()(-::=)"
-						design = "Large Space Organism"
-					}
-				}
-			}
-		}
-	}	
-}
+	# immediate = {
+		# every_country = {
+			# limit = { has_country_flag = vorlonstart_1 }
+			# give_technology = tech_energy_lance_2
+			# give_technology = tech_regenerative_hull_tissue
+			# give_technology = tech_arctic_colonization
+			# capital_scope = {
+				# create_fleet = { name = "Vorlon Guardian" }
+				# last_created_fleet = {
+					# set_owner = PREV
+					# create_ship = {
+						# name = "(())()()(-::=)"
+						# design = "Large Space Organism"
+					# }
+				# }
+			# }
+		# }
+	# }	
+# }
 
 
-#Shadow init
-country_event = {
-	id = babylon5_start.2
+### Shadow init
+# country_event = {
+	# id = babylon5_start.2
 	
-	show_sound = event_laboratory_sound
-	location = root
+	# show_sound = event_laboratory_sound
+	# location = root
 	
-	hide_window = yes
-	is_triggered_only = no
-	fire_only_once = yes
+	# hide_window = yes
+	# is_triggered_only = no
+	# fire_only_once = yes
 	
-	immediate = {
-			every_country = {
-				limit = { has_country_flag = shadowstart_1 }
-				add_modifier = { modifier = army_speed_boost days = -1 }
-				give_technology = tech_disruptors_2
-		}
-	}
+	# immediate = {
+			# every_country = {
+				# limit = { has_country_flag = shadowstart_1 }
+				# add_modifier = { modifier = army_speed_boost days = -1 }
+				# give_technology = tech_disruptors_2
+		# }
+	# }
 
-} 
+# } 

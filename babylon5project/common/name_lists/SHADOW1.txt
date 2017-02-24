@@ -47,9 +47,9 @@
 			"Do'mutu"
 		}
 
-		terraform_station = {
-			"Doto'dum"
-		}
+		# terraform_station = {
+			# "Doto'dum"
+		# }
 
 		observation_station = {
 			"Vasa'zu"

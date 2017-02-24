@@ -26,28 +26,36 @@ MAM = {
 			"earthalliance"
 		}
 	}
+	graphical_culture = mammalian_01
+	move_pop_sound_effect = "moving_pop_confirmation"
 }
 
 ART = {
-		custom_portraits = {
+	custom_portraits = {
 		portraits = {
 			"shadow"
 		}
 	}
+	graphical_culture = arthropoid_01
+	move_pop_sound_effect = "arthopoid_pops_move"
 }
 
 MOL = {
-		custom_portraits = {
+	custom_portraits = {
 		portraits = {
 			"vorlon"
 		}
 	}
+	graphical_culture = molluscoid_01
+	move_pop_sound_effect = "molluscoid_pops_move"
 }
 
 REP = {
-		custom_portraits = {
+	custom_portraits = {
 		portraits = {
 			"narn"
 		}
 	}
+	graphical_culture = reptilian_01
+	move_pop_sound_effect = "reptilian_pops_move"
 }

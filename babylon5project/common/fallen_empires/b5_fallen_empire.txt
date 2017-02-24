@@ -1,0 +1,269 @@
+# This file defines the fallen empires within the b5 universe
+# 
+# 
+
+
+### Shadow Fallen Empire Init
+
+fallen_empire_shadow = {
+	
+	graphical_culture = "fallen_empire_04"
+	initializer = "fallen_empire_shadow"
+	
+	create_country_effect = {
+		create_species = {
+			name = "Sha'de"
+			class = "ART"
+			portrait = "shadow"
+			traits = {
+				trait = trait_slow_breeders			# Cost -1
+				trait = trait_repugnant				# Cost -1
+				trait = trait_extremely_adaptive	# Cost +4
+			}
+			extra_trait_points = 2
+			allow_negative_traits = yes
+		}
+		create_country = {
+			name = "Sha'dow"
+			type = fallen_empire_shadow # see b5_country_types.txt for custom AI behavior settings.
+			ignore_initial_colony_error = yes
+			government = stagnated_ascendancy_shadow
+			species = last_created
+			ethos = {
+				ethic = ethic_fanatic_militarist
+				ethic = ethic_fanatic_materialist
+			}
+			flag = {
+				icon={
+					category="babylon5"
+					file="shadow_flag_1.dds"
+				}
+				background={
+					category="backgrounds"
+					file="00_solid.dds"
+				}
+				colors={
+					"burgundy"
+					"null"
+					"null"
+					"null"
+				}
+			}
+			effect = {
+				set_country_flag = fallen_empire_shadow	
+				add_minerals = 5000
+				add_energy = 5000		
+				# must initialize global designs here
+				add_global_ship_design = "Alpha"
+				add_global_ship_design = "Beta"
+				add_global_ship_design = "Gamma"
+				add_global_ship_design = "Theta"
+				add_global_ship_design = "Tau"
+				add_global_ship_design = "Omega"
+				add_global_ship_design = "Sigma"			
+			}
+		}
+	}
+}
+
+### Vorlon Fallen Empire Init
+
+fallen_empire_vorlon = {
+	graphical_culture = "fallen_empire_04"
+	initializer = "fallen_empire_vorlon"
+	
+	create_country_effect = {
+		create_species = {
+			name = "Vorlon"
+			class = "ART"
+			portrait = "vorlon"
+			traits = {
+				trait = trait_nonadaptive			# Cost -2
+				trait = trait_talented				# Cost +2
+				trait = trait_venerable				# Cost +4
+			}
+			extra_trait_points = 2
+			allow_negative_traits = yes
+		}
+		create_country = {
+			name = "Vorlon Empire"
+			type = fallen_empire_vorlon # see b5_country_types.txt for custom AI behavior settings.
+			ignore_initial_colony_error = yes
+			government = stagnated_ascendancy_vorlon
+			species = last_created
+			ethos = {
+				ethic = ethic_fanatic_militarist
+				ethic = ethic_fanatic_spiritualist
+				
+			}
+			flag = {
+				icon={
+					category="babylon5"
+					file="vorlon_flag_1.dds"
+				}
+				background={
+					category="backgrounds"
+					file="00_solid.dds"
+				}
+				colors={
+					"teal"
+					"green"
+					"null"
+					"null"
+				}
+			}
+			effect = {
+				set_country_flag = fallen_empire_vorlon
+				add_minerals = 5000
+				add_energy = 5000		
+				# must initialize global designs here
+				add_global_ship_design = "Alpha"
+				add_global_ship_design = "Beta"
+				add_global_ship_design = "Gamma"
+				add_global_ship_design = "Theta"
+				add_global_ship_design = "Tau"
+				add_global_ship_design = "Omega"
+				add_global_ship_design = "Sigma"			
+			}
+		}
+	}
+}
+
+### The First Born
+fallen_empire_first_born = {
+	graphical_culture = "fallen_empire_02"
+	# Using ringworld fallen initializer from stock gamefiles
+	initializer = "fallen_1_1"
+	
+	create_country_effect = {
+		create_species = {
+			name = "First Born"
+			class = "MAM"
+			portrait = "gfx/portraits/firstones/firstborn_lorien.dds"
+			traits = {
+				trait = trait_solitary		# Cost -1
+				trait = trait_slow_breeders	# Cost -1
+				trait = trait_venerable		# Cost 4
+				trait = trait_intelligent	# Cost 2
+			}
+			extra_trait_points = 2
+			allow_negative_traits = yes
+		}
+		create_country = {
+			name = "The First Born"
+			type = fallen_empire_first_born	# see b5_country_types.txt for custom AI behavior settings.
+			ignore_initial_colony_error = yes
+			government = stagnated_ascendancy
+			# government = stagnated_ascendancy_first_born
+			species = last_created
+			flag = {
+				icon={
+					category="blocky"
+					file="flag_blocky_4.dds"
+				}
+				background={
+					category="backgrounds"
+					file="00_solid.dds"
+				}
+				colors={
+					"blue"
+					"indigo"
+					"null"
+					"null"
+				}
+			}
+			effect = {
+				set_country_flag = fallen_empire_first_born
+			}
+		}
+	}
+}
+
+### Walkers of Sigma-957
+fallen_empire_walkers = {
+	graphical_culture = "fallen_empire_01"
+	# Using initializer from stock gamefiles
+	initializer = "fallen_2"
+	
+	create_country_effect = {
+		create_species = {
+			name = "Walkers of Sigma-957"
+			class = random
+			portrait = random
+			traits = random
+			extra_trait_points = 2
+			allow_negative_traits = yes
+		}
+		create_country = {
+			name = "Walkers of Sigma-957"
+			type = fallen_empire
+			ignore_initial_colony_error = yes
+			government = stagnated_ascendancy
+			# government = stagnated_ascendancy_walkers
+			species = last_created
+			flag = {
+				icon={
+					category="babylon5"
+					file="walker_flag_1.dds"
+				}
+				background={
+					category="backgrounds"
+					file="stripes.dds"
+				}
+				colors={
+					"blue"
+					"indigo"
+					"null"
+					"null"
+				}
+			}
+			effect = {
+				set_country_flag = fallen_empire_walkers
+			}
+		}
+	}
+}
+
+### The Hand
+fallen_empire_the_hand = {
+	graphical_culture = "fallen_empire_03"
+	initializer = "fallen_3"
+	
+	create_country_effect = {
+		create_species = {
+			name = "The Hand"
+			class = random
+			portrait = random
+			traits = random
+			extra_trait_points = 2
+			allow_negative_traits = yes
+		}
+		create_country = {
+			name = "The Hand"
+			type = fallen_empire_the_hand
+			ignore_initial_colony_error = yes
+			government = stagnated_ascendancy
+			# government = stagnated_ascendancy_the_hand
+			species = last_created
+			flag = {
+				icon={
+						category="babylon5"
+						file="the_hand_flag_1.dds"
+					}
+					background={
+						category="backgrounds"
+						file="00_solid.dds"
+					}
+					colors={
+						"blue"
+						"null"
+						"null"
+						"null"
+					}
+			}
+			effect = {
+				set_country_flag = fallen_empire_the_hand
+			}
+		}
+	}
+}

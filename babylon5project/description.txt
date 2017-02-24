@@ -1,3 +1,3 @@
-V0.5 - Initial Release
+v 1.1 - Major Release
 
 The Babylon 5 Project brings the B5 universe to Stellaris! Play as the faction you love. Make Centauri and Narn allies? 

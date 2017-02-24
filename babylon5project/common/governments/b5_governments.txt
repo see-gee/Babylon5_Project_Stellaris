@@ -1,0 +1,77 @@
+#Custom Government types are defined here
+
+### Shadow Fallen Empire Government
+stagnated_ascendancy_shadow = {
+	icon = "gfx/interface/icons/governments/awakened_ascendancy.dds"
+	has_heir = yes
+	potential = {
+		is_country_type = fallen_empire_shadow	# Custom Country types = b5_country_types.txt
+	}
+	
+	modifier = {
+	}	
+	
+	pickable_at_start = no
+	
+	ruler_title = RT_EMPEROR
+	ruler_title_female = RT_EMPRESS
+	heir_title = HT_CROWN_PRINCE
+	heir_title_female = HT_CROWN_PRINCESS
+}
+
+### vorlon Fallen Empire Government
+stagnated_ascendancy_vorlon = {
+	icon = "gfx/interface/icons/governments/transcendent_empire.dds"
+	has_heir = yes
+	potential = {
+		is_country_type = fallen_empire_vorlon	# Custom Country types = b5_country_types.txt
+	}
+	
+	modifier = {
+	}	
+	
+	pickable_at_start = no
+	
+	ruler_title = RT_EMPEROR
+	ruler_title_female = RT_EMPRESS
+	heir_title = HT_CROWN_PRINCE
+	heir_title_female = HT_CROWN_PRINCESS
+}
+
+### Awakened Fallen Empire Government
+awakened_ascendancy_shadow = {
+	icon = "gfx/interface/icons/governments/awakened_ascendancy.dds"
+	has_heir = yes
+	potential = {
+		is_country_type = awakened_fallen_empire_shadow	# Custom Country types = b5_country_types.txt
+	}
+	
+	modifier = {
+	}	
+	
+	pickable_at_start = no
+	
+	ruler_title = RT_EMPEROR
+	ruler_title_female = RT_EMPRESS
+	heir_title = HT_CROWN_PRINCE
+	heir_title_female = HT_CROWN_PRINCESS
+}
+
+### Awakened Fallen Empire Government
+awakened_ascendancy_vorlon = {
+	icon = "gfx/interface/icons/governments/transcendent_empire.dds"
+	has_heir = yes
+	potential = {
+		is_country_type = awakened_fallen_empire_vorlon	# Custom Country types = b5_country_types.txt
+	}
+	
+	modifier = {
+	}	
+	
+	pickable_at_start = no
+	
+	ruler_title = RT_EMPEROR
+	ruler_title_female = RT_EMPRESS
+	heir_title = HT_CROWN_PRINCE
+	heir_title_female = HT_CROWN_PRINCESS
+}

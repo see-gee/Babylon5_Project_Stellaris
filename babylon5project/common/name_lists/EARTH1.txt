@@ -65,9 +65,9 @@ EARTH1 = {
 		wormhole_station = {
 			"Jumpgate %N%"
 		}
-		terraform_station = {
-			"Habitat Station %N%"
-		}
+		# terraform_station = {
+		# 	"Habitat Station %N%"
+		# }
 		observation_station = {
 			"Research Outpost %N%"
 		}

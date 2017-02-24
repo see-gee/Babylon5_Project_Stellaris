@@ -1,5 +1,6 @@
 
 ### EarthAlliance ###
+
 earthalliance = {
 	spawn_enabled = always # yes / no / always
 	name_list="EARTH1"
@@ -42,7 +43,7 @@ earthalliance = {
 	ruler={
 		gender=male
 		name="Luis Santiago"
-		portrait="earthalliance_santiago_1"
+		portrait="earthalliance_ruler_m_1"
 		texture=0
 		hair=7
 		clothes=2
@@ -57,6 +58,7 @@ earthalliance = {
 }
 
 ### Minbari ###
+
 minbari = {
 	spawn_enabled = always # yes / no / always
 	
@@ -116,7 +118,7 @@ minbari = {
 	ruler={
 		gender=female
 		name="Delenn Furlan"
-		portrait=minbari_delenn_1
+		portrait= minbari_ruler_f_1
 		texture=0
 		hair=2
 		clothes=0
@@ -124,6 +126,7 @@ minbari = {
 }
 
 ### Centauri ###
+
 centauri = {
 	name = "Centauri Republic"
 	spawn_enabled = always # yes / no / always
@@ -182,7 +185,7 @@ centauri = {
 	ruler={
 		gender=male
 		name="Londo Mollari"
-		portrait="centauri_londo_1"
+		portrait="centauri_ruler_m_1"
 		texture=0
 		hair=28
 		clothes=0
@@ -190,6 +193,7 @@ centauri = {
 }
 
 ### Narn ###
+
 narn = {
 	name = "Narn Regime"
 	spawn_enabled = always # yes / no / always
@@ -248,138 +252,140 @@ narn = {
 	ruler={
 		gender=male
 		name="G'kar of G'Quan"
-		portrait= narn_gkar_1
+		portrait= narn_ruler_m_1
 		texture=0
 		hair=0
 		clothes=0
 	}
 }
+
+### Uncomment below to make them Playable
 
 ### Shadow ###
-shadow = {
-	name = "Sha'dow Matriarchat"
-	spawn_enabled = always # yes / no / always
+# shadow = {
+	# name = "Sha'dow Matriarchat"
 	
-	name_list = "SHADOW1"
-	ship_prefix = "SSS"
+	# spawn_enabled = no # yes / no / always
 	
-	species_name = "Sha'de"
-	species_plural = "Sha'des"
-	species_adjective = "Sha'den"
-	species_class = "ART"
-	trait="trait_strong"
-	trait="trait_enduring"
-	trait="trait_nomadic"
-	trait="trait_solitary"
-	# portrait = "rep2"
-	portrait = "shadow"
-	adjective = "Sha'den"
+	# name_list = "SHADOW1"
+	# ship_prefix = ""
 	
-	species_bio = "The Shadows are insectoid hexapeds that resemble a cross between an Earth spider and praying mantis. The Shadows believe that for a race to evolve into their full potential, they must do so through a cycle of chaos; growth through pain and struggle, conflict and war. Weak races die. Strong races are made even stronger. With this they developed their First Principles: chaos through warfare; evolution through bloodshed; perfection through victory."
+	# species_name = "Sha'de"
+	# species_plural = "Sha'des"
+	# species_adjective = "Sha'den"
+	# species_class = "ART"
+	# trait="trait_strong"
+	# trait="trait_enduring"
+	# trait="trait_nomadic"
+	# trait="trait_solitary"
+	# portrait = "shadow"
+	# adjective = "Sha'den"
 	
-	government="martial_empire"
-	ethic="ethic_collectivist"
-	ethic="ethic_fanatic_militarist"
+	# species_bio = "The Shadows are insectoid hexapeds that resemble a cross between an Earth spider and praying mantis. The Shadows believe that for a race to evolve into their full potential, they must do so through a cycle of chaos; growth through pain and struggle, conflict and war. Weak races die. Strong races are made even stronger. With this they developed their First Principles: chaos through warfare; evolution through bloodshed; perfection through victory."
+	
+	# government="martial_empire"
+	# ethic="ethic_collectivist"
+	# ethic="ethic_fanatic_militarist"
 
-	flags = { shadowstart_1 shadow_cpu }
+	# flags = { shadowstart_1 shadow_cpu }
 	
-	weapon="tech_lasers_1"
-	ftl=warp
+	# weapon="tech_lasers_1"
+	# ftl=warp
 	
-	planet_name="Z'ha'dum"
-	planet_class="pc_desert"
+	# planet_name="Z'ha'dum"
+	# planet_class="pc_desert"
 	#Actual system of Shadow Homeworld 
-	system_name="Alpha Omega"
+	# system_name="Alpha Omega"
 	
-	graphical_culture="avian_01"
-	city_graphical_culture="arthropoid_01"
+	# graphical_culture="avian_01"
+	# city_graphical_culture="arthropoid_01"
 	
-	empire_flag={
-		icon={
-			category="babylon5"
-			file="shadow_flag_1.dds"
-		}
-		background={
-			category="backgrounds"
-			file="pattern_01.dds"
-		}
-		colors={
-			"black"
-			"dark_grey"
-			"null"
-			"null"
-		}
-	}
+	# empire_flag={
+		# icon={
+			# category="babylon5"
+			# file="shadow_flag_1.dds"
+		# }
+		# background={
+			# category="backgrounds"
+			# file="pattern_01.dds"
+		# }
+		# colors={
+			# "black"
+			# "dark_grey"
+			# "null"
+			# "null"
+		# }
+	# }
 		
-	ruler={
-		gender=female
-		name="Daha'tme"
-		portrait="shadow_mother_1"
-		texture=3
-		hair=0
-		clothes=0
-	}
-}
+	# ruler={
+		# gender=female
+		# name="Daha'tme"
+		# portrait="shadow_mother_1"
+		# texture=3
+		# hair=0
+		# clothes=0
+	# }
+# }
 
 ### Vorlon ###
-vorlon = {
-	name = "Vorlon Empire"
-	spawn_enabled = always # yes / no / always
+# vorlon = {
+	# name = "Vorlon Empire"
+	# spawn_enabled = no # yes / no / always
 	
-	name_list = "VORLON1"
-	ship_prefix = ""
+	# name_list = "VORLON1"
+	# ship_prefix = ""
 	
-	species_name = "Vorlon"
-	species_plural = "Vorlons"
-	species_adjective = "Vorlon"
-	species_class = "MOL"
-	trait="trait_intelligent"
-	trait="trait_natural_physicists"
-	trait="trait_slow_breeders"
-	portrait = "vorlon"
-	adjective = "Vorlon"
+	# species_name = "Vorlon"
+	# species_plural = "Vorlons"
+	# species_adjective = "Vorlon"
+	# species_class = "MOL"
+	# trait="trait_intelligent"
+	# trait="trait_natural_physicists"
+	# trait="trait_slow_breeders"
+	# portrait = "vorlon"
+	# adjective = "Vorlon"
 	
-	species_bio = "As with all things Vorlon, next to nothing is known by non-Vorlons about the Empire's governmental structure. No mention is ever made of a specific governing body or head of state, although it is known to have existed in one form or another for at least a million years. It is worth noting that representatives of the Empire seem proficent at manipulating the beureaucratic structures and governmental systems of other states."
+	# species_bio = "As with all things Vorlon, next to nothing is known by non-Vorlons about the Empire's governmental structure. No mention is ever made of a specific governing body or head of state, although it is known to have existed in one form or another for at least a million years. It is worth noting that representatives of the Empire seem proficent at manipulating the beureaucratic structures and governmental systems of other states."
 	
-	government="ai_overlordship"
-	ethic="ethic_collectivist"
-	ethic="ethic_fanatic_materialist"
+	# government="ai_overlordship"
+	# ethic="ethic_collectivist"
+	# ethic="ethic_fanatic_materialist"
 
-	flags = { vorlonstart_1 vorlon_cpu }
+	# flags = { vorlonstart_1 vorlon_cpu }
 	
-	weapon="tech_lasers_1"
-	ftl=wormhole
+	# weapon="tech_lasers_1"
+	# ftl=wormhole
 	
-	planet_name = "Vorlon Homeworld"
-	planet_class = "pc_nuked"
-	system_name = "Vorlon"
+	# planet_name = "Vorlon Homeworld"
+	# planet_class = "pc_nuked"
+	# system_name = "Vorlon"
 	
-	graphical_culture="molluscoid_01"
-	city_graphical_culture="fungoid_01"
+	# graphical_culture="molluscoid_01"
+	# city_graphical_culture="fungoid_01"
 	
-	empire_flag={
-		icon={
-			category="babylon5"
-			file="vorlon_flag_1.dds"
-		}
-		background={
-			category="backgrounds"
-			file="sinus.dds"
-		}
-		colors={
-			"green"
-			"teal"
-			"null"
-			"null"
-		}
-	}
+	# empire_flag={
+		# icon={
+			# category="babylon5"
+			# file="vorlon_flag_1.dds"
+		# }
+		# background={
+			# category="backgrounds"
+			# file="sinus.dds"
+		# }
+		# colors={
+			# "green"
+			# "teal"
+			# "null"
+			# "null"
+		# }
+	# }
 		
-	ruler={
-		gender=male
-		name="Kosh"
-		portrait="vorlon_kosh_1"
-		texture=0
-		hair=0
-		clothes=0
-	}
-}
+	# ruler={
+		# gender=male
+		# name="Kosh"
+		# portrait="vorlon_kosh_1"
+		# texture=0
+		# hair=0
+		# clothes=0
+	# }
+# }

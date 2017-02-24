@@ -1,19 +1,19 @@
 ### Earth Alliance
 portraits = {
 	# Rulers
-	earthalliance_luchenko_1 = { texturefile = "gfx/portraits/earthalliance/earthalliance_susanna_luchenko_1.dds"}
-	earthalliance_santiago_1 = { texturefile = "gfx/portraits/earthalliance/earthalliance_luis_santiago_1.dds"}
+	earthalliance_ruler_f_1 = { texturefile = "gfx/portraits/earthalliance/earthalliance_susanna_luchenko_1.dds"}
+	earthalliance_ruler_m_1 = { texturefile = "gfx/portraits/earthalliance/earthalliance_luis_santiago_1.dds"}
 #	earthalliance_clark_1 = { texturefile = "gfx/portraits/earthalliance/earthalliance_william_clark_1.dds"}
 
 	# Leaders
-	earthalliance_ivanova_1 = { texturefile = "gfx/portraits/earthalliance/earthalliance_susan_ivanova_1.dds"}
-	earthalliance_ivanova_2 = { texturefile = "gfx/portraits/earthalliance/earthalliance_susan_ivanova_2.dds"}
-	earthalliance_sheridan_1 = { texturefile = "gfx/portraits/earthalliance/earthalliance_john_sheridan_1.dds"}
-	earthalliance_sheridan_2 = { texturefile = "gfx/portraits/earthalliance/earthalliance_john_sheridan_2.dds"}
-	earthalliance_garibaldi_1 = { texturefile = "gfx/portraits/earthalliance/earthalliance_michael_garibaldi_1.dds"}
-	earthalliance_garibaldi_2 = { texturefile = "gfx/portraits/earthalliance/earthalliance_michael_garibaldi_2.dds"}
-	earthalliance_franklin_1 = { texturefile = "gfx/portraits/earthalliance/earthalliance_stephen_franklin_1.dds"}
-	earthalliance_franklin_2 = { texturefile = "gfx/portraits/earthalliance/earthalliance_stephen_franklin_2.dds"}
+	earthalliance_gov_f_1 = { texturefile = "gfx/portraits/earthalliance/earthalliance_susan_ivanova_1.dds"}
+	earthalliance_gov_f_2 = { texturefile = "gfx/portraits/earthalliance/earthalliance_susan_ivanova_2.dds"}
+	earthalliance_gov_m_1 = { texturefile = "gfx/portraits/earthalliance/earthalliance_john_sheridan_1.dds"}
+	earthalliance_gov_m_2 = { texturefile = "gfx/portraits/earthalliance/earthalliance_john_sheridan_2.dds"}
+	earthalliance_mil_m_1 = { texturefile = "gfx/portraits/earthalliance/earthalliance_michael_garibaldi_1.dds"}
+	earthalliance_mil_m_2 = { texturefile = "gfx/portraits/earthalliance/earthalliance_michael_garibaldi_2.dds"}
+	earthalliance_sci_m_1 = { texturefile = "gfx/portraits/earthalliance/earthalliance_stephen_franklin_1.dds"}
+	earthalliance_sci_m_2 = { texturefile = "gfx/portraits/earthalliance/earthalliance_stephen_franklin_2.dds"}
 	
 	# Pops
 #	earthalliance_civ = { texturefile = "gfx/portraits/earthalliance/earthalliance_civ_1.dds"}
@@ -25,14 +25,14 @@ portraits = {
 }
 portrait_groups = {
 	earthalliance = {
-		default = earthalliance_santiago_1
+		default = earthalliance_ruler_m_1
 		game_setup = { #will run with a limited country scope. species and government is set but the country does not actually exist
 			add = {
 				trigger = {
 					ruler = { gender = male }
 				}
 				portraits = {
-					earthalliance_santiago_1
+					earthalliance_ruler_m_1
 					#earthalliance_clark_1
 				}
 			}
@@ -41,7 +41,7 @@ portrait_groups = {
 					ruler = { gender = female }
 				}
 				portraits = {
-					earthalliance_luchenko_1
+					earthalliance_ruler_f_1
 				}
 			}
 			#set = {
@@ -55,6 +55,10 @@ portrait_groups = {
 		species = { #generic portrait for a species
 			add = {
 				portraits = {
+					earthalliance_gov_m_1
+					earthalliance_gov_m_2
+					earthalliance_gov_f_1
+					earthalliance_gov_f_2
 					human_female_01
 					human_male_01
 				}
@@ -65,11 +69,14 @@ portrait_groups = {
 		pop = { #for a specific pop
 			add = {
 				portraits = {
-				#	earthalliance_civ
-				#	earthalliance_mil
-				#	earthalliance_arm
-				#	earthalliance_gov
-				#	earthalliance_sci
+					earthalliance_gov_f_1
+					earthalliance_gov_f_2
+					earthalliance_gov_m_1
+					earthalliance_gov_m_2
+					earthalliance_mil_m_1
+					earthalliance_mil_m_2
+					earthalliance_sci_m_1
+					earthalliance_sci_m_2
 					human_female_01
 					human_male_01
 				}
@@ -83,8 +90,8 @@ portrait_groups = {
 					gender = female
 				}
 				portraits = {
-					earthalliance_ivanova_1
-					earthalliance_ivanova_2
+					earthalliance_gov_f_1
+					earthalliance_gov_f_2
 				}
 			}
 			add = {
@@ -92,12 +99,12 @@ portrait_groups = {
 					gender = male
 				}
 				portraits = {
-					earthalliance_garibaldi_1
-					earthalliance_sheridan_1
-					earthalliance_franklin_1
-					earthalliance_garibaldi_2
-					earthalliance_sheridan_2
-					earthalliance_franklin_2
+					earthalliance_mil_m_1
+					earthalliance_mil_m_2
+					earthalliance_gov_m_1
+					earthalliance_gov_m_2
+					earthalliance_sci_m_1
+					earthalliance_sci_m_2
 				}
 			}
 			add = {
@@ -106,8 +113,8 @@ portrait_groups = {
 					leader_class = governor
 				}
 				portraits = {
-					earthalliance_ivanova_1
-					earthalliance_ivanova_2
+					earthalliance_gov_f_1
+					earthalliance_gov_f_2
 				}
 			}
 			add = {
@@ -116,8 +123,8 @@ portrait_groups = {
 					leader_class = scientist
 				}
 				portraits = {
-					earthalliance_franklin_1
-					earthalliance_franklin_2
+					earthalliance_sci_m_1
+					earthalliance_sci_m_2
 				}
 			}
 			add = {
@@ -126,8 +133,10 @@ portrait_groups = {
 					leader_class = admiral
 				}
 				portraits = {
-					earthalliance_sheridan_1
-					earthalliance_sheridan_2
+					earthalliance_gov_m_1
+					earthalliance_gov_m_2
+					earthalliance_mil_m_1
+					earthalliance_mil_m_2
 				}
 			}
 			add = {
@@ -136,8 +145,8 @@ portrait_groups = {
 					leader_class = general
 				}
 				portraits = {
-					earthalliance_garibaldi_1
-					earthalliance_garibaldi_2
+					earthalliance_mil_m_1
+					earthalliance_mil_m_2
 				}
 			}
 		}
@@ -150,7 +159,7 @@ portrait_groups = {
 					gender = female
 				}
 				portraits = {
-					earthalliance_luchenko_1
+					earthalliance_ruler_f_1
 				}
 			}
 			add = {
@@ -158,7 +167,7 @@ portrait_groups = {
 					gender = male
 				}
 				portraits = {
-					earthalliance_santiago_1
+					earthalliance_ruler_m_1
 				}
 			}
 		}
@@ -167,10 +176,10 @@ portrait_groups = {
 
 ### Minbari Portraits
 portraits = {
-	minbari_delenn_1= { texturefile = "gfx/portraits/minbari/minbari_delenn_1.dds"}
-	minbari_delenn_2= { texturefile = "gfx/portraits/minbari/minbari_delenn_2.dds"}
-	minbari_dukhat_1 = { texturefile = "gfx/portraits/minbari/minbari_dukhat_1.dds"}
-	minbari_lennier_1 = { texturefile = "gfx/portraits/minbari/minbari_lennier_1.dds"}
+	minbari_ruler_f_1 = { texturefile = "gfx/portraits/minbari/minbari_delenn_1.dds"}
+	minbari_ruler_f_2 = { texturefile = "gfx/portraits/minbari/minbari_delenn_2.dds"}
+	minbari_ruler_m_1 = { texturefile = "gfx/portraits/minbari/minbari_dukhat_1.dds"}
+	minbari_gov_m_1 = { texturefile = "gfx/portraits/minbari/minbari_lennier_1.dds"}
 #	minbari_civ = { texturefile = "gfx/portraits/minbari/minbari_civ_1.dds"}
 #	minbari_mil = { texturefile = "gfx/portraits/minbari/minbari_mil_1.dds"}
 #	minbari_arm = { texturefile = "gfx/portraits/minbari/minbari_arm_1.dds"}
@@ -179,15 +188,15 @@ portraits = {
 }
 portrait_groups = {
 	minbari = {
-		default = minbari_delenn_1
+		default = minbari_ruler_f_1
 		game_setup = { #will run with a limited country scope. species and government is set but the country does not actually exist
 			add = {
 				trigger = {
 					ruler = { gender = male }
 				}
 				portraits = {
-					minbari_dukhat_1
-					minbari_lennier_1
+					minbari_ruler_m_1
+					minbari_gov_m_1
 				}
 			}
 			add = {
@@ -195,7 +204,7 @@ portrait_groups = {
 					ruler = { gender = female }
 				}
 				portraits = {
-					minbari_delenn_1
+					minbari_ruler_f_1
 				}
 			}
 			#set = {
@@ -209,8 +218,9 @@ portrait_groups = {
 		species = { #generic portrait for a species
 			add = {
 				portraits = {
-					human_female_01
-					human_male_01
+					minbari_ruler_m_1
+					minbari_gov_m_1
+					minbari_ruler_f_1
 				}
 			}
 		}		
@@ -219,8 +229,9 @@ portrait_groups = {
 		pop = { #for a specific pop
 			add = {
 				portraits = {
-					human_female_01
-					human_male_01
+					minbari_ruler_m_1
+					minbari_gov_m_1
+					minbari_ruler_f_1
 				}
 			}
 		}
@@ -232,7 +243,7 @@ portrait_groups = {
 					gender = female
 				}
 				portraits = {
-					minbari_delenn_1
+					minbari_ruler_f_1
 				}
 			}
 			add = {
@@ -240,7 +251,7 @@ portrait_groups = {
 					gender = male
 				}
 				portraits = {
-					minbari_lennier_1
+					minbari_gov_m_1
 				}
 			}
 		}
@@ -253,7 +264,7 @@ portrait_groups = {
 					gender = female
 				}
 				portraits = {
-					minbari_delenn_1
+					minbari_ruler_f_1
 				}
 			}
 			add = {
@@ -261,7 +272,7 @@ portrait_groups = {
 					gender = male
 				}
 				portraits = {
-					minbari_dukhat_1
+					minbari_ruler_m_1
 				}
 			}
 		}
@@ -270,9 +281,16 @@ portrait_groups = {
 
 ### Centauri Portraits
 portraits = {
-	centauri_londo_1 = { texturefile = "gfx/portraits/centauri/centauri_londo_mollari_1.dds"}
-	centauri_timov_1 = { texturefile = "gfx/portraits/centauri/centauri_timov_1.dds"}
-	#centauri_vir_1 = { texturefile = "gfx/portraits/centauri/centauri_vir_cotto_1.dds"}
+	
+	centauri_ruler_m_1 = { texturefile = "gfx/portraits/centauri/centauri_londo_mollari_1.dds"}
+	centauri_ruler_m_2 = { texturefile = "gfx/portraits/centauri/centauri_londo_mollari_2.dds"}
+	centauri_ruler_f_1 = { texturefile = "gfx/portraits/centauri/centauri_timov_1.dds"}
+	centauri_gov_m_1 = { texturefile = "gfx/portraits/centauri/centauri_vir_1.dds"}
+	centauri_pop_f_1 = { texturefile = "gfx/portraits/centauri/centauri_pop_f_1.dds"}
+	
+	
+	
+
 #	narn_civ = { texturefile = "gfx/portraits/narn/narn_civ_1.dds"}
 #	narn_mil = { texturefile = "gfx/portraits/narn/narn_mil_1.dds"}
 #	narn_arm = { texturefile = "gfx/portraits/narn/narn_arm_1.dds"}
@@ -281,14 +299,15 @@ portraits = {
 }
 portrait_groups = {
 	centauri = {
-		default = centauri_londo_1
+		default = centauri_ruler_m_1
 		game_setup = { #will run with a limited country scope. species and government is set but the country does not actually exist
 			add = {
 				trigger = {
 					ruler = { gender = male }
 				}
 				portraits = {
-					centauri_londo_1
+					centauri_ruler_m_1
+					centauri_ruler_m_2
 				}
 			}
 			add = {
@@ -296,7 +315,7 @@ portrait_groups = {
 					ruler = { gender = female }
 				}
 				portraits = {
-					centauri_timov_1
+					centauri_ruler_f_1
 				}
 			}
 			#set = {
@@ -310,8 +329,10 @@ portrait_groups = {
 		species = { #generic portrait for a species
 			add = {
 				portraits = {
-					human_female_02
-					human_male_02
+					centauri_ruler_m_1
+					centauri_ruler_m_2
+					centauri_ruler_f_1
+					centauri_gov_m_1
 				}
 			}
 		}		
@@ -320,8 +341,11 @@ portrait_groups = {
 		pop = { #for a specific pop
 			add = {
 				portraits = {
-					human_female_02
-					human_male_02
+					centauri_gov_m_1
+					centauri_ruler_f_1
+					centauri_ruler_m_1
+					centauri_pop_f_1
+					#human_male_02
 				}
 			}
 		}
@@ -333,7 +357,8 @@ portrait_groups = {
 					gender = female
 				}
 				portraits = {
-					human_female_02
+					centauri_ruler_f_1
+					# human_female_02
 				}
 			}
 			add = {
@@ -341,8 +366,9 @@ portrait_groups = {
 					gender = male
 				}
 				portraits = {
-					centauri_londo_1
-					centauri_vir_1
+					centauri_ruler_m_1
+					centauri_ruler_m_2
+					centauri_gov_m_1
 				}
 			}
 		}
@@ -355,7 +381,7 @@ portrait_groups = {
 					gender = female
 				}
 				portraits = {
-					centauri_timov_1
+					centauri_ruler_f_1
 				}
 			}
 			add = {
@@ -363,7 +389,7 @@ portrait_groups = {
 					gender = male
 				}
 				portraits = {
-					centauri_londo_1
+					centauri_ruler_m_1
 				}
 			}
 		}
@@ -372,8 +398,8 @@ portrait_groups = {
 
 ### Narn Portraits
 portraits = {
-	narn_gkar_1 = { texturefile = "gfx/portraits/narn/narn_gkar_1.dds"}
-	narn_natoth_1 = { texturefile = "gfx/portraits/narn/narn_natoth_1.dds"}
+	narn_ruler_m_1 = { texturefile = "gfx/portraits/narn/narn_gkar_1.dds"}
+	narn_ruler_f_1 = { texturefile = "gfx/portraits/narn/narn_natoth_1.dds"}
 #	narn_civ = { texturefile = "gfx/portraits/narn/narn_civ_1.dds"}
 #	narn_mil = { texturefile = "gfx/portraits/narn/narn_mil_1.dds"}
 #	narn_arm = { texturefile = "gfx/portraits/narn/narn_arm_1.dds"}
@@ -382,14 +408,14 @@ portraits = {
 }
 portrait_groups = {
 	narn = {
-		default = narn_gkar
+		default = narn_ruler_m_1
 		game_setup = { 
 			add = {
 				trigger = {
 					ruler = { gender = male }
 				}
 				portraits = {
-					narn_gkar
+					narn_ruler_m_1
 				}
 			}
 			add = {
@@ -397,7 +423,7 @@ portrait_groups = {
 					ruler = { gender = female }
 				}
 				portraits = {
-					narn_natoth
+					narn_ruler_f_1
 				}
 			}
 
@@ -407,7 +433,8 @@ portrait_groups = {
 		species = { #generic portrait for a species
 			set = {
 				portraits = {
-					narn_gkar
+					narn_ruler_f_1
+					narn_ruler_m_1
 				}
 			}
 		}		
@@ -417,6 +444,8 @@ portrait_groups = {
 			add = {
 				portraits = {
 					rep2
+					narn_ruler_f_1
+					narn_ruler_m_1
 				}
 			}
 		}
@@ -428,7 +457,7 @@ portrait_groups = {
 					gender = female
 				}
 				portraits = {
-					narn_natoth
+					narn_ruler_f_1
 				}
 			}
 			add = {
@@ -436,7 +465,7 @@ portrait_groups = {
 					gender = male
 				}
 				portraits = {
-					narn_gkar
+					narn_ruler_m_1
 				}
 			}
 		}
@@ -449,7 +478,7 @@ portrait_groups = {
 					gender = female
 				}
 				portraits = {
-					narn_natoth
+					narn_ruler_f_1
 				}
 			}
 			add = {
@@ -457,7 +486,7 @@ portrait_groups = {
 					gender = male
 				}
 				portraits = {
-					narn_gkar
+					narn_ruler_m_1
 				}
 			}
 		}
@@ -468,9 +497,9 @@ portrait_groups = {
 
 ### Shadow Portraits
 portraits = {
-	shadow_mother_1 = { texturefile = "gfx/portraits/shadow/shadow_mother_1.dds"}
-	shadow_morden_1 = { texturefile = "gfx/portraits/shadow/shadow_morden_1.dds"}
-	shadow_civ_1 = { texturefile = "gfx/portraits/shadow/shadow_civ_1.dds"}
+	shadow_ruler_f_1 = { texturefile = "gfx/portraits/shadow/shadow_mother_1.dds"}
+	shadow_gov_m_1 = { texturefile = "gfx/portraits/shadow/shadow_morden_1.dds"}
+	shadow_pop_1 = { texturefile = "gfx/portraits/shadow/shadow_pop_1.dds"}
 #	narn_civ = { texturefile = "gfx/portraits/narn/narn_civ_1.dds"}
 #	narn_mil = { texturefile = "gfx/portraits/narn/narn_mil_1.dds"}
 #	narn_arm = { texturefile = "gfx/portraits/narn/narn_arm_1.dds"}
@@ -479,11 +508,11 @@ portraits = {
 }
 portrait_groups = {
 	shadow = {
-		default = shadow_mother_1
+		default = shadow_ruler_f_1
 		game_setup = { #will run with a limited country scope. species and government is set but the country does not actually exist
 			add = {
 				portraits = {
-					shadow_mother_1
+					shadow_ruler_f_1
 				}
 			}
 		}		
@@ -492,7 +521,7 @@ portrait_groups = {
 		species = { #generic portrait for a species
 			set = {
 				portraits = {
-					shadow_mother_1
+					shadow_ruler_f_1
 				}
 			}
 		}		
@@ -501,7 +530,7 @@ portrait_groups = {
 		pop = { #for a specific pop
 			add = {
 				portraits = {
-					shadow_civ_1
+					shadow_pop_1
 				}
 			}
 		}
@@ -513,7 +542,7 @@ portrait_groups = {
 					gender = male
 				}
 				portraits = {
-					shadow_mother_1
+					shadow_ruler_f_1
 				}
 			}
 			
@@ -522,7 +551,8 @@ portrait_groups = {
 					leader_class = general
 				}
 				portraits = {
-					shadow_mother_1
+					shadow_ruler_f_1
+					shadow_gov_m_1
 				}
 			}
 			
@@ -531,7 +561,7 @@ portrait_groups = {
 					leader_class = admiral
 				}
 				portraits = {
-					shadow_mother_1
+					shadow_ruler_f_1
 				}
 			}
 			
@@ -540,7 +570,7 @@ portrait_groups = {
 					leader_class = scientist
 				}
 				portraits = {
-					shadow_mother_1
+					shadow_ruler_f_1
 				}
 			}
 			
@@ -549,7 +579,8 @@ portrait_groups = {
 					leader_class = governor
 				}
 				portraits = {
-					shadow_mother_1
+					shadow_ruler_f_1
+					shadow_gov_m_1
 				}
 			}
 			
@@ -558,7 +589,7 @@ portrait_groups = {
 					leader_class = ruler
 				}
 				portraits = {
-					shadow_mother_1
+					shadow_ruler_f_1
 				}
 			}
 		}
@@ -568,7 +599,7 @@ portrait_groups = {
 		ruler = {
 			add = {
 				portraits = {
-					shadow_mother_1
+					shadow_ruler_f_1
 				}
 			}
 		}
@@ -579,8 +610,8 @@ portrait_groups = {
 
 ### Vorlon Portraits
 portraits = {
-	vorlon_kosh_1 = { texturefile = "gfx/portraits/vorlon/vorlon_kosh_1.dds"}
-	vorlon_kosh_2 = { texturefile = "gfx/portraits/vorlon/vorlon_kosh_2.dds"}
+	vorlon_1 = { texturefile = "gfx/portraits/vorlon/vorlon_kosh_1.dds"}
+	vorlon_2 = { texturefile = "gfx/portraits/vorlon/vorlon_kosh_2.dds"}
 	vorlon_civ_1 = { texturefile = "gfx/portraits/vorlon/vorlon_civ_1.dds"}
 	vorlon_mil_1	= { texturefile = "gfx/portraits/vorlon/vorlon_mil_1.dds"}
 	vorlon_arm_1 = { texturefile = "gfx/portraits/vorlon/vorlon_arm_1.dds"}
@@ -589,12 +620,12 @@ portraits = {
 }
 portrait_groups = {
 	vorlon = {
-		default = vorlon_kosh_1
+		default = vorlon_1
 		game_setup = { #will run with a limited country scope. species and government is set but the country does not actually exist
 			add = {
 				portraits = {
-					vorlon_kosh_1
-					vorlon_kosh_2
+					vorlon_1
+					vorlon_2
 				}
 			}
 		}		
@@ -603,7 +634,7 @@ portrait_groups = {
 		species = { #generic portrait for a species
 			set = {
 				portraits = {
-					vorlon_kosh_1
+					vorlon_1
 				}
 			}
 		}		
@@ -613,6 +644,10 @@ portrait_groups = {
 			add = {
 				portraits = {
 					vorlon_civ_1
+					vorlon_mil_1
+					vorlon_arm_1
+					vorlon_gov_1
+					vorlon_sci_1 
 				}
 			}
 		}
@@ -669,7 +704,7 @@ portrait_groups = {
 					leader_class = ruler
 				}
 				portraits = {
-					vorlon_kosh_1
+					vorlon_1
 				}
 			}
 		}
@@ -679,7 +714,7 @@ portrait_groups = {
 		ruler = {
 			add = {
 				portraits = {
-					vorlon_kosh_1
+					vorlon_1
 				}
 			}
 		}

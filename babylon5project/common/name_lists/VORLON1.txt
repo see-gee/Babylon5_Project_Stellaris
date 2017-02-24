@@ -47,9 +47,9 @@
 			"(((:.))"
 		}
 
-		terraform_station = {
-			")):.:(_"
-		}
+		# terraform_station = {
+			# ")):.:(_"
+		# }
 
 		observation_station = {
 			"_|(.)--"
